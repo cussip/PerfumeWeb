@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="38DF446A-D9DA-43C4-F007-A351D5CB734C" name="ORDER_DETAIL">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:41:59 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="BF249E94-4088-3A2A-4DC2-6FFC9A1FA78A">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:43:09 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_ID" id="A172F8BC-9DAC-D5D7-3D4A-C53AE1E84755">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:43:09 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_COUNT" id="63068054-2365-BC86-B6A2-7E170AB3274E">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:43:09 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_PRICE" id="DF2C35EF-0BDA-E69C-931B-97099C302862">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:43:09 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_ID" id="AB0DDE0D-0480-D483-34BF-92EEB1161384">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:43:09 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D33307D3-2DD0-BBF3-531E-2166DF7ED5CE" name="FAQ">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:26:28 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TITLE" id="A009DC55-FFE8-D9E9-5815-D436336298A3">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:26:48 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="99B81E7E-EA70-0FC8-FA1E-B1A3B843DDE8">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:26:48 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REGDATE" id="0985C0EE-BEB3-2C12-0D95-24F66F6CBE5E">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:26:48 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID" id="DC45BB72-0A12-ADCE-13B2-8223D892FC1E">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-15 14:26:48 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
