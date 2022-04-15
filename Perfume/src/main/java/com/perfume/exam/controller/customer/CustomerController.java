@@ -15,11 +15,11 @@ public class CustomerController implements Controller {
 
 		System.out.println("*** call Customer Controller ***");
 		
-		ModelAndView mv = new ModelAndView("customer.notice");
+		ModelAndView mv = new ModelAndView("root.customer.notice");
 		mv.addObject("title", "spring title test!");
-		mv.setViewName("customer.notice");
+		mv.setViewName("root.customer.notice");
 		
 		return mv;
-	}
-
+	}	
+	
 }

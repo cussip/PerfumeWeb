@@ -42,4 +42,8 @@
 	<!-- 고객 서비스 -->
 	<beans:bean name="/customer/notice" class="com.perfume.exam.controller.customer.CustomerController"/>
 	
+	
+	<beans:bean class="com.perfume.exam.controller.customer.CustomerNotice"/>
+	
+	
 </beans:beans>
