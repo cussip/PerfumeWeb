@@ -41,11 +41,12 @@
     </div>
     <br><hr style="color: grey">
     
-    <p class="text-center text-muted" style="font-size:5pt; margin-bottom: 0;">
-    	<br>주식회사 파펨
-    	<br>주소: 서울 중구 청계천로 100 시그니처타워 서관 1103호 | 사업자등록번호: 792-87-00153 사업자정보확인 | 상호: 파펨 | 대표: 최영열
-		<br>고객 문의 이메일: help@paffem.com | 고객 센터: 070-4948-8028 | 통신판매업신고번호: 제2020-서울중구-2566호 | 개인정보취급방침 및 이용약관 | 개인정보관리책임자: 최영열
-		<br>created by EZEN prject
+    <p class="text-center text-muted" style="font-size:6pt; margin-bottom: 0;">
+    	<br>Perfume Project Co.,Ltd
+    	<br>
+    	<br>주소: 서울특별시 종로구 종로 지하55, 종각역 | 사업자등록번호: 111-22-3333 사업자정보확인 | 상호: Perfume Project | 대표: 향기남
+		<br>고객 문의 이메일: help@paffem.com | 고객 센터: 000-9999-8888 | 통신판매업신고번호: 제2020-서울중구-2566호 | 개인정보취급방침 및 이용약관 | 개인정보관리책임자: 향기남
+		<br>created by EZEN project
 		<br><br><br><br>
     </p>
  </footer>

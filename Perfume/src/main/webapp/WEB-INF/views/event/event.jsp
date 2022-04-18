@@ -10,13 +10,13 @@
 	<div class="container-fluid">
 	  <!-- Three columns of text below the carousel -->   
 		<div class="row justify-content-md-center">
-		    <div class="col-lg-2">
+		    <div class="col-lg-2" role="button">
 				<p class="event-menu">진행중인 이벤트</p>			
 		    </div>
-		    <div class="col-lg-auto">
+		    <div class="col-lg-auto" role="button">
 				<p class="event-menu">당첨자 발표</p>		    
 			</div>
-		    <div class="col-lg-2">
+		    <div class="col-lg-2" role="button" align="center">
 				<p class="event-menu">종료된 이벤트</p>		     
 		 	</div>
 		</div>

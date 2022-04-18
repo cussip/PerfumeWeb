@@ -32,9 +32,19 @@
 		}
 		
 		@media (min-width: 768px) {
-		  .bd-placeholder-img-lg {
-		    font-size: 3.5rem;
-		  }
+		  	.bd-placeholder-img-lg {
+		    	font-size: 3.5rem;
+		  	}
+		  	.header-menu-left {
+		  		display: none;
+		  	}
+		}
+		
+		@media (max-width: 768px){
+		  	.my-icon {
+		  		display: none;
+		  	}
+
 		}
 		
 		.dropdown:hover .dropdown-menu {
@@ -51,14 +61,19 @@
 		}
 		
 		.event-menu {
+			color: grey;
 			font-size: 9pt;
+			
+		}
+		.event-menu:hover {
+			color: black;
 		}
 		
 		.header-icon {
 			font-size: 15pt
 		}
 		
-		.header-menu {
+		.header-menu-text {
 			font-size: 9pt;
 		}
 		
@@ -70,6 +85,10 @@
 			color: white;
 			font-size: 10pt;
 			font-weight: bold;
+		}
+		
+		.dropdown-item {
+			font-size: 9pt;
 		}
 		
 	</style>
