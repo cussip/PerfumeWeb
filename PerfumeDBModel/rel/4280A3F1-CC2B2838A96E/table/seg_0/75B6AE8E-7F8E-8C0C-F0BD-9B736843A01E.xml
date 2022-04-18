@@ -8,9 +8,9 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID" id="4748AE64-042F-62DC-74F9-9982E85B6FA4">
+<Column name="PRODUCT_ID" id="E767EE15-BFEB-9A90-3F8B-F34A778F60D7">
 <createdBy>ishcj</createdBy>
-<createdTime>2022-04-15 13:19:44 UTC</createdTime>
+<createdTime>2022-04-15 15:11:27 UTC</createdTime>
 <ownerDesignName>PerfumeDBModel</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -88,20 +88,6 @@
 <ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PRODUCT_ID" id="E767EE15-BFEB-9A90-3F8B-F34A778F60D7">
-<createdBy>ishcj</createdBy>
-<createdTime>2022-04-15 15:11:27 UTC</createdTime>
-<ownerDesignName>PerfumeDBModel</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="F4E8EB35-CDCB-01BE-5E5F-C117CD08F8DE" referredColumn="5FC27527-3EBA-B3FC-A9A1-C3A877067DD0"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="8C2162B7-6E69-F83D-699D-72859FCCC676" name="PRODUCT_PK">
@@ -110,16 +96,6 @@
 <ownerDesignName>PerfumeDBModel</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="4748AE64-042F-62DC-74F9-9982E85B6FA4"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="9C1D7B97-A1E1-48EF-D26B-86718896A9D0" name="PRODUCT_REVIEW_FK">
-<createdBy>ishcj</createdBy>
-<createdTime>2022-04-15 15:11:39 UTC</createdTime>
-<ownerDesignName>PerfumeDBModel</ownerDesignName>
-<indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E767EE15-BFEB-9A90-3F8B-F34A778F60D7"/>

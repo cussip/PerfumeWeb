@@ -1,52 +1,51 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
- <footer>	
+ <footer class="bg-dark">	
 	<div class="upper row row-cols-6 py-6 my-6 border-top" style="margin-top: 100px; padding-top: 50px;">
 	
-		<div class="col"></div>
-	
+		<div class="col"></div>	
 	    <div class="col">
-	      <h5>°í°´¼¾ÅÍ</h5>
+	      <h6>ê³ ê°ì„¼í„°</h6>
 	      <ul class="nav flex-column">
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ÀÌ¸ÞÀÏ | help@help.com</a></li>
+	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ì´ë©”ì¼ | help@help.com</a></li>
 	      </ul>
 	    </div>
 		
 	    <div class="col">
-	      <h5>¹®ÀÇ</h5>
+	      <h6>ë¬¸ì˜</h6>
 	      <ul class="nav flex-column">
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">°øÁö»çÇ×</a></li>
+	        <li class="nav-item mb-2"><a href="/customer/notice" class="nav-link p-0 text-muted">ê³µì§€ì‚¬í•­</a></li>
 	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQ</a></li>
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">1:1¹®ÀÇ</a></li>	     
+	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">1:1ë¬¸ì˜</a></li>	     
 	      </ul>
 	    </div>
 		
 	    <div class="col">
-	      <h5>Section</h5>
+	      <h6>Section</h6>
 	      <ul class="nav flex-column">
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ä£±¸ ÃßÃµ Æ÷ÀÎÆ®</a></li>
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">2.5ML ±³È¯ ¼­ºñ½º</a></li>
+	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ì¹œêµ¬ ì¶”ì²œ í¬ì¸íŠ¸</a></li>
+	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">2.5ML êµí™˜ ì„œë¹„ìŠ¤</a></li>
 	      </ul>
 	    </div>
 	
 	    <div class="col">
-	      <h5>°¡Ä¡°ü</h5>
+	      <h6>ê°€ì¹˜ê´€</h6>
 	      <ul class="nav flex-column">
 	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Find Your Signature</a></li>
 	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Eco friendly</a></li>
 	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Better but different</a></li>
 	      </ul>
-	    </div>
-	    
+	    </div>	    
 	    <div class="col"></div>
-    
     </div>
-    <hr>
+    <br><hr style="color: grey">
     
-    <p class="text-center text-muted" style="font-size:5pt">
-    	<br>ÁÖ½ÄÈ¸»ç ÆÄÆè
-    	<br>ÁÖ¼Ò: ¼­¿ï Áß±¸ Ã»°èÃµ·Î 100 ½Ã±×´ÏÃ³Å¸¿ö ¼­°ü 1103È£ | »ç¾÷ÀÚµî·Ï¹øÈ£: 792-87-00153 »ç¾÷ÀÚÁ¤º¸È®ÀÎ | »óÈ£: ÆÄÆè | ´ëÇ¥: ÃÖ¿µ¿­
-		<br>°í°´ ¹®ÀÇ ÀÌ¸ÞÀÏ: help@paffem.com | °í°´ ¼¾ÅÍ: 070-4948-8028 | Åë½ÅÆÇ¸Å¾÷½Å°í¹øÈ£: Á¦2020-¼­¿ïÁß±¸-2566È£ | °³ÀÎÁ¤º¸Ãë±Þ¹æÄ§ ¹× ÀÌ¿ë¾à°ü | °³ÀÎÁ¤º¸°ü¸®Ã¥ÀÓÀÚ: ÃÖ¿µ¿­
+    <p class="text-center text-muted" style="font-size:5pt; margin-bottom: 0;">
+    	<br>ì£¼ì‹íšŒì‚¬ íŒŒíŽ¨
+    	<br>ì£¼ì†Œ: ì„œìš¸ ì¤‘êµ¬ ì²­ê³„ì²œë¡œ 100 ì‹œê·¸ë‹ˆì²˜íƒ€ì›Œ ì„œê´€ 1103í˜¸ | ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸: 792-87-00153 ì‚¬ì—…ìžì •ë³´í™•ì¸ | ìƒí˜¸: íŒŒíŽ¨ | ëŒ€í‘œ: ìµœì˜ì—´
+		<br>ê³ ê° ë¬¸ì˜ ì´ë©”ì¼: help@paffem.com | ê³ ê° ì„¼í„°: 070-4948-8028 | í†µì‹ íŒë§¤ì—…ì‹ ê³ ë²ˆí˜¸: ì œ2020-ì„œìš¸ì¤‘êµ¬-2566í˜¸ | ê°œì¸ì •ë³´ì·¨ê¸‰ë°©ì¹¨ ë° ì´ìš©ì•½ê´€ | ê°œì¸ì •ë³´ê´€ë¦¬ì±…ìž„ìž: ìµœì˜ì—´
+		<br>created by EZEN prject
+		<br><br><br><br>
     </p>
  </footer>

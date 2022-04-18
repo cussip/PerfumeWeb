@@ -1,43 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height:80px">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Perfume</a>
+    
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>	
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-atuo">
+      </button>
+      
+      <!-- ì¢Œì¸¡ ë©”ë‰´ ì˜ì—­ -->	
+      <div class="collapse navbar-collapse col-md-4 justify-content-md-end" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Perfume Teller</a>
+            <a class="header-menu nav-link" aria-current="page" href="#">Perfume Teller</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				SHOP
-			</a>
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#">Action</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
-			</div>
+          
+		  <li class="nav-item dropdown">
+		    <a class="header-menu nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+		    	SHOP
+		    </a>	
+		    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		      <li><a class="dropdown-item" href="#">40ml</a></li>
+		      <li><a class="dropdown-item" href="#">Curation</a></li>
+		      <li><a class="dropdown-item" href="#">GOODS</a></li>
+		    </ul>
+		  </li>
+          
+          <li class="nav-item">
+            <a class="header-menu nav-link" aria-current="page" href="#">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">ABOUT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">EVENT</a>
+            <a class="header-menu nav-link" aria-current="page" href="/event/event">EVENT</a>
           </li>
         </ul>
+       </div>
 
-		<!-- ¿ìÃþ ³¡ ¿µ¿ª -->
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <!-- ë¸Œëžœë“œ ë¶€ë¶„ -->
+      <div class="col-md-4" align="center" >
+      	<a class="navbar-brand" href="#" style="font-weight: bold; font-size: 20pt">PERFUME</a>
+      </div>
+      
+		<!-- ìš°ì¸µ ë©”ë‰´ ì˜ì—­ -->
+	  <div class="col-md-4">	
+        <ul class="navbar-nav me-auto mb-2 mb-md-0  justify-content-md-center">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">my</a>
+            <a class="nav-link" aria-current="page" href="#">
+            	<i class="header-icon bi bi-person-circle"></i>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">cart</a>
+            <a class="nav-link" aria-current="page" href="#">
+				<i class="header-icon bi bi-minecart"></i>
+			</a>
           </li>
         </ul>
       </div>

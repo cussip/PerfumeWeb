@@ -8,7 +8,12 @@
 			rel="stylesheet" 
 			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
 			crossorigin="anonymous">
+			
+	<!-- CSS파일 -->		
 	<link rel="stylesheet" href="/css/main.css" type="text/css"/>	
+	
+	<!-- 부트스트랩 아이콘 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,6 +35,41 @@
 		  .bd-placeholder-img-lg {
 		    font-size: 3.5rem;
 		  }
+		}
+		
+		.dropdown:hover .dropdown-menu {
+		    display: block;
+		    margin-top: 0;
+		}
+		
+		.notice-icon {
+			font-size: 50pt;
+		}
+		
+		.notice-icon-text {
+			font-weight: bold;
+		}
+		
+		.event-menu {
+			font-size: 9pt;
+		}
+		
+		.header-icon {
+			font-size: 15pt
+		}
+		
+		.header-menu {
+			font-size: 9pt;
+		}
+		
+		footer li {
+			font-size: 9pt;
+		}
+		
+		footer h6 {
+			color: white;
+			font-size: 10pt;
+			font-weight: bold;
 		}
 		
 	</style>
