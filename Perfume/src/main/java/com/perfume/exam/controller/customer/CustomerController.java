@@ -1,4 +1,4 @@
-package com.perfume.exam;
+package com.perfume.exam.controller.customer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,21 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-/**
- * Handles requests for the application home page.
- */
+public class CustomerController implements Controller {
 
-public class HomeController implements Controller {
-	
-	@RequestMapping("/perfume/home")
+	@RequestMapping("/customer/notice")
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		System.out.println("*** call Customer Controller ***");
 		
+		ModelAndView mv = new ModelAndView("root.customer.notice");
+		mv.addObject("title", "spring title test!");
+		mv.setViewName("root.customer.notice");
 		
-		ModelAndView mv = new ModelAndView("root.perfume.home");
-		mv.setViewName("root.perfume.home");		
 		return mv;
-	}
+	}	
 	
 }
-

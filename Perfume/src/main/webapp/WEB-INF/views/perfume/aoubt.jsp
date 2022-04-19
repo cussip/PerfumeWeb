@@ -24,7 +24,6 @@
 	height: auto;
 	margin-bottom: 100px;
 }
-
 .box2 {
   background-image: url("https://cdn.pixabay.com/photo/2014/06/24/17/38/smoke-376543_960_720.jpg");
   background-size: 100% 100%;
@@ -56,21 +55,17 @@
   margin-bottom: 100px;
   margin-right: 200px;
 }
-
 .content {
   display: flex;
   flex-direction: column;
 }
-
 .content span {
   color: white;
 }
-
 .content span:nth-child(1) {
   font-size: 25px;
   font-weight: bold;
 }
-
 .content span:nth-child(2) {
   font-size: 20px;
 }
