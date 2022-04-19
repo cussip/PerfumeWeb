@@ -19,7 +19,7 @@ public class AboutController implements Controller {
 		
 		
 		ModelAndView mv = new ModelAndView("root.perfume.about");
-		mv.setViewName("root.perfume.aoubt");		
+		mv.setViewName("root.perfume.about");		
 		return mv;
 	}
 	

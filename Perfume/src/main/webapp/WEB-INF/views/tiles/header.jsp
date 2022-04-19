@@ -28,7 +28,7 @@
 		  </li>
           
           <li class="nav-item">
-            <a class="header-menu-text nav-link" aria-current="page" href="#">ABOUT</a>
+            <a class="header-menu-text nav-link" aria-current="page" href="/perfume/about">ABOUT</a>
           </li>
           <li class="nav-item">
             <a class="header-menu-text nav-link" aria-current="page" href="/event/event">EVENT</a>
