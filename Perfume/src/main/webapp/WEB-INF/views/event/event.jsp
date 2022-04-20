@@ -38,31 +38,31 @@
 		<c:when test="${param.type == '1' || param.type == null}">
 
 			<br><br>
-			<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div class="row row-cols-1 row-cols-md-2 g-4">
 			
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/9cab35139df4171d2835f872018ad517ea1ef3ef9d7adfd15eb9ed05254c24909c9b7881548f7b31139859e3bf09bcfe32f1df29082a44b40f38d37bc47dfd69e618a3e51a38162cd90fa2cf64269128950863bea60845ebf7cca2abb8fb1b286d88f565e3723962832aa1721022cdb8" 
 			      		class="card-img-top" alt="...">
 			    </div>
 			  </div>
 			  
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/9cab35139df4171d2835f872018ad517ea1ef3ef9d7adfd15eb9ed05254c24909c9b7881548f7b31139859e3bf09bcfe32f1df29082a44b40f38d37bc47dfd69e618a3e51a38162cd90fa2cf64269128950863bea60845ebf7cca2abb8fb1b286d88f565e3723962832aa1721022cdb8" 
 			      		class="card-img-top" alt="...">			      
 			    </div>
 			  </div>
 			  
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/9cab35139df4171d2835f872018ad517ea1ef3ef9d7adfd15eb9ed05254c24909c9b7881548f7b31139859e3bf09bcfe32f1df29082a44b40f38d37bc47dfd69e618a3e51a38162cd90fa2cf64269128950863bea60845ebf7cca2abb8fb1b286d88f565e3723962832aa1721022cdb8" 
 			      		class="card-img-top" alt="...">			     
 			    </div>
 			  </div>
 			  
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/9cab35139df4171d2835f872018ad517ea1ef3ef9d7adfd15eb9ed05254c24909c9b7881548f7b31139859e3bf09bcfe32f1df29082a44b40f38d37bc47dfd69e618a3e51a38162cd90fa2cf64269128950863bea60845ebf7cca2abb8fb1b286d88f565e3723962832aa1721022cdb8" 
 			      		class="card-img-top" alt="...">			     
 			    </div>
@@ -107,31 +107,31 @@
 		<c:when test="${param.type == '3'}">
 			
 			<br><br>
-			<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div class="row row-cols-1 row-cols-md-2 g-4">
 			
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/eb3f1a751ddb5a5d80f1b5e161c09c232e7741384eaded3c98f486866b2c6a2a97f53eb4eb7f656145dd4106a13542b4065b69ad3120feafb6358aff6d9115b1efbe50407339868160883aabdf5bac5eaf0491354b06235e797834f600a83742" 
 			      		class="card-img-top" alt="...">
 			    </div>
 			  </div>
 			  
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/eb3f1a751ddb5a5d80f1b5e161c09c232e7741384eaded3c98f486866b2c6a2a97f53eb4eb7f656145dd4106a13542b4065b69ad3120feafb6358aff6d9115b1efbe50407339868160883aabdf5bac5eaf0491354b06235e797834f600a83742" 
 			      		class="card-img-top" alt="...">			      
 			    </div>
 			  </div>
 			  
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/eb3f1a751ddb5a5d80f1b5e161c09c232e7741384eaded3c98f486866b2c6a2a97f53eb4eb7f656145dd4106a13542b4065b69ad3120feafb6358aff6d9115b1efbe50407339868160883aabdf5bac5eaf0491354b06235e797834f600a83742" 
 			      		class="card-img-top" alt="...">			     
 			    </div>
 			  </div>
 			  
 			  <div class="col">
-			    <div class="card h-100">
+			    <div class="card">
 			      <img src="https://w.namu.la/s/eb3f1a751ddb5a5d80f1b5e161c09c232e7741384eaded3c98f486866b2c6a2a97f53eb4eb7f656145dd4106a13542b4065b69ad3120feafb6358aff6d9115b1efbe50407339868160883aabdf5bac5eaf0491354b06235e797834f600a83742" 
 			      		class="card-img-top" alt="...">			     
 			    </div>

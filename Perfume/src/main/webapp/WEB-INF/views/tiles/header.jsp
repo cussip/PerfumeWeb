@@ -8,7 +8,6 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
       <!-- 좌측 메뉴 영역 -->	
       <div class="header-menu-text collapse navbar-collapse col-md-4 justify-content-md-end" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">

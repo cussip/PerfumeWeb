@@ -114,6 +114,9 @@
 			height: 400*16/10px;
 		}
 		
+		.notice-card {
+			background-color: #F8F8F8;
+		}
 
 		
 	</style>

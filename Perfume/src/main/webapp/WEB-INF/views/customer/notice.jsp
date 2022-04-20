@@ -12,52 +12,59 @@
 		<div class="container-fluid">
 			<div class="row text-center">	
 					
-				<div class="col-md-3"></div>	
+				<div class="col-md-3"></div>
 				
-				<c:if test="${param.type != '1' && param.type != null}">
 				
-				 	<div class="col-md-2">
-						<button class="btn" name="type" value="1">
-							<p class="notice-icon bi bi-megaphone"/>
-						</button>
-						<br>    
-						<h6 class="notice-icon-text">공지사항</h6>		
-				 	</div>				
-				</c:if>			    
-				 	
-				<c:if test="${param.type != '2'}">
-				 	<div class="col-md-2">
-						<button class="btn" name="type" value="2">
-							<p class="notice-icon bi bi-info-circle"/>
-						</button>
-						<br>     
-						<h6 class="notice-icon-text">FAQ</h6>		
-				 	</div>			 				
-				</c:if>			 				    
-					 	
-				<c:if test="${param.type != '3'}">
-				 	<div class="col-md-2">
-						<button class="btn" name="type" value="3">
-							<p class="notice-icon bi bi-envelope"/>
-						</button>
-						<br>    
-						<h6 class="notice-icon-text">1:1문의</h6>		
-				 	</div>			
-				</c:if>			 	
-			 	
-				<c:if test="${param.type != '4'}">
-				 	<div class="col-md-2">
-						<button class="btn" name="type" value="4">
-							<p class="notice-icon bi bi-signpost-2"/>
-						</button>
-						<br>    
-						<h6 class="notice-icon-text">혜택안내</h6>		
-				 	</div>					
-				</c:if>
-				
-				<div class="col-md-3"></div>		 	
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+			
+			  <c:if test="${param.type != '1' && param.type != null}">	
+			  <div class="col">
+			    <div class="notice-card card">
+			      <button class="btn" name="type" value="1">
+					<p class="notice-icon bi bi-megaphone"/>
+					<p class="notice-icon-text">공지사항</p>
+				  </button>
+			    </div>
+			  </div>
+			  </c:if>
+			  
+			  <c:if test="${param.type != '2'}">
+			  <div class="col">
+			    <div class="notice-card card">
+			      <button class="btn" name="type" value="2">
+					<p class="notice-icon bi bi-info-circle"/>
+					<p class="notice-icon-text">FAQ</p>
+				  </button>
+			    </div>
+			  </div>
+			  </c:if>
+			  
+			  <c:if test="${param.type != '3'}">
+			  <div class="col">
+			    <div class="notice-card card">
+			      <button class="btn" name="type" value="3">
+					<p class="notice-icon bi bi-envelope"/>
+					<p class="notice-icon-text">1:1문의</p>
+				  </button>
+			    </div>
+			  </div>
+			  </c:if>
+			  
+			  <c:if test="${param.type != '4'}">
+			  <div class="col">
+			    <div class="notice-card card">
+			      <button class="btn" name="type" value="4">
+					<p class="notice-icon bi bi-signpost-2"/>
+					<p class="notice-icon-text">혜택안내</p>
+				  </button>
+			    </div>
+			  </div>
+			  </c:if>
+			  
+			</div>	
 		 			
 			</div>
+ 	
 		</div>
 	</form>
 	
