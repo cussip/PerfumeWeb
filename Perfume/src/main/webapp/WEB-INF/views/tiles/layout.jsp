@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!doctype html>
-<html>
+<html style="background-color: #212529">
 <head>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
 			rel="stylesheet" 
@@ -74,7 +74,7 @@
 		}
 		
 		.header-menu-text {
-			font-size: 9pt;
+			font-size: 11pt;
 		}
 		
 		footer li {
@@ -90,6 +90,31 @@
 		.dropdown-item {
 			font-size: 9pt;
 		}
+		
+		.center-logo {
+			font-weight: bold; 
+			font-size: 24pt;
+		}
+		
+		.footer-logo {
+			margin-top: 20px;
+			font-weight: bold;
+			font-size: 34pt;
+			color: grey;
+			text-align: center;
+		}
+		
+		.upper {
+			margin-top: 100px; 
+			padding-top: 50px;
+		}
+		
+		.event-img {
+			width: 400px;
+			height: 400*16/10px;
+		}
+		
+
 		
 	</style>
 </head>

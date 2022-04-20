@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<header>
+<header style="margin: 80px 0 80px 0">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height:80px">
     <div class="container-fluid">
     
@@ -10,7 +10,7 @@
       </button>
       
       <!-- 좌측 메뉴 영역 -->	
-      <div class="header-menu-left collapse navbar-collapse col-md-4 justify-content-md-end" id="navbarCollapse">
+      <div class="header-menu-text collapse navbar-collapse col-md-4 justify-content-md-end" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="header-menu-text nav-link" aria-current="page" href="#">Perfume Teller</a>
@@ -38,7 +38,7 @@
 
       <!-- 브랜드 부분 -->
       <div class="col-md-4" align="center" >
-      	<a class="navbar-brand" href="#" style="font-weight: bold; font-size: 20pt">PERFUME</a>
+      	<a class="center-logo navbar-brand" href="#">PERFUME</a>
       </div>
       
 		<!-- 우층 메뉴 영역 -->

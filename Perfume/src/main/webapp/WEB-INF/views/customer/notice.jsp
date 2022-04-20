@@ -2,18 +2,21 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<main style="margin: 0 350px 0 350px">
+<main style="margin-left: 350px; margin-right: 350px">
 	
 	<!-- 공통 이미지 부분  -->
-	
-	<h4 style="margin:130px 0 35px 0; text-align:center">SERVICE</h4>	
+	<br><br><br>
+	<h4 style="margin:0px 0px 50px 0px; text-align:center">SERVICE</h4>	
 		 	
 	<form action="notice">
 		<div class="container-fluid">
 			<div class="row text-center">	
-
+					
+				<div class="col-md-3"></div>	
+				
 				<c:if test="${param.type != '1' && param.type != null}">
-				 	<div class="col-md-4">
+				
+				 	<div class="col-md-2">
 						<button class="btn" name="type" value="1">
 							<p class="notice-icon bi bi-megaphone"/>
 						</button>
@@ -23,7 +26,7 @@
 				</c:if>			    
 				 	
 				<c:if test="${param.type != '2'}">
-				 	<div class="col-md-4">
+				 	<div class="col-md-2">
 						<button class="btn" name="type" value="2">
 							<p class="notice-icon bi bi-info-circle"/>
 						</button>
@@ -33,9 +36,9 @@
 				</c:if>			 				    
 					 	
 				<c:if test="${param.type != '3'}">
-				 	<div class="col-md-4">
+				 	<div class="col-md-2">
 						<button class="btn" name="type" value="3">
-							<p class="btn notice-icon bi bi-envelope"/>
+							<p class="notice-icon bi bi-envelope"/>
 						</button>
 						<br>    
 						<h6 class="notice-icon-text">1:1문의</h6>		
@@ -43,14 +46,16 @@
 				</c:if>			 	
 			 	
 				<c:if test="${param.type != '4'}">
-				 	<div class="col-md-4">
+				 	<div class="col-md-2">
 						<button class="btn" name="type" value="4">
 							<p class="notice-icon bi bi-signpost-2"/>
 						</button>
 						<br>    
 						<h6 class="notice-icon-text">혜택안내</h6>		
 				 	</div>					
-				</c:if>		 	
+				</c:if>
+				
+				<div class="col-md-3"></div>		 	
 		 			
 			</div>
 		</div>
@@ -65,7 +70,7 @@
 			<h6 style="font:bold">공지사항<br><br><br></h6>
 		</div>	
 			
-		<div class="accordion accordion-flush" id="accordionFlushExample" style="font-size: 12px; text-align: center">		
+		<div class="container accordion accordion-flush" id="accordionFlushExample" style="font-size: 12px; text-align: center">		
 		  <c:forEach var="n" items="list">	
 			  <div class="accordion-item">
 			    <h2 class="accordion-header" id="flush-headingOne">
@@ -165,11 +170,12 @@
 	  </c:when>
 	  
 	  <c:when test="${param.type eq '4'}">
-		<div style="margin-top:100px; border-bottom:1px solid black">
+		<div style="margin-top:100px; text-align: center">
 			<h6 style="font:bold; text-align: center">혜택안내<br><br><br></h6>
+			<img alt="benefit" src="https://paffem.me/web/paffem/assets/service/membership.jpg" 
+				 style="width: 1024px;">	  
 		</div>
 		
-		<img alt="benefit" src="/img/customer/membership.jpg">	  
 	  		
 	  </c:when>
   

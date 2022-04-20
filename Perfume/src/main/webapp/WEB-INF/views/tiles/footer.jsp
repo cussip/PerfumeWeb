@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
  <footer class="bg-dark">	
-	<div class="upper row row-cols-6 py-6 my-6 border-top" style="margin-top: 100px; padding-top: 50px;">
+	<div class="upper row row-cols-6 py-6 my-6 border-top">
 	
 		<div class="col"></div>	
 	    <div class="col">
@@ -41,12 +41,13 @@
     </div>
     <br><hr style="color: grey">
     
-    <p class="text-center text-muted" style="font-size:6pt; margin-bottom: 0;">
+    <p class="text-center text-muted" style="font-size:6pt; margin-bottom: 0px;">
     	<br>Perfume Project Co.,Ltd
     	<br>
     	<br>주소: 서울특별시 종로구 종로 지하55, 종각역 | 사업자등록번호: 111-22-3333 사업자정보확인 | 상호: Perfume Project | 대표: 향기남
 		<br>고객 문의 이메일: help@paffem.com | 고객 센터: 000-9999-8888 | 통신판매업신고번호: 제2020-서울중구-2566호 | 개인정보취급방침 및 이용약관 | 개인정보관리책임자: 향기남
 		<br>created by EZEN project
-		<br><br><br><br>
+		<p class="footer-logo">PERFUME</p>
+		<br>
     </p>
  </footer>
