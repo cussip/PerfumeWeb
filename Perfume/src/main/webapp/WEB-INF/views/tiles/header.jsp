@@ -21,7 +21,7 @@
 		    	SHOP
 		    </a>	
 		    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-		      <li><a class="dropdown-item" href="#">40ml</a></li>
+		      <li><a class="dropdown-item" href="/shop/first">40ml</a></li>
 		      <li><a class="dropdown-item" href="#">Curation</a></li>
 		      <li><a class="dropdown-item" href="#">GOODS</a></li>
 		    </ul>
@@ -38,7 +38,7 @@
 
       <!-- 브랜드 부분 -->
       <div class="col-md-4" align="center" >
-      	<a class="navbar-brand" href="#" style="font-weight: bold; font-size: 20pt">PERFUME</a>
+      	<a class="navbar-brand" href="/perfume/home" style="font-weight: bold; font-size: 20pt">PERFUME</a>
       </div>
       
 		<!-- 우층 메뉴 영역 -->

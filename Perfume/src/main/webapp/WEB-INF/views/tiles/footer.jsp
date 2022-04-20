@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
- <footer class="bg-dark">	
+ <footer class="bg-dark" >	
 	<div class="upper row row-cols-6 py-6 my-6 border-top" style="padding-top: 50px;">
 	
 		<div class="col"></div>	

@@ -1,27 +1,31 @@
 package com.perfume.exam;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
-/**
- * Handles requests for the application home page.
- */
 
-public class HomeController implements Controller {
+@Controller
+public class HomeController {
 	
 	@RequestMapping("/perfume/home")
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String home() {
 		
-		
-		ModelAndView mv = new ModelAndView("root.perfume.home");
-		mv.setViewName("root.perfume.home");		
-		return mv;
+		return "root.perfume.home";
 	}
+	
+	@RequestMapping("/perfume/about")
+	public String about() {
+		
+		return "root.perfume.about";
+	}
+	
+	@RequestMapping("/shop/first")
+    public String shop() {
+		
+		return "root.shop.first";
+	}
+		
+	
 	
 }
 
