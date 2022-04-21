@@ -85,6 +85,28 @@
 <colAssociation fkAssociation="2875B970-2FE0-5032-7E73-CE9169B58AA9" referredColumn="34157B73-C61D-0F45-B7DB-40EC7A4288ED"/>
 </associations>
 </Column>
+<Column name="IMG_MINI" id="49B6089E-9CBB-0193-9306-F733A20B4BFC">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-20 08:00:49 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IMG_MAIN" id="3B8A6272-E9D0-55F4-FD52-9990BFCB9BA6">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-20 08:00:49 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="C2153FE6-7749-17A2-5B55-77BEFEA6222D" name="EVENT_PK">

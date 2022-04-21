@@ -37,7 +37,7 @@
 
       <!-- 브랜드 부분 -->
       <div class="col-md-4" align="center" >
-      	<a class="center-logo navbar-brand" href="#">PERFUME</a>
+      	<a class="navbar-brand" href="/" style="font-weight: bold; font-size: 24pt;">PERFUME</a>
       </div>
       
 		<!-- 우층 메뉴 영역 -->

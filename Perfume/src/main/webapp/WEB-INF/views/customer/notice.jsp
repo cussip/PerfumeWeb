@@ -15,53 +15,53 @@
 				<div class="col-md-3"></div>
 				
 				
-			<div class="row row-cols-1 row-cols-md-3 g-4">
-			
-			  <c:if test="${param.type != '1' && param.type != null}">	
-			  <div class="col">
-			    <div class="notice-card card">
-			      <button class="btn" name="type" value="1">
-					<p class="notice-icon bi bi-megaphone"/>
-					<p class="notice-icon-text">공지사항</p>
-				  </button>
-			    </div>
-			  </div>
-			  </c:if>
-			  
-			  <c:if test="${param.type != '2'}">
-			  <div class="col">
-			    <div class="notice-card card">
-			      <button class="btn" name="type" value="2">
-					<p class="notice-icon bi bi-info-circle"/>
-					<p class="notice-icon-text">FAQ</p>
-				  </button>
-			    </div>
-			  </div>
-			  </c:if>
-			  
-			  <c:if test="${param.type != '3'}">
-			  <div class="col">
-			    <div class="notice-card card">
-			      <button class="btn" name="type" value="3">
-					<p class="notice-icon bi bi-envelope"/>
-					<p class="notice-icon-text">1:1문의</p>
-				  </button>
-			    </div>
-			  </div>
-			  </c:if>
-			  
-			  <c:if test="${param.type != '4'}">
-			  <div class="col">
-			    <div class="notice-card card">
-			      <button class="btn" name="type" value="4">
-					<p class="notice-icon bi bi-signpost-2"/>
-					<p class="notice-icon-text">혜택안내</p>
-				  </button>
-			    </div>
-			  </div>
-			  </c:if>
-			  
-			</div>	
+				<div class="row row-cols-1 row-cols-md-3 g-4">
+				
+				  <c:if test="${param.type != '1' && param.type != null}">	
+				  <div class="col">
+				    <div class="notice-card card">
+				      <button class="btn" name="type" value="1">
+						<p class="notice-icon bi bi-megaphone"/>
+						<p class="notice-icon-text">공지사항</p>
+					  </button>
+				    </div>
+				  </div>
+				  </c:if>
+				  
+				  <c:if test="${param.type != '2'}">
+				  <div class="col">
+				    <div class="notice-card card">
+				      <button class="btn" name="type" value="2">
+						<p class="notice-icon bi bi-info-circle"/>
+						<p class="notice-icon-text">FAQ</p>
+					  </button>
+				    </div>
+				  </div>
+				  </c:if>
+				  
+				  <c:if test="${param.type != '3'}">
+				  <div class="col">
+				    <div class="notice-card card">
+				      <a class="btn" href="/">
+						<p class="notice-icon bi bi-envelope"/>
+						<p class="notice-icon-text">1:1문의</p>
+					  </a>
+				    </div>
+				  </div>
+				  </c:if>
+				  
+				  <c:if test="${param.type != '4'}">
+				  <div class="col">
+				    <div class="notice-card card">
+				      <button class="btn" name="type" value="4">
+						<p class="notice-icon bi bi-signpost-2"/>
+						<p class="notice-icon-text">혜택안내</p>
+					  </button>
+				    </div>
+				  </div>
+				  </c:if>
+				  
+				</div>	
 		 			
 			</div>
  	
@@ -179,7 +179,7 @@
 	  <c:when test="${param.type eq '4'}">
 		<div style="margin-top:100px; text-align: center">
 			<h6 style="font:bold; text-align: center">혜택안내<br><br><br></h6>
-			<img alt="benefit" src="https://paffem.me/web/paffem/assets/service/membership.jpg" 
+			<img alt="benefit" src="/img/customer/membership.jpg" 
 				 style="width: 1024px;">	  
 		</div>
 		

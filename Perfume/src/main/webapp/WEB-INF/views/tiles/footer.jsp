@@ -16,8 +16,8 @@
 	      <h6>문의</h6>
 	      <ul class="nav flex-column">
 	        <li class="nav-item mb-2"><a href="/customer/notice" class="nav-link p-0 text-muted">공지사항</a></li>
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQ</a></li>
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">1:1문의</a></li>	     
+	        <li class="nav-item mb-2"><a href="/customer/notice?type=2" class="nav-link p-0 text-muted">FAQ</a></li>
+	        <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">1:1문의</a></li>	     
 	      </ul>
 	    </div>
 		

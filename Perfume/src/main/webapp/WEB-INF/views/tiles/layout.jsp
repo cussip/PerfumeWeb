@@ -60,15 +60,22 @@
 			font-weight: bold;
 		}
 		
-		.event-menu {
+		.event-menu-default {
 			color: grey;
-			font-size: 9pt;
-			
+			font-size: 12pt;
 		}
+		
+		.event-menu-onclick {
+			color: black;
+			font-size: 12pt;
+			text-decoration: underline;
+			text-underline-position: under;
+		}
+		
 		.event-menu:hover {
 			color: black;
 		}
-		
+			
 		.header-icon {
 			font-size: 15pt
 		}
@@ -91,11 +98,6 @@
 			font-size: 9pt;
 		}
 		
-		.center-logo {
-			font-weight: bold; 
-			font-size: 24pt;
-		}
-		
 		.footer-logo {
 			margin-top: 20px;
 			font-weight: bold;
@@ -109,16 +111,64 @@
 			padding-top: 50px;
 		}
 		
-		.event-img {
-			width: 400px;
-			height: 400*16/10px;
-		}
-		
 		.notice-card {
 			background-color: #F8F8F8;
 		}
-
 		
+		<!-- 호버링 블랙아웃 이펙트 구현 -->
+		figure.effect-out {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+			/* content: ''; */
+			opacity: 0;
+			transform: translate3d(0,50%,0);
+		}
+		
+		figure.effect-out h2 {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			/* color: #484c61; */
+			color: black;
+			transition: transform 0.35s, color 0.35s;
+			transform: translate3d(0,-50%,0);
+		}
+				
+		figure.effect-out p {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 2em;
+			width: 100%;
+			opacity: 0;
+			transform: translate3d(0,10px,0);
+			transition: opacity 0.35s, transform 0.35s;
+		}
+		
+		figure.effect-out:hover {
+			color: black;
+			opacity: 0.7;
+		}
+				
+		figure.effect-out:hover h2 {
+			color: black;
+			transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+		}
+		
+		figure.effect-out:hover p {
+			color: black;
+			font-weight: bold;
+			opacity: 1;
+			transform: translate3d(0,-150%,0);
+		}
+		
+		<!-- 호버링 블랙아웃 이펙트 구현 -->
+	
 	</style>
 </head>
 

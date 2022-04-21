@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -43,4 +44,22 @@
 	<beans:bean name="/customer/notice" class="com.perfume.exam.controller.customer.CustomerController"/>
 	<beans:bean name="/event/event" class="com.perfume.exam.controller.event.EventController"/>
 	
+		
+	
+	<!-- DB연결 임수한 작성 -->
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+    	<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521/xepdb1"/>
+    	<beans:property name="username" value="cussip"/>
+    	<beans:property name="password" value="xoch2380"/>
+    </beans:bean>   
+
+    <beans:bean id="eventService" class="com.perfume.exam.service.EventService">
+    	<beans:property name="dataSource" ref="dataSource"/>
+    </beans:bean>
+	
+	
 </beans:beans>
+
+
+
