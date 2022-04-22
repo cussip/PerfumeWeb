@@ -10,13 +10,9 @@
 		 	
 	<form action="notice">
 		<div class="container-fluid">
-			<div class="row text-center">	
-					
-				<div class="col-md-3"></div>
-				
-				
-				<div class="row row-cols-1 row-cols-md-3 g-4">
-				
+			<div class="row text-center">						
+				<div class="col-md-3"></div>								
+				<div class="row row-cols-1 row-cols-md-3 g-4">				
 				  <c:if test="${param.type != '1' && param.type != null}">	
 				  <div class="col">
 				    <div class="notice-card card">
@@ -59,12 +55,9 @@
 					  </button>
 				    </div>
 				  </div>
-				  </c:if>
-				  
-				</div>	
-		 			
-			</div>
- 	
+				  </c:if>				  
+				</div>			 			
+			</div>	
 		</div>
 	</form>
 	
@@ -72,53 +65,37 @@
 	<!-- content 부분 -->
 	<c:choose>
 	  <c:when test="${param.type eq '1' || param.type eq null}">
-
 		<div style="margin-top:70px; border-bottom:1px solid black">
 			<h6 style="font:bold">공지사항<br><br><br></h6>
 		</div>	
 			
-		<div class="container accordion accordion-flush" id="accordionFlushExample" style="font-size: 12px; text-align: center">		
-		  <c:forEach var="n" items="list">	
-			  <div class="accordion-item">
-			    <h2 class="accordion-header" id="flush-headingOne">
-			      <button class="accordion-button collapsed" type="button" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-size: 12px; text-align: center">
-			      		<div class="col-md-7">제목</div>
-			      		<div class="col-md-4">작성일</div>
-			      </button>
-			    </h2>
-			  </div>	
-			  <div class="accordion-item">
-			    <h2 class="accordion-header" id="flush-headingOne">
-			      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-		     	  	<div class="col-md-7">내용이 작성되어 있는 상태의 샘플</div>
-		      	  	<div class="col-md-4">2022-04-15 17:09:55</div>
-			      </button>
-			    </h2>
-			    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-			      <div class="accordion-body">내용내용내용</div>
-			    </div>
-			    <h2 class="accordion-header" id="flush-headingTwo">
-			      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-		     	  	<div class="col-md-7">내용이 작성되어 있는 상태의 샘플</div>
-		      	  	<div class="col-md-4">2022-04-15 17:09:55</div>
-			      </button>
-			    </h2>
-			    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-			      <div class="accordion-body">내용내용내용</div>
-			    </div>		    
-			    <h2 class="accordion-header" id="flush-headingThree">
-			      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-		     	  	<div class="col-md-7">내용이 작성되어 있는 상태의 샘플</div>
-		      	  	<div class="col-md-4">2022-04-15 17:09:55</div>
-			      </button>
-			    </h2>
-			    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-			      <div class="accordion-body">내용내용내용</div>
-			    </div>		    
-			  </div>
-			  		  
-		  </c:forEach>	    
-		</div>    
+		<div class="accordion accordion-flush" id="accordionFlushExample" style="font-size: 12px; text-align: center">		
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="flush-headingOne">
+		      <button class="accordion-button collapsed" type="button" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-size: 12px; text-align: center">
+		      		<div class="col-md-9">제목</div>
+		      		<div class="col-md-3" style="text-align: center;">작성일</div>
+		      </button>
+		    </h2>
+		  </div>	
+			  
+		  <c:forEach var="notice" items="${noticeList}">
+		    <div class="accordion-item">
+		      <h2 class="accordion-header" id="flush-heading${notice.notice_id}">
+		        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+		        		data-bs-target="#flush-collapse${notice.notice_id}" aria-expanded="false" 
+		        		aria-controls="flush-collapse${notice.notice_id}">
+	     	  	  <div class="col-md-9">${notice.title}</div>
+	      	  	  <div class="col-md-3" style="text-align: center;">${notice.regdate}</div>
+		        </button>
+		      </h2>
+		      <div id="flush-collapse${notice.notice_id}" class="accordion-collapse collapse" 
+		      		aria-labelledby="flush-heading${notice.notice_id}" data-bs-parent="#accordionFlushExample">
+		        <div class="accordion-body">${notice.content}</div>
+		      </div>
+			</div>    
+		  </c:forEach>
+		</div>  		  
 	  </c:when>
 	  
 	  <c:when test="${param.type eq '2'}">
@@ -128,53 +105,34 @@
 		</div>	
 			
 		<div class="accordion accordion-flush" id="accordionFlushExample" style="font-size: 12px; text-align: center">		
-		  <c:forEach var="n" items="list">	
-			  <div class="accordion-item">
-			    <h2 class="accordion-header" id="flush-headingOne">
-			      <button class="accordion-button collapsed" type="button" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-size: 12px; text-align: center">
-			      		<div class="col-md-7">제목</div>
-			      		<div class="col-md-4">작성일</div>
-			      </button>
-			    </h2>
-			  </div>	
-			  <div class="accordion-item">
-			    <h2 class="accordion-header" id="flush-headingOne">
-			      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-		     	  	<div class="col-md-7">내용이 작성되어 있는 상태의 샘플</div>
-		      	  	<div class="col-md-4">2022-04-15 17:09:55</div>
-			      </button>
-			    </h2>
-			    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-			      <div class="accordion-body">내용내용내용</div>
-			    </div>
-			    <h2 class="accordion-header" id="flush-headingTwo">
-			      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-		     	  	<div class="col-md-7">내용이 작성되어 있는 상태의 샘플</div>
-		      	  	<div class="col-md-4">2022-04-15 17:09:55</div>
-			      </button>
-			    </h2>
-			    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-			      <div class="accordion-body">내용내용내용</div>
-			    </div>		    
-			    <h2 class="accordion-header" id="flush-headingThree">
-			      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-		     	  	<div class="col-md-7">내용이 작성되어 있는 상태의 샘플</div>
-		      	  	<div class="col-md-4">2022-04-15 17:09:55</div>
-			      </button>
-			    </h2>
-			    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-			      <div class="accordion-body">내용내용내용</div>
-			    </div>		    
-			  </div>
-			  		  
-		  </c:forEach>	    
-		</div> 	  
-	  	  
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="flush-headingOne">
+		      <button class="accordion-button collapsed" type="button" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-size: 12px; text-align: center">
+		      		<div class="col-md-9">제목</div>
+		      		<div class="col-md-3">작성일</div>
+		      </button>
+		    </h2>
+		  </div>	
+		  <c:forEach var="faq" items="${faqList}">
+		    <div class="accordion-item">
+		      <h2 class="accordion-header" id="flush-heading${faq.notice_id}">
+		        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+		        		data-bs-target="#flush-collapse${faq.notice_id}" aria-expanded="false" 
+		        		aria-controls="flush-collapse${faq.notice_id}">
+	     	  	  <div class="col-md-9">${faq.title}</div>
+	      	  	  <div class="col-md-3" style="text-align: center;">${faq.regdate}</div>
+		        </button>
+		      </h2>
+		      <div id="flush-collapse${faq.notice_id}" class="accordion-collapse collapse" 
+		      		aria-labelledby="flush-heading${faq.notice_id}" data-bs-parent="#accordionFlushExample">
+		        <div class="accordion-body">${faq.content}</div>
+		      </div>
+			</div>    
+		  </c:forEach>   
+		</div> 	  	  	  
 	  </c:when>
 	  
-	  <c:when test="${param.type eq '3'}">
-	  	
-	  </c:when>
+	  <c:when test="${param.type eq '3'}"></c:when>
 	  
 	  <c:when test="${param.type eq '4'}">
 		<div style="margin-top:100px; text-align: center">
@@ -182,10 +140,7 @@
 			<img alt="benefit" src="/img/customer/membership.jpg" 
 				 style="width: 1024px;">	  
 		</div>
-		
-	  		
-	  </c:when>
-  
+	  </c:when> 
   </c:choose>
 	
 </main>

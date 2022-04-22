@@ -1,25 +1,33 @@
 package com.perfume.exam.controller.customer;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
-public class CustomerController implements Controller {
+import com.perfume.exam.entity.Board;
+import com.perfume.exam.service.CustomerService;
 
-	@RequestMapping("/customer/notice")
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		System.out.println("*** call Customer Controller ***");
+@Controller
+@RequestMapping("/customer/")
+public class CustomerController {
 		
-		ModelAndView mv = new ModelAndView("root.customer.notice");
-		mv.addObject("title", "spring title test!");
-		mv.setViewName("root.customer.notice");
+	@Autowired
+	private CustomerService customerService;
+	
+	@RequestMapping("notice")
+	public String notice(Model model) throws ClassNotFoundException, SQLException {
 		
-		return mv;
-	}	
+		List<Board> noticeList = customerService.getNoticeList();
+		List<Board> faqList = customerService.getFAQList();
+		
+		model.addAttribute("noticeList", noticeList);
+		model.addAttribute("faqList", faqList);
+		
+		return "root.customer.notice";
+	}
 	
 }

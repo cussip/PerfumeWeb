@@ -91,8 +91,8 @@
 			    <h2 class="accordion-header" id="flush-headingOne">
 			      <button class="accordion-button collapsed" type="button" data-bs-target="#flush-collapseOne" 
 			      			aria-expanded="false" aria-controls="flush-collapseOne" style="font-size: 12px; text-align: center">
-			      	<div class="col-md-7">제목</div>
-			      	<div class="col-md-4">작성일</div>
+			      	<div class="col-md-9">제목</div>
+			      	<div class="col-md-3">작성일</div>
 			      </button>
 			    </h2>
 			  </div>
@@ -104,8 +104,8 @@
 				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
 				      			data-bs-target="#flush-collapse${winner.notice_id}" aria-expanded="false" 
 				      			aria-controls="flush-collapse${winner.notice_id}">
-			     	  	<div class="col-md-7">${winner.title}</div>
-			      	  	<div class="col-md-4">${winner.regdate}</div>
+			     	  	<div class="col-md-9">${winner.title}</div>
+			      	  	<div class="col-md-3" style="text-align: center;">${winner.regdate}</div>
 				      </button>
 				    </h2>
 				    <div id="flush-collapse${winner.notice_id}" class="accordion-collapse collapse" 

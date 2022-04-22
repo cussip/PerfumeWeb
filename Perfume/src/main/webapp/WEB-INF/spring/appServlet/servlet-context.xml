@@ -30,7 +30,6 @@
 		<beans:property name="definitions" value="/WEB-INF/tiles.xml"/>
 	</beans:bean>
 
-
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -39,25 +38,14 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.perfume.exam" />
-	
-	<!-- 고객 서비스 -->
-	<beans:bean name="/customer/notice" class="com.perfume.exam.controller.customer.CustomerController"/>
-	<beans:bean name="/event/event" class="com.perfume.exam.controller.event.EventController"/>
-	
 		
-	
 	<!-- DB연결 임수한 작성 -->
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
     	<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521/xepdb1"/>
     	<beans:property name="username" value="cussip"/>
     	<beans:property name="password" value="xoch2380"/>
-    </beans:bean>   
-
-    <beans:bean id="eventService" class="com.perfume.exam.service.EventService">
-    	<beans:property name="dataSource" ref="dataSource"/>
-    </beans:bean>
-	
+    </beans:bean>   	
 	
 </beans:beans>
 

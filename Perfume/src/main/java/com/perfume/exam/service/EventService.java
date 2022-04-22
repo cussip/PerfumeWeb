@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.perfume.exam.entity.Board;
@@ -18,11 +19,8 @@ import com.perfume.exam.entity.Event;
 @Service
 public class EventService {
 
+	@Autowired
 	private DataSource dataSource;
-	
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-	}
 	
 	public List<Event> getEndList() throws ClassNotFoundException, SQLException {
 		
