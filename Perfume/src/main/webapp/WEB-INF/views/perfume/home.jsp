@@ -110,7 +110,7 @@ text-align: center;
       <h2 class="display-9">쉽고 재미있는 향기 취향 테스트로 나만의 #시그니처향수찾기</h2>
       <br><br><br>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">        
-       <a class="btn btn-outline-dark btn-lg col-5" href="#" role="button" style="color:white">바 로 가 기</a>
+       <a class="btn btn-outline-dark btn-lg col-5" href="/shop/40ml" role="button" style="color:white">바 로 가 기</a>
       </div>
     </div>
   </div>

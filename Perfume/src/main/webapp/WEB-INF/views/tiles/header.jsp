@@ -21,9 +21,9 @@
 		    	SHOP
 		    </a>	
 		    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-		      <li><a class="dropdown-item" href="/shop/first">40ml</a></li>
-		      <li><a class="dropdown-item" href="#">Curation</a></li>
-		      <li><a class="dropdown-item" href="#">GOODS</a></li>
+		      <li><a class="dropdown-item" href="/shop/40ml">40ml</a></li>
+		      <li><a class="dropdown-item" href="/shop/curation">Curation</a></li>
+		      <li><a class="dropdown-item" href="/shop/goods">GOODS</a></li>
 		    </ul>
 		  </li>
           
