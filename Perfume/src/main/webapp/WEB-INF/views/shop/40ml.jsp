@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="kr">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<!DOCTYPE html>
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -58,7 +59,8 @@
 
 .col-sm-3{
   margin-top: 100px;
-  display: flex;
+  display: flex;  
+  margin-bottom: 100px;
 }
     </style>
   
@@ -69,7 +71,9 @@
    
      <h2 style="text-align: center; margin-top: 200px;  margin-bottom: 30px;">Pick Your Signature!</h2>
     <p style="text-align: center; margin-bottom: 50px; color: gray; margin-bottom: 300px;">6가지 향을 선택하여 나만의 디스커버리 세트를 구성해보세요</p>
+    <div class="border-bottom">
     <div class="category" style="display: flex; justify-content: center; margin-bottom: 10px;">
+    
      <a href="#"><div>All</div></a>
       <a href="#"><div>시트러스</div></a>
       <a href="#"><div>플로럴</div></a>
@@ -97,125 +101,37 @@
       </div>
     </div>  
     </div>
+    </div>
     
-    
+ 
 <div class="bg-light"    style="padding-bottom: 100px;"  >
-<div class="container">
-	
+
+<div class="container">	
 		<div class="row">
-		
-		
-		
+		<c:forEach var="item" items="${list}">   		
 		<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/50095e50e766ca4dd8292b7663d8ca9b.jpg" class="card-img-top" alt="...">
+		
+		<a href="#" style="text-decoration: none; color:black;">
+		<div class="card" style="width:19rem; text-align: center; border: none;">
+					
+					<img style="height:22rem;" src="${item.image}" class="card-img-top" alt="..."/>					 	
+					
+					
+					<div class="bg-light">
 					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
+					<h5>${item.brand}</h5>
+					<h5>${item.name}</h5>
+					<h7 style="color:gray;">${item.source1} ${item.source2} ${item.source3}</h7>
+					<p style="color:gray;">2.5ml / ${item.price}</p>
+					</div>
+					
 				</div></a>
+	   
 			</div>
-			
-		
-		
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/e372c370e78f454ce477eccad93122d3.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
-				</div></a>
-			</div>
-		
-		
-		
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/74d632ae9ac0903c7b6cfe10eaa095e1.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
-				</div></a>
-			</div>
-		
-		
-			
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;">		<div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/9269366fa24f720cad6689edc2d49d83.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
-				</div></a>
-			</div>
-			
-			
-			
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/50095e50e766ca4dd8292b7663d8ca9b.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
-				</div></a>
-			</div>
-			
-		
-		
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/e372c370e78f454ce477eccad93122d3.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
-				</div></a>
-			</div>
-		
-		
-		
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/74d632ae9ac0903c7b6cfe10eaa095e1.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
-				</div></a>
-			</div>
-		
-		
-			
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;">		<div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/9269366fa24f720cad6689edc2d49d83.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5>wind 01. <strong>투명한 바람</strong></h5>
-					<h7>#차분한 #깔끔한 #겨울숲</h7>
-					<p>2.5ml / 4,000</p>
-				</div></a>
-			</div>
-			
-			
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			 </c:forEach>
 		</div>
-
-
 	</div>
+
 </div>
 
 

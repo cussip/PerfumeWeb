@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<div class="border-top">
  <footer class="bg-dark" >	
 	<div class="upper row row-cols-6 py-6 my-6 border-top" style="padding-top: 50px;">
 	
@@ -50,3 +50,4 @@
 		<br><br><br><br>
     </p>
  </footer>
+ </div>

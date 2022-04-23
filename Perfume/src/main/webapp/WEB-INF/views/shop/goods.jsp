@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="kr">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<!DOCTYPE html>
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -59,6 +60,7 @@
 .col-sm-3{
   margin-top: 100px;
   display: flex;
+  margin-bottom: 100px;
 }
     </style>
   
@@ -70,66 +72,37 @@
      <h2 style="text-align: center; padding-top: 170px;  padding-bottom: 80px;">GOODS</h2>
    
     
-    
+<div class="border-top">    
 <div class="bg-light"    style="padding-bottom: 100px;"  >
-<div class="container">
-	
+
+<div class="container">	
 		<div class="row">
-		
-		
-		
+		<c:forEach var="item" items="${list}">   		
 		<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/50095e50e766ca4dd8292b7663d8ca9b.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5><strong>보송보송 파우더리</strong></h5>
+		
+		<a href="#" style="text-decoration: none; color:black;">
+		<div class="card" style="width:19rem; text-align: center; border: none;">
 					
-					<p>goods / 12,000</p>
-				</div></a>
-			</div>
-			
-		
-		
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/e372c370e78f454ce477eccad93122d3.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5><strong>상큼달달 시트러스</strong></h5>
+					<img style="height:22rem;" src="${item.image}" class="card-img-top" alt="..."/>					 	
 					
-					<p>goods / 12,000</p>
-				</div></a>
-			</div>
-		
-		
-		
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="https://paffem.me/web/product/big/202012/74d632ae9ac0903c7b6cfe10eaa095e1.jpg" class="card-img-top" alt="...">
-					<br>
-					<h5><strong>꽃다발 한 아름</strong></h5>
 					
-					<p>goods / 12,000</p>
-				</div></a>
-			</div>
-		
-			<div class="col-sm-3">
-		<a href="#" style="text-decoration: none; color:black;"><div class="card" style="width: 18rem; text-align: center;">
-					<img src="http://drive.google.com/uc?export=view&id=1-3p5BqrlNWPxZ6K2Ztu2ftxLOppfkTXF" class="card-img-top" alt="...">
+					<div class="bg-light">
 					<br>
-					<h5><strong>상큼달달 시트러스</strong></h5>
+					<h5>${item.brand}</h5>
+					<h5>${item.name}</h5>
+					<h7 style="color:gray;">${item.source1} ${item.source2} ${item.source3}</h7>
+					<p style="color:gray;">curation / ${item.price}</p>
+					</div>
 					
-					<p>goods / 12,000</p>
 				</div></a>
+	   
 			</div>
-		
-			
-		
+			 </c:forEach>
 		</div>
-
-
 	</div>
-</div>
 
+</div>
+</div>
 
 
 

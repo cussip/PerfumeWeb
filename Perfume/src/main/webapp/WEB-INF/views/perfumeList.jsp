@@ -59,8 +59,7 @@
 
 .col-sm-3{
   margin-top: 100px;
-  display: flex;
-  margin-bottom: 100px;
+  display: flex;  
 }
     </style>
   
@@ -69,10 +68,41 @@
   </head>
   <body>
    
-     <h2 style="text-align: center; padding-top: 170px;  padding-bottom: 80px;">Curation</h2>
-   
+     <h2 style="text-align: center; margin-top: 200px;  margin-bottom: 30px;">Pick Your Signature!</h2>
+    <p style="text-align: center; margin-bottom: 50px; color: gray; margin-bottom: 300px;">6가지 향을 선택하여 나만의 디스커버리 세트를 구성해보세요</p>
+    <div class="border-bottom">
+    <div class="category" style="display: flex; justify-content: center; margin-bottom: 10px;">
     
-<div class="border-top">    
+     <a href="#"><div>All</div></a>
+      <a href="#"><div>시트러스</div></a>
+      <a href="#"><div>플로럴</div></a>
+      <a href="#"><div>프루티</div></a>
+      <a href="#"><div>그린</div></a>
+      <a href="#"><div>허벌</div></a>
+      <a href="#"><div>아쿠아</div></a>
+      <a href="#"><div>우디</div></a>
+      <a href="#"><div>발삼</div></a>
+      <a href="#"><div>구르망</div></a>
+      <a href="#"><div>머스크</div></a>
+      <a href="#"><div style="margin-right: 100px;">파우더리</div></a>
+      
+      <div class="dropdown">
+      <span class="dropbtn">카테고리순</span>
+      <i class="bi bi-chevron-down"></i>
+      <div class="dropdown-content">     
+        <a href="#"></a>
+        <a href="#">all</a>
+        <a href="#">wind</a>
+        <a href="#">drop</a>
+        <a href="#">melt</a>
+        <a href="#">path</a>
+        <a href="#">time</a>
+      </div>
+    </div>  
+    </div>
+    </div>
+    
+ 
 <div class="bg-light"    style="padding-bottom: 100px;"  >
 
 <div class="container">	
@@ -81,9 +111,9 @@
 		<div class="col-sm-3">
 		
 		<a href="#" style="text-decoration: none; color:black;">
-		<div class="card" style="width:19rem; text-align: center; border: none;">
+		<div class="card" style="width:20rem; text-align: center; border: none;">
 					
-					<img style="height:22rem;" src="${item.image}" class="card-img-top" alt="..."/>					 	
+					<img style="height:26rem;" src="${item.image}" class="card-img-top" alt="..."/>					 	
 					
 					
 					<div class="bg-light">
@@ -91,7 +121,7 @@
 					<h5>${item.brand}</h5>
 					<h5>${item.name}</h5>
 					<h7 style="color:gray;">${item.source1} ${item.source2} ${item.source3}</h7>
-					<p style="color:gray;">curation / ${item.price}</p>
+					<p style="color:gray;">2.5ml / ${item.price}</p>
 					</div>
 					
 				</div></a>
@@ -102,7 +132,7 @@
 	</div>
 
 </div>
-</div>
+
 
 
 
