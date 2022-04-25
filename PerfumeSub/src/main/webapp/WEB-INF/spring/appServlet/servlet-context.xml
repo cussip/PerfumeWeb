@@ -36,7 +36,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.perfume.exam" />
-		
+	 
 	<!-- DB연결 임수한 작성 -->
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
