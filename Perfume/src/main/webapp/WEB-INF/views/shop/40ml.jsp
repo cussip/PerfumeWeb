@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
 <!DOCTYPE html>
 <html>
   <head>
@@ -122,7 +123,7 @@
 					<h5>${item.brand}</h5>
 					<h5>${item.name}</h5>
 					<h7 style="color:gray;">${item.source1} ${item.source2} ${item.source3}</h7>
-					<p style="color:gray;">2.5ml / ${item.price}</p>
+					<p style="color:gray;">2.5ml / <fmt:formatNumber value="${item.price}" pattern="#,###" /></p>
 					</div>
 					
 				</div></a>
