@@ -23,5 +23,10 @@ public class PerfumeServiceImpl implements PerfumeService {
 		
 		return perfumeDAO.selectPerfumeList();
 	}
+	
+	public List<PerfumeVO> selectGoodsList() throws Exception{
+		
+		return perfumeDAO.selectGoodsList();
+	}
 
 }

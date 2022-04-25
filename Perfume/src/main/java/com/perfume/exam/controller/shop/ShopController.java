@@ -42,7 +42,7 @@ public class ShopController {
 	@RequestMapping("goods")
 	public String goods(Model model) throws Exception {
 
-		List<PerfumeVO> list = perfumeservice.selectPerfumeList();
+		List<PerfumeVO> list = perfumeservice.selectGoodsList();
 
 		model.addAttribute("list", list);
 
