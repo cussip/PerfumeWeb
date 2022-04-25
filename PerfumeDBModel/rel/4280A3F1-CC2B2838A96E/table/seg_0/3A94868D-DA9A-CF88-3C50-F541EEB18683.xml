@@ -63,7 +63,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PRODUCT_PRODUCT_ID" id="11B0FA3C-37A4-9FC1-3770-576AA50EEB72">
+<Column name="PRODUCT_ID1" id="11B0FA3C-37A4-9FC1-3770-576AA50EEB72">
 <createdBy>ishcj</createdBy>
 <createdTime>2022-04-15 16:11:27 UTC</createdTime>
 <ownerDesignName>PerfumeDBModel</ownerDesignName>

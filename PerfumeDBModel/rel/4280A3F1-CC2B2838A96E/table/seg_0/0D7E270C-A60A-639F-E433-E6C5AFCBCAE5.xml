@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0D7E270C-A60A-639F-E433-E6C5AFCBCAE5" name="WISHLIST">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-25 10:06:22 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="WISH_ID" id="E4E700E6-9FA7-DE07-70FB-6EDE9FCF9795">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-25 10:09:19 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_ID" id="697A6899-BA0D-40FA-BF2C-8A823DC46C29">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-25 10:09:19 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_ID" id="7AFE6C8B-8917-6953-29EE-F28680B99C87">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-25 10:09:49 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="17645D31-26AE-D5E0-ECD9-E0DBB289F651" name="WISHLIST_PK">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-25 10:09:19 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E4E700E6-9FA7-DE07-70FB-6EDE9FCF9795"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8098121F-306F-471F-D127-C3A1F1C5E102" name="WISHLIST_MEMBER_FK">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-25 10:11:49 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

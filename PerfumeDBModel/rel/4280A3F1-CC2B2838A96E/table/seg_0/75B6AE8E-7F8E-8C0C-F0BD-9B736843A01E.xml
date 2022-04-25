@@ -88,6 +88,18 @@
 <ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="IMG" id="7117A58F-0973-FEEB-2F91-023A08B7FEC6">
+<createdBy>ishcj</createdBy>
+<createdTime>2022-04-25 10:14:03 UTC</createdTime>
+<ownerDesignName>PerfumeDBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="8C2162B7-6E69-F83D-699D-72859FCCC676" name="PRODUCT_PK">
