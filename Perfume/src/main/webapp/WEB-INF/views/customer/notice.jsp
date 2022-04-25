@@ -2,16 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<main style="margin-left: 350px; margin-right: 350px">
+<main class="container">
 	
 	<!-- 공통 이미지 부분  -->
-	<br><br><br>
-	<h4 style="margin:0px 0px 50px 0px; text-align:center">SERVICE</h4>	
+	<br><br><br><br><br>
+	<h4 style="text-align:center">SERVICE</h4>
+	<br><br>	
 		 	
 	<form action="notice">
 		<div class="container-fluid">
-			<div class="row text-center">						
-				<div class="col-md-3"></div>								
+			<div class="row text-center">														
 				<div class="row row-cols-1 row-cols-md-3 g-4">				
 				  <c:if test="${param.type != '1' && param.type != null}">	
 				  <div class="col">
@@ -95,12 +95,13 @@
 		      </div>
 			</div>    
 		  </c:forEach>
+		  <br>
 		</div>  		  
 	  </c:when>
 	  
 	  <c:when test="${param.type eq '2'}">
 
-		<div style="margin-top:100px; border-bottom:1px solid black">
+		<div style="margin-top:70px; border-bottom:1px solid black">
 			<h6 style="font:bold">FAQ<br><br><br></h6>
 		</div>	
 			
@@ -128,7 +129,8 @@
 		        <div class="accordion-body">${faq.content}</div>
 		      </div>
 			</div>    
-		  </c:forEach>   
+		  </c:forEach>
+		  <br>   
 		</div> 	  	  	  
 	  </c:when>
 	  
@@ -137,7 +139,7 @@
 	  <c:when test="${param.type eq '4'}">
 		<div style="margin-top:100px; text-align: center">
 			<h6 style="font:bold; text-align: center">혜택안내<br><br><br></h6>
-			<img alt="benefit" src="/img/customer/membership.jpg" 
+			<img class="img-fluid" alt="benefit" src="/img/customer/membership.jpg" 
 				 style="width: 1024px;">	  
 		</div>
 	  </c:when> 

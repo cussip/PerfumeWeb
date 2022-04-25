@@ -164,11 +164,14 @@
 			color: black;
 			font-weight: bold;
 			opacity: 1;
-			transform: translate3d(0,-150%,0);
-		}
-		
+			transform: translate3d(0,-70%,0) translate3d(0,0,0);
+		}		
 		<!-- 호버링 블랙아웃 이펙트 구현 -->
 	
+		.event-detail {
+			background-color: #F5F5F5;
+		}
+			
 	</style>
 </head>
 
@@ -188,5 +191,4 @@
 		crossorigin="anonymous"></script>
 		  
 </body>
-
 </html>

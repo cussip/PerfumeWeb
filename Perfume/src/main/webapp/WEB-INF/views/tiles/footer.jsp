@@ -1,43 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
- <footer class="bg-dark">	
-	<div class="upper row row-cols-6 py-6 my-6 border-top">
+ <footer class="container bg-dark" style="height:0px">	
 	
-		<div class="col"></div>	
-	    <div class="col">
+	<div class="upper row" style="text-align: center">
+		
+	    <div class="col-md-3">
 	      <h6>고객센터</h6>
 	      <ul class="nav flex-column">
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">이메일 | help@help.com</a></li>
+	        <li class="nav-item mb-2"><a href="#" class="nav-link text-muted">이메일 | help@help.com</a></li>
 	      </ul>
 	    </div>
 		
-	    <div class="col">
+	    <div class="col-md-3">
 	      <h6>문의</h6>
 	      <ul class="nav flex-column">
-	        <li class="nav-item mb-2"><a href="/customer/notice" class="nav-link p-0 text-muted">공지사항</a></li>
-	        <li class="nav-item mb-2"><a href="/customer/notice?type=2" class="nav-link p-0 text-muted">FAQ</a></li>
-	        <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">1:1문의</a></li>	     
+	        <li class="nav-item"><a href="/customer/notice" class="nav-link text-muted">공지사항</a></li>
+	        <li class="nav-item"><a href="/customer/notice?type=2" class="nav-link text-muted">FAQ</a></li>
+	        <li class="nav-item"><a href="/" class="nav-link text-muted">1:1문의</a></li>	     
 	      </ul>
 	    </div>
 		
-	    <div class="col">
+	    <div class="col-md-3">
 	      <h6>Section</h6>
 	      <ul class="nav flex-column">
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">친구 추천 포인트</a></li>
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">2.5ML 교환 서비스</a></li>
+	        <li class="nav-item"><a href="#" class="nav-link text-muted">친구 추천 포인트</a></li>
+	        <li class="nav-item"><a href="#" class="nav-link text-muted">2.5ML 교환 서비스</a></li>
 	      </ul>
 	    </div>
 	
-	    <div class="col">
+	    <div class="col-md-3">
 	      <h6>가치관</h6>
 	      <ul class="nav flex-column">
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Find Your Signature</a></li>
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Eco friendly</a></li>
-	        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Better but different</a></li>
+	        <li class="nav-item"><a href="#" class="nav-link text-muted">Find Your Signature</a></li>
+	        <li class="nav-item"><a href="#" class="nav-link text-muted">Eco friendly</a></li>
+	        <li class="nav-item"><a href="#" class="nav-link text-muted">Better but different</a></li>
 	      </ul>
 	    </div>	    
-	    <div class="col"></div>
+	    
     </div>
     <br><hr style="color: grey">
     

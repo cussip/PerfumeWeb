@@ -1,4 +1,4 @@
-package com.perfume.exam.controller.event;
+package com.perfume.exam.controller;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.perfume.exam.entity.Board;
 import com.perfume.exam.entity.Event;
@@ -31,6 +32,16 @@ public class EventController {
 		model.addAttribute("winnerList", winnerList);
 		
 		return "root.event.event";
+	}
+	
+	@RequestMapping("detail")
+	public String detail(@RequestParam(name="p")String page, Model model) throws ClassNotFoundException, SQLException {
+		
+		Event event = eventService.getEvent(page);
+		
+		model.addAttribute("event", event);
+		
+		return "root.event.detail";
 	}
 }
 
