@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
+<html lang="kr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -39,7 +40,7 @@ section {
 
 #box {
 	background-image:
-		url("https://cdn.pixabay.com/photo/2019/03/05/05/45/man-4035612_960_720.jpg");
+		url("https://paffem.me/web/upload/main/b2@desktop.jpeg");
 	color: white;
 	background-size: 100% 100%;
 	height: 700px;
@@ -47,7 +48,7 @@ section {
 
 #box2 {
 	background-image:
-		url("https://cdn.pixabay.com/photo/2022/04/04/03/10/wooden-bench-7110299_960_720.jpg");
+		url("https://paffem.me/web/paffem/8b29cc9c-376e-476f-a98a-5de05dc67451/main_img_3_discovery_1920x600.jpg");
 	color: white;
 	background-size: 100% 100%;
 	height: 700px;
@@ -79,10 +80,13 @@ text-align: center;
   
 }
 .ig{
+  display: flex;
   color:black;
   text-decoration: none;
 }
-
+.btn btn-outline-light btn-lg col-5:hover{
+  background-color: black;
+}
 </style>
   </head>
   <body>  
@@ -97,7 +101,7 @@ text-align: center;
   </div>
   <div class="carousel-inner">  
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2022/03/09/22/57/maidens-tower-7058791_960_720.jpg" class="d-block w-100" alt="..."> 
+      <img src="https://paffem.me/web/paffem/e6e3da25-f78c-4ac3-b831-1362636af6e6/main_img_exchange_1920x898.jpg" class="d-block w-100" alt="..."> 
       <div class="carousel-caption d-none d-md-block">
       
    
@@ -108,7 +112,7 @@ text-align: center;
       <h2 class="display-9">쉽고 재미있는 향기 취향 테스트로 나만의 #시그니처향수찾기</h2>
       <br><br><br>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">        
-        <button type="button" class="btn btn-outline-secondary btn-lg col-5 " style="color:white" ><a class="going" href="#">바로가기</a></button>
+       <a class="btn btn-outline-dark btn-lg col-5" href="/shop/40ml" role="button" style="color:white">바 로 가 기</a>
       </div>
     </div>
   </div>
@@ -120,7 +124,7 @@ text-align: center;
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.pixabay.com/photo/2021/12/11/07/50/forest-6862143_960_720.jpg" class="d-block w-100" alt="...">
+      <img src="https://paffem.me/web/paffem/db7a6717-658b-4749-bd6f-665da5f9f2e6/homepage.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       
            <div id="carouselbox" class="px-4 py-5 my-0 text-center">     
@@ -130,7 +134,7 @@ text-align: center;
       <h2 class="display-9">쉽고 재미있는 향기 취향 테스트로 나만의 #시그니처향수찾기</h2>
       <br><br><br>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">        
-        <button type="button" class="btn btn-outline-secondary btn-lg col-5 " style="color:white"><a class="going" href="#">바로가기</a></button>
+        <a class="btn btn-outline-dark btn-lg col-5" href="#" role="button" style="color:white">바 로 가 기</a>
       </div>
     </div>
   </div>
@@ -140,7 +144,7 @@ text-align: center;
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.pixabay.com/photo/2021/12/26/08/32/lantern-6894507_960_720.jpg" class="d-block w-100" alt="...">
+      <img src="https://paffem.me/web/paffem/4810f91f-c441-4749-938e-4d2c54d982a4/main_img_Layering_1920x898.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       
       
@@ -151,13 +155,11 @@ text-align: center;
       <h2 class="display-9">쉽고 재미있는 향기 취향 테스트로 나만의 #시그니처향수찾기</h2>
       <br><br><br>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">        
-        <button type="button" class="btn btn-outline-secondary btn-lg col-5 " style="color:white"><a class="going" href="#">바로가기</a></button>
+       <a class="btn btn-outline-dark btn-lg col-5" href="#" role="button" style="color:white">바 로 가 기</a>
       </div>
     </div>
   </div>
-      
-      
-      
+       
       
        
       </div>
@@ -182,7 +184,7 @@ text-align: center;
       <h2 class="display-9">쉽고 재미있는 향기 취향 테스트로 나만의 #시그니처향수찾기</h2>
       <br><br><br>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">        
-        <button type="button" class="btn btn-outline-secondary btn-lg col-5 " style="color:white"><a class="going" href="#">바로가기</a></button>
+         <a class="btn btn-outline-dark btn-lg col-5" href="#" role="button" style="color:white; hover:background-color:black;">바 로 가 기</a>  
       </div>
     </div>
   </div>
@@ -195,7 +197,7 @@ text-align: center;
       <h2 class="display-9">쉽고 재미있는 향기 취향 테스트로 나만의 #시그니처향수찾기</h2>
       <br><br><br>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">        
-        <button type="button" class="btn btn-outline-secondary btn-lg col-5 " style="color:white"><a class="going" href="#">바로가기</a></button>
+         <a class="btn btn-outline-dark btn-lg col-5" href="#" role="button" style="color:white">바 로 가 기</a> 
       </div>
     </div>
   </div>
@@ -237,13 +239,15 @@ text-align: center;
 				</div>
 			</div>
 			
-			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center" style="margin-top:50px">        
-        <button type="button" class="btn btn-outline-secondary btn-lg col-5 " style="color:black" ><a class="ig" href="#" >바로가기</a></button>
-      </div>
+			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center" style="margin-top:50px">  			      
+	          <a class="btn btn-outline-dark btn-lg col-5" href="/perfume/about" role="button">바 로 가 기</a>       
+             </div>
 		</div>
 	</div>
     
-    
+   
+
+
     
 	<!--  body -->
  
