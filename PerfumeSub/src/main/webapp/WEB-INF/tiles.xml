@@ -8,7 +8,7 @@
   <definition name="root.*.*" template="/WEB-INF/views/tiles/layout.jsp">
     <put-attribute name="title" value="Perfume Project" />
     <put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
-    <put-attribute name="main" value="/WEB-INF/views/{1}/{2}.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
     <put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
   </definition>
   

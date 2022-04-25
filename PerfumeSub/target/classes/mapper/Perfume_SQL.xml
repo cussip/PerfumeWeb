@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.perfume.exam.service.dao.PerfumeDAO">
+
+
+<!-- 전체 조회 -->
+ <select id="selectPerfumeList" resultType="perfumeVO">
+	<![CDATA[
+		select * from PRODUCT WHERE BRAND is NOT NULL
+		
+		]]>
+ </select>
+ 
+ <select id="selectGoodsList" resultType="perfumeVO">
+	<![CDATA[
+		select * from PRODUCT WHERE BRAND is NULL
+		
+		]]>
+ </select>
+ 
+
+</mapper>
