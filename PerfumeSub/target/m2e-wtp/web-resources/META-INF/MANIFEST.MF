@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: Yoon
 Build-Jdk: 11.0.14
-=======
-Built-By: user
-Build-Jdk: 11.0.1
->>>>>>> 0200054e5063878d0ddc40147f83aa9d722e1a4a
 Created-By: Maven Integration for Eclipse
 
