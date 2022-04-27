@@ -12,11 +12,18 @@
 		]]>
  </select>
  
+ <!--  goods 조회 -->
  <select id="selectGoodsList" resultType="perfumeVO">
 	<![CDATA[
 		select * from PRODUCT WHERE BRAND is NULL
 		
 		]]>
+ </select>
+ <!-- 향수 카테고리 -->
+ <select id="selectCategoryList" resultType="perfumeVO" parameterType = "String">
+   <![CDATA[
+      select * from PRODUCT where = #{SOURCE1}
+      ]]>
  </select>
  
 

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+   
 <!DOCTYPE html>
 <html>
   <head>
@@ -75,18 +76,19 @@
     <div class="border-bottom">
     <div class="category" style="display: flex; justify-content: center; margin-bottom: 10px;">
     
-     <a href="#"><div>All</div></a>
-      <a href="#"><div>시트러스</div></a>
-      <a href="#"><div>플로럴</div></a>
-      <a href="#"><div>프루티</div></a>
-      <a href="#"><div>그린</div></a>
-      <a href="#"><div>허벌</div></a>
-      <a href="#"><div>아쿠아</div></a>
-      <a href="#"><div>우디</div></a>
-      <a href="#"><div>발삼</div></a>
-      <a href="#"><div>구르망</div></a>
-      <a href="#"><div>머스크</div></a>
-      <a href="#"><div style="margin-right: 100px;">파우더리</div></a>
+      <a href="/40ml?param=all"><div>All</div></a>
+      <a href="/40ml?param=시트러스"><div>시트러스</div></a>
+      <a href="/40ml?param=플로럴"><div>플로럴</div></a>
+      <a href="/40ml?param=프루티"><div>프루티</div></a>
+      <a href="/40ml?param=그린"><div>그린</div></a>
+      <a href="/40ml?param=허벌"><div>허벌</div></a>
+      <a href="/40ml?param=아쿠아"><div>아쿠아</div></a>
+      <a href="/40ml?param=우디"><div>우디</div></a>
+      <a href="/40ml?param=발삼"><div>발삼</div></a>
+      <a href="/40ml?param=구르망"><div>구르망</div></a>
+      <a href="/40ml?param=머스크"><div>머스크</div></a>
+      <a href="/40ml?param=파우더리"><div style="margin-right: 100px;">파우더리</div></a>
+
       
       <div class="dropdown">
       <span class="dropbtn">카테고리순</span>
