@@ -1,5 +1,6 @@
 package com.perfume.exam.controller.shop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -20,59 +21,73 @@ public class ShopController {
 
 	@Autowired
 	private PerfumeService perfumeservice;
-	
-	
-	
+		
 
 	@RequestMapping("40ml")
 	   public String shop(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
-	      
+		 
+		List<PerfumeVO> list = new ArrayList<>();
 		String param = request.getParameter("param");
-	      
-	      
-	      if (param.equals("all")) {
+		
+		
+		if(param != null){	
+			
+		 if (param.equals("All")) {
+	            list = perfumeservice.selectPerfumeList();	  
+	           
+	         } else if (param.equals("citrus")) {
+	             list = perfumeservice.selectCategoryList(param);   
+	             
+	         } else if (param.equals("floral")) {
+	             list = perfumeservice.selectCategoryList(param); 
+	             
+	         } else if (param.equals("frutity")) {
+	           list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("시트러스")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("green")) {
+	          list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("프로럴")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("herbal")) {
+	           list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("프루티")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("aqua")) {
+	          list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("그린")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("woody")) {
+	           list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("허벌")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("balsam")) {
+	            list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("아쿠아")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("gourmand")) {
+	           list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("우디")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("musk")) {
+	            list = perfumeservice.selectCategoryList(param);
 
-	      } else if (param.equals("발삼")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
+	         } else if (param.equals("powdery")) {
+	            list = perfumeservice.selectCategoryList(param);
+                   
+	         }
+		 
+		  
+		}else{
+		    param = "All";
+		    list = perfumeservice.selectPerfumeList();
 
-	      } else if (param.equals("구르망")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
-
-	      } else if (param.equals("머스크")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
-
-	      } else if (param.equals("파우더리")) {
-	         List<PerfumeVO> list = perfumeservice.selectCategoryList(param);
-
-	      }
-	      
-
-	     
+		}
 		model.addAttribute("list", list);
+		return "root.shop.40ml";		
+	}
+	    
+		
+		
 
-	      return "root.shop.goods";
-	   }
+		     
+
+		
+		      
+		
 
 	@RequestMapping("curation")
 	public String curation(Model model) throws Exception {

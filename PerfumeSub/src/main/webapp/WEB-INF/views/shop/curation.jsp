@@ -91,7 +91,7 @@
 					<br>
 					<h5>${item.brand}</h5>
 					<h5>${item.name}</h5>
-					<h7 style="color:gray;">${item.source1} ${item.source2} ${item.source3}</h7>
+					<h7 style="color:gray;">#${item.source1} #${item.source2} #${item.source3}</h7>
 					<p style="color:gray;">curation / <fmt:formatNumber value="${item.price}" pattern="#,###" /></p>
 					</div>
 					

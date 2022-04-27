@@ -22,7 +22,7 @@
  <!-- 향수 카테고리 -->
  <select id="selectCategoryList" resultType="perfumeVO" parameterType = "String">
    <![CDATA[
-      select * from PRODUCT where = #{SOURCE1}
+      select * from PRODUCT where SOURCE1 = #{param} or SOURCE2 = #{param} or SOURCE3 = #{param}
       ]]>
  </select>
  

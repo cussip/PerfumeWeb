@@ -70,39 +70,28 @@
   
   </head>
   <body>
-   
+  
+
      <h2 style="text-align: center; margin-top: 200px;  margin-bottom: 30px;">Pick Your Signature!</h2>
     <p style="text-align: center; margin-bottom: 50px; color: gray; margin-bottom: 300px;">6가지 향을 선택하여 나만의 디스커버리 세트를 구성해보세요</p>
     <div class="border-bottom">
     <div class="category" style="display: flex; justify-content: center; margin-bottom: 10px;">
     
-      <a href="/40ml?param=all"><div>All</div></a>
-      <a href="/40ml?param=시트러스"><div>시트러스</div></a>
-      <a href="/40ml?param=플로럴"><div>플로럴</div></a>
-      <a href="/40ml?param=프루티"><div>프루티</div></a>
-      <a href="/40ml?param=그린"><div>그린</div></a>
-      <a href="/40ml?param=허벌"><div>허벌</div></a>
-      <a href="/40ml?param=아쿠아"><div>아쿠아</div></a>
-      <a href="/40ml?param=우디"><div>우디</div></a>
-      <a href="/40ml?param=발삼"><div>발삼</div></a>
-      <a href="/40ml?param=구르망"><div>구르망</div></a>
-      <a href="/40ml?param=머스크"><div>머스크</div></a>
-      <a href="/40ml?param=파우더리"><div style="margin-right: 100px;">파우더리</div></a>
+      <a href="/shop/40ml?param=All"><div>All </div></a>
+      <a href="/shop/40ml?param=citrus"><div>시트러스 </div></a>
+      <a href="/shop/40ml?param=floral"><div>플로럴 </div></a>
+      <a href="/shop/40ml?param=frutity"><div>프루티 </div></a>
+      <a href="/shop/40ml?param=green"><div>그린 </div></a>
+      <a href="/shop/40ml?param=herbal"><div>허벌 </div></a>
+      <a href="/shop/40ml?param=aqua"><div>아쿠아 </div></a>
+      <a href="/shop/40ml?param=woody"><div>우디 </div></a>
+      <a href="/shop/40ml?param=balsam"><div>발삼 </div></a>
+      <a href="/shop/40ml?param=gourmand"><div>구르망 </div></a>
+      <a href="/shop/40ml?param=musk"><div>머스크 </div></a>
+      <a href="/shop/40ml?param=powdery"><div style="margin-right: 100px;">파우더리</div></a>
 
       
-      <div class="dropdown">
-      <span class="dropbtn">카테고리순</span>
-      <i class="bi bi-chevron-down"></i>
-      <div class="dropdown-content">     
-        <a href="#"></a>
-        <a href="#">all</a>
-        <a href="#">wind</a>
-        <a href="#">drop</a>
-        <a href="#">melt</a>
-        <a href="#">path</a>
-        <a href="#">time</a>
-      </div>
-    </div>  
+   
     </div>
     </div>
     
@@ -124,7 +113,7 @@
 					<br>
 					<h5>${item.brand}</h5>
 					<h5>${item.name}</h5>
-					<h7 style="color:gray;">${item.source1} ${item.source2} ${item.source3}</h7>
+					<h7 style="color:gray;">#${item.source1} #${item.source2} #${item.source3}</h7>
 					<p style="color:gray;">2.5ml / <fmt:formatNumber value="${item.price}" pattern="#,###" /></p>
 					</div>
 					

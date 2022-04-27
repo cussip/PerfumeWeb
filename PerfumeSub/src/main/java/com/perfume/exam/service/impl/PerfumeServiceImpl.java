@@ -28,10 +28,15 @@ public class PerfumeServiceImpl implements PerfumeService {
 		
 		return perfumeDAO.selectGoodsList();
 	}
-	
-    public List<PerfumeVO> selectCategoryList() throws Exception{
 		
-		return perfumeDAO.selectCategoryList();
+	@Override
+	public List<PerfumeVO> selectCategoryList(String param) throws Exception {
+		
+		return perfumeDAO.selectCategoryList(param);
 	}
+
+	
+
+	
 
 }

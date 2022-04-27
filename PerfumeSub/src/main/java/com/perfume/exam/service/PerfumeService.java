@@ -8,6 +8,6 @@ import com.perfume.exam.vo.PerfumeVO;
 
 public interface PerfumeService {
 	List<PerfumeVO> selectPerfumeList() throws Exception;
-	List<PerfumeVO> selectGoodsList() throws Exception;
+	List<PerfumeVO> selectGoodsList() throws Exception;	
 	List<PerfumeVO> selectCategoryList(String param) throws Exception;
 }
