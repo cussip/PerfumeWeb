@@ -108,5 +108,17 @@ public class ShopController {
 
 		return "root.shop.goods";
 	}
+	
+	@RequestMapping("detail")
+	public String detail(Model model,HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String param = request.getParameter("param");
+		
+		List<PerfumeVO> list = perfumeservice.selectName(param);       		 
+		
+		model.addAttribute("list", list);
+        
+		return "root.shop.detail";
+	}
 
 }

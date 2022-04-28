@@ -25,6 +25,12 @@
       select * from PRODUCT where SOURCE1 = #{param} or SOURCE2 = #{param} or SOURCE3 = #{param}
       ]]>
  </select>
+ <!-- 향수명으로 조회 -->
+ <select id="selectName" resultType="perfumeVO" parameterType = "String">
+   <![CDATA[
+      select * from PRODUCT where NAME = #{param}
+      ]]>
+ </select>
  
 
 </mapper>
