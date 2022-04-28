@@ -81,7 +81,7 @@
 		<c:forEach var="item" items="${list}">   		
 		<div class="col-sm-3">
 		
-		<a href="#" style="text-decoration: none; color:black;">
+		<a href="/shop/detail?param=${item.name}" style="text-decoration: none; color:black;">
 		<div class="card" style="width:19rem; text-align: center; border: none;">
 					
 					<img style="height:22rem;" src="${item.image}" class="card-img-top" alt="..."/>					 	
