@@ -7,10 +7,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.taglibs.standard.tag.common.fmt.ParseDateSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.perfume.exam.service.PerfumeService;
 import com.perfume.exam.vo.PerfumeVO;
@@ -21,73 +23,61 @@ public class ShopController {
 
 	@Autowired
 	private PerfumeService perfumeservice;
-		
 
 	@RequestMapping("40ml")
-	   public String shop(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		 
+	public String shop(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		List<PerfumeVO> list = new ArrayList<>();
 		String param = request.getParameter("param");
-		
-		
-		if(param != null){	
-			
-		 if (param.equals("All")) {
-	            list = perfumeservice.selectPerfumeList();	  
-	           
-	         } else if (param.equals("citrus")) {
-	             list = perfumeservice.selectCategoryList(param);   
-	             
-	         } else if (param.equals("floral")) {
-	             list = perfumeservice.selectCategoryList(param); 
-	             
-	         } else if (param.equals("frutity")) {
-	           list = perfumeservice.selectCategoryList(param);
 
-	         } else if (param.equals("green")) {
-	          list = perfumeservice.selectCategoryList(param);
+		if (param != null) {
 
-	         } else if (param.equals("herbal")) {
-	           list = perfumeservice.selectCategoryList(param);
+			if (param.equals("All")) {
+				list = perfumeservice.selectPerfumeList();
 
-	         } else if (param.equals("aqua")) {
-	          list = perfumeservice.selectCategoryList(param);
+			} else if (param.equals("citrus")) {
+				list = perfumeservice.selectCategoryList(param);
 
-	         } else if (param.equals("woody")) {
-	           list = perfumeservice.selectCategoryList(param);
+			} else if (param.equals("floral")) {
+				list = perfumeservice.selectCategoryList(param);
 
-	         } else if (param.equals("balsam")) {
-	            list = perfumeservice.selectCategoryList(param);
+			} else if (param.equals("frutity")) {
+				list = perfumeservice.selectCategoryList(param);
 
-	         } else if (param.equals("gourmand")) {
-	           list = perfumeservice.selectCategoryList(param);
+			} else if (param.equals("green")) {
+				list = perfumeservice.selectCategoryList(param);
 
-	         } else if (param.equals("musk")) {
-	            list = perfumeservice.selectCategoryList(param);
+			} else if (param.equals("herbal")) {
+				list = perfumeservice.selectCategoryList(param);
 
-	         } else if (param.equals("powdery")) {
-	            list = perfumeservice.selectCategoryList(param);
-                   
-	         }
-		 
-		  
-		}else{
-		    param = "All";
-		    list = perfumeservice.selectPerfumeList();
+			} else if (param.equals("aqua")) {
+				list = perfumeservice.selectCategoryList(param);
+
+			} else if (param.equals("woody")) {
+				list = perfumeservice.selectCategoryList(param);
+
+			} else if (param.equals("balsam")) {
+				list = perfumeservice.selectCategoryList(param);
+
+			} else if (param.equals("gourmand")) {
+				list = perfumeservice.selectCategoryList(param);
+
+			} else if (param.equals("musk")) {
+				list = perfumeservice.selectCategoryList(param);
+
+			} else if (param.equals("powdery")) {
+				list = perfumeservice.selectCategoryList(param);
+
+			}
+
+		} else {
+			param = "All";
+			list = perfumeservice.selectPerfumeList();
 
 		}
 		model.addAttribute("list", list);
-		return "root.shop.40ml";		
+		return "root.shop.40ml";
 	}
-	    
-		
-		
-
-		     
-
-		
-		      
-		
 
 	@RequestMapping("curation")
 	public String curation(Model model) throws Exception {
@@ -108,16 +98,30 @@ public class ShopController {
 
 		return "root.shop.goods";
 	}
-	
+
 	@RequestMapping("detail")
-	public String detail(Model model,HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+	public String detail(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		String param = request.getParameter("param");
-		
-		List<PerfumeVO> list = perfumeservice.selectName(param);       		 
-		
+
+		List<PerfumeVO> list = perfumeservice.selectName(param);
+
 		model.addAttribute("list", list);
-        
+
+		return "root.shop.detail";
+	}
+
+	@ResponseBody
+	@RequestMapping("detailSelectMl")
+	public String detailSelectMl(Model model, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+
+		String param = request.getParameter("param");
+
+		List<PerfumeVO> list = perfumeservice.selectName(param);
+
+		model.addAttribute("list", list);
+
 		return "root.shop.detail";
 	}
 

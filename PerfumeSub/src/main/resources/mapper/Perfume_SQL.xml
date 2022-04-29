@@ -28,7 +28,7 @@
  <!-- 향수명으로 조회 -->
  <select id="selectName" resultType="perfumeVO" parameterType = "String">
    <![CDATA[
-      select * from PRODUCT where NAME = #{param}
+      select * from PRODUCT where NAME like '%'||#{param}||'%'
       ]]>
  </select>
  
