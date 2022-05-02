@@ -52,34 +52,39 @@
 <script>
 
 $(document).ready(function(){
-	var ml;
-	$("#40ml").click(function(){
-		ml = $("#40ml").val();	
-	});
-	$("#60ml").click(function(){
-		ml = $("#60ml").val();	
-	});
-	$("#120ml").click(function(){
-		ml = $("#120ml").val();	
-	});
-	$("input[name='ml']").click(function(){
-		$.ajax({ 
-			url: "/shop/detailSelectMl", 
-			type: "POST", 
-			cache: false, 
-			dataType: "json", 
-			data: {'ml' : ml}, 
-			success: function(data){
-				alert("success")
+	$(document).ready(function(){
+		var price;
+		$("#ml").change(function() {
+			if ($("#ml").val() == '40ml') {
+				price = ${price}
+				const cn1 = price.toString()
+				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				price = '<strong>'+cn1+' 원</strong>'
+				$("#p").text("");
+				$("#p").append(price);
+			}else if ($("#ml").val() == '60ml') {
+				price = ${price2}
+				const cn1 = price.toString()
+				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				price = '<strong>'+cn1+' 원</strong>'
+				$("#p").text("");
+				$("#p").append(price);
+			}else if ($("#ml").val() == '120ml') {
+				price = ${price3}
+				const cn1 = price.toString()
+				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				price = '<strong>'+cn1+' 원</strong>'
+				$("#p").text("");
+				$("#p").append(price);
 			}
+			
+			
+			
+			
+		});
 		
-	
 
-					
 	});
-	
-	
-});
 });
 
 
@@ -87,6 +92,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+
 
 
 	<!--  http://drive.google.com/uc?export=view&id=1-3p5BqrlNWPxZ6K2Ztu2ftxLOppfkTXF-->
@@ -102,7 +108,7 @@ $(document).ready(function(){
 
 
 
-					<c:forEach var="item" items="${list}" end="0">
+					<c:forEach var="item" items="${list}" >
 						<img style="height: 35rem;" src="${item.image} "
 							class="card-img-top" />
 					</c:forEach>
@@ -113,11 +119,11 @@ $(document).ready(function(){
 				<div class="product_title"
 					style="padding-top: 100px; padding-left: 100px;">
 					<h4>
-						<strong><c:forEach var="item" items="${list}" end="0">${item.name} </c:forEach></strong>
+						<strong><c:forEach var="item" items="${list}" >${item.name} </c:forEach></strong>
 
 					</h4>
 					<div class="produc_price">
-						<c:forEach var="item" items="${list}" end="0">
+						<c:forEach var="item" items="${list}" >
 							<h6 style="padding-left: 310px;">
 								<strong><fmt:formatNumber value="${item.price}"
 										pattern="#,### 원" /></strong>
@@ -129,19 +135,18 @@ $(document).ready(function(){
 
 					<div class="dropdown">
 
-						<div class="border border-gray" style="text-align: center;">
-							<a class="btn btn-white btn-lg dropdown-toggle" href="#"
-								role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-								aria-expanded="false" style="color: gray; font-size: 15px;">-[필수]옵션을선택해
-								주세요-</a>
-						</div>
 						
-                       
-						<ul class="menu" >					
-							<li style="width: 23rem;"><input id="40ml" value="40ml" type="button" name="ml"/></li>
-							<li style="width: 23rem;"><input id="60ml" value="60ml" type="button"name="ml"/></li>
-							<li style="width: 23rem;"><input id="120ml" value="120ml" type="button"name="ml"/></li>		 
-						</ul>
+						
+						<select name="ml" id="ml">
+						    <option id="price" value="40ml">40ml</option>
+						    <option id="price2" value="60ml">60ml</option>
+						    <option id="price3" value="120ml">120ml</option>
+						</select>
+
+
+
+
+						
                       
 					</div>
 					<br>
@@ -150,8 +155,8 @@ $(document).ready(function(){
 					<div class="all_price"
 						style="padding-top: 20px; display: flex; padding-bottom: 10px;">
 						<h6>총 상품금액</h6>
-						<c:forEach var="item" items="${list}" end="0">
-							<h6 style="margin-left: 230px;">
+						<c:forEach var="item" items="${list}" >
+							<h6 style="margin-left: 230px;" id="p">
 								<strong><fmt:formatNumber value="${item.price}"
 										pattern="#,### 원" /></strong>
 							</h6>
@@ -205,7 +210,7 @@ $(document).ready(function(){
 
 
 			</div>
-
+			
 			<div id="target1" class="row">
 
 				<div class="col-sm-12">

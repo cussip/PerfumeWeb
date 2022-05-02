@@ -10,7 +10,8 @@ public class PerfumeVO {
 	private String Source2;
 	private String Source3;
 	private String Image;
-   
+	private int Price2;
+	private int Price3;
 	public PerfumeVO(){
 		
 	}
@@ -26,6 +27,23 @@ public class PerfumeVO {
 		Source2 = source2;
 		Source3 = source3;
 		Image = image;
+	}
+	
+
+	public int getPrice2() {
+		return Price2;
+	}
+
+	public void setPrice2(int price2) {
+		Price2 = price2;
+	}
+
+	public int getPrice3() {
+		return Price3;
+	}
+
+	public void setPrice3(int price3) {
+		Price3 = price3;
 	}
 
 	public int getProduct_id() {
@@ -101,3 +119,4 @@ public class PerfumeVO {
 	
 	
 }
+

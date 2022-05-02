@@ -105,24 +105,16 @@ public class ShopController {
 		String param = request.getParameter("param");
 
 		List<PerfumeVO> list = perfumeservice.selectName(param);
-
+		
 		model.addAttribute("list", list);
+		//가격 값만 따로 넘겨줘서  price 3개로나눔(PerfumeVO에 price2 price3 추가)
+		model.addAttribute("price", list.get(0).getPrice());
+		model.addAttribute("price2", list.get(0).getPrice2());
+		model.addAttribute("price3", list.get(0).getPrice3());
 
 		return "root.shop.detail";
 	}
 
-	@ResponseBody
-	@RequestMapping("detailSelectMl")
-	public String detailSelectMl(Model model, HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
 
-		String param = request.getParameter("param");
-
-		List<PerfumeVO> list = perfumeservice.selectName(param);
-
-		model.addAttribute("list", list);
-
-		return "root.shop.detail";
-	}
 
 }
