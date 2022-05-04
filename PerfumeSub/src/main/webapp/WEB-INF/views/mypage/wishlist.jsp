@@ -32,18 +32,14 @@
 	
 	<div class="container">
 		<div class="col" id="mywish" style="margin: 0 0 40px 0; color:#555555; font-weight:600">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
-<<<<<<< HEAD
-		
-			
-=======
->>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
+
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
-<<<<<<< HEAD
+
 				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt02_1000px_shop1_162253.jpg" class="img-thumbnail" height="60" width="60">
-=======
+
 				<img src="#" class="img-thumbnail">
 				</div>
 				<!-- 날짜 -->
@@ -98,7 +94,7 @@
 				<!-- 상품이미지 -->
 				<div class="col">
 				<img src="#" class="img-thumbnail">
->>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
+
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -119,20 +115,20 @@
 		<br><hr>		
 		</div>
 		
-<<<<<<< HEAD
+
 		
-=======
+
 	<br>	
->>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
+
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
-<<<<<<< HEAD
+
 				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt01_detail-01_shop1_161557.png" class="img-thumbnail" height="60" width="60">
-=======
+
 				<img src="#" class="img-thumbnail">
->>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
+
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -153,7 +149,7 @@
 		<br><hr>		
 		</div>
 		
-<<<<<<< HEAD
+
 		<c:forEach var="item" items="${wish}">
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
@@ -179,8 +175,7 @@
 		</c:forEach>
 		
 		
-=======
->>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
+
 		
 	</div>	
 </div>	
@@ -189,9 +184,4 @@
 	
 </main>	
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
