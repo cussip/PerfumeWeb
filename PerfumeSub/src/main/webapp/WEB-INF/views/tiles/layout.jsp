@@ -71,7 +71,29 @@
 		.event-menu:hover {
 			color: black;
 		}
+<<<<<<< HEAD
 			
+=======
+		
+<<<<<<< HEAD
+		
+		#mymenu {
+			color: #555555;
+			text-decoration:none;
+		
+		}
+		
+		#mymenu:hover {
+			color: black;
+			text-decoration:none;
+			font-weight:bold;
+		
+		}	
+		
+		
+=======
+>>>>>>> 0200054e5063878d0ddc40147f83aa9d722e1a4a
+>>>>>>> 7291d243e8bb034ca6eadadc5e0809df5d3e8acf
 		.header-icon {
 			font-size: 15pt
 		}

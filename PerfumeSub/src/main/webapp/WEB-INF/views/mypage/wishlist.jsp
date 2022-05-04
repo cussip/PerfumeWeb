@@ -32,13 +32,19 @@
 	
 	<div class="container">
 		<div class="col" id="mywish" style="margin: 0 0 40px 0; color:#555555; font-weight:600">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
+<<<<<<< HEAD
 		
 			
+=======
+>>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
+<<<<<<< HEAD
 				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt02_1000px_shop1_162253.jpg" class="img-thumbnail" height="60" width="60">
+=======
+				<img src="#" class="img-thumbnail">
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -46,25 +52,53 @@
 				</div>
 				<!-- 상품명 -->
 				<div class="col">
-				<a href="#" id="goodsname">향수2</a>
+				<a href="#">향수1</a>
 				</div>
 				<!-- 가격 -->
 				<div class="col">
-				34,000원
+				22,000원
 				</div>
 				<div class="col">
 						<button type="button" class="btn btn-outline-secondary btn-sm">구매하기</button>
 						<button type="button" class="btn btn-outline-danger btn-sm">삭제하기</button>
 				</div>
-		<br><hr>		
+		<br><hr>
 		</div>
 		
+		<br>
 		
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
-				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt01_detail-01_shop1_161557.png" class="img-thumbnail" height="60" width="60">
+				<img src="#" class="img-thumbnail">
+				</div>
+				<!-- 날짜 -->
+				<div class="col">
+				2022.04.14
+				</div>
+				<!-- 상품명 -->
+				<div class="col">
+				<a href="#">향수2</a>
+				</div>
+				<!-- 가격 -->
+				<div class="col">
+				34,000원
+				</div>
+				<div class="col">
+						<button type="button" class="btn btn-outline-secondary btn-sm">구매하기</button>
+						<button type="button" class="btn btn-outline-danger btn-sm">삭제하기</button>
+				</div>
+		<br><hr>		
+		</div>
+		
+		<br>	
+		<!-- 각 관심상품 리스트 -->
+		<div class="row">
+				<!-- 상품이미지 -->
+				<div class="col">
+				<img src="#" class="img-thumbnail">
+>>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -85,6 +119,41 @@
 		<br><hr>		
 		</div>
 		
+<<<<<<< HEAD
+		
+=======
+	<br>	
+>>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
+		<!-- 각 관심상품 리스트 -->
+		<div class="row">
+				<!-- 상품이미지 -->
+				<div class="col">
+<<<<<<< HEAD
+				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt01_detail-01_shop1_161557.png" class="img-thumbnail" height="60" width="60">
+=======
+				<img src="#" class="img-thumbnail">
+>>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
+				</div>
+				<!-- 날짜 -->
+				<div class="col">
+				2022.04.14
+				</div>
+				<!-- 상품명 -->
+				<div class="col">
+				<a href="#" id="goodsname">향수2</a>
+				</div>
+				<!-- 가격 -->
+				<div class="col">
+				34,000원
+				</div>
+				<div class="col">
+						<button type="button" class="btn btn-outline-secondary btn-sm">구매하기</button>
+						<button type="button" class="btn btn-outline-danger btn-sm">삭제하기</button>
+				</div>
+		<br><hr>		
+		</div>
+		
+<<<<<<< HEAD
 		<c:forEach var="item" items="${wish}">
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
@@ -110,6 +179,8 @@
 		</c:forEach>
 		
 		
+=======
+>>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
 		
 	</div>	
 </div>	
@@ -118,6 +189,9 @@
 	
 </main>	
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4b42f6e820b3272c50745a620858e80fabc68c35
