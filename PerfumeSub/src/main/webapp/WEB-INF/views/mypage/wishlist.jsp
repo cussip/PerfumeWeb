@@ -32,10 +32,14 @@
 	
 	<div class="container">
 		<div class="col" id="mywish" style="margin: 0 0 40px 0; color:#555555; font-weight:600">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
+
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
+
+				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt02_1000px_shop1_162253.jpg" class="img-thumbnail" height="60" width="60">
+
 				<img src="#" class="img-thumbnail">
 				</div>
 				<!-- 날짜 -->
@@ -90,6 +94,7 @@
 				<!-- 상품이미지 -->
 				<div class="col">
 				<img src="#" class="img-thumbnail">
+
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -110,12 +115,20 @@
 		<br><hr>		
 		</div>
 		
+
+		
+
 	<br>	
+
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
+
+				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt01_detail-01_shop1_161557.png" class="img-thumbnail" height="60" width="60">
+
 				<img src="#" class="img-thumbnail">
+
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -136,6 +149,33 @@
 		<br><hr>		
 		</div>
 		
+
+		<c:forEach var="item" items="${wish}">
+		<!-- 각 관심상품 리스트 -->
+		<div class="row">
+				<!-- 상품이미지 -->
+				<div class="col">
+				<img src="${item.image}" class="img-thumbnail" height="60" width="60">
+				</div>
+				
+				<!-- 상품명 -->
+				<div class="col">
+				<a href="#" id="goodsname">${item.name}</a>
+				</div>
+				<!-- 가격 -->
+				<div class="col">
+				${item.price}
+				</div>
+				<div class="col">
+						<button type="button" class="btn btn-outline-secondary btn-sm">구매하기</button>
+						<button type="button" class="btn btn-outline-danger btn-sm">삭제하기</button>
+				</div>
+		<br><hr>		
+		</div>
+		</c:forEach>
+		
+		
+
 		
 	</div>	
 </div>	
@@ -143,4 +183,5 @@
 </div>
 	
 </main>	
+
 
