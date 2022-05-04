@@ -2,10 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<<<<<<< HEAD
+=======
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 
 
 
+>>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 <main style="margin: 100px 150px 100px 150px">
 <h3 style="margin:130px 0 40px 0; text-align:center">마이페이지</h3>
 <hr style="color:#555555">
@@ -33,7 +36,10 @@
 				<div class="col">수량</div>
 				<div class="col">총금액</div>
 			</div>			
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 			<!-- 추후에 사진첨부 할것... -->
 			<div class="row" style="border-bottom:1px solid lightgrey">
 				<div class="col-2">2022.04.14</div>
@@ -49,6 +55,10 @@
 				</div>	
 			</div>
 			
+<<<<<<< HEAD
+			
+			
+=======
 
 			<c:forEach var="item" items="${order}">
 				<div class="row" style="border-bottom:1px solid lightgrey">
@@ -69,6 +79,7 @@
 				</div>
 			</c:forEach>
 
+>>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 		</div>
 	</div>		
 			
