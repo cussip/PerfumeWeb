@@ -89,9 +89,9 @@ public class MemberController {
 	        //System.out.println("login 메서드 진입");
 	        //System.out.println("전달된 데이터 : " + member);
 	    	HttpSession session = request.getSession();
-	    	MemberVO lvo = memberservice.memberLogin(member);
+	    	MemberVO mvo = memberservice.memberLogin(member);
 	    	
-	    	if(lvo == null) {                                // 일치하지 않는 아이디, 비밀번호 입력 경우
+	    	if(mvo == null) {                                // 일치하지 않는 아이디, 비밀번호 입력 경우
 	            
 	            int result = 0;
 	            rttr.addFlashAttribute("result", result);
@@ -99,7 +99,7 @@ public class MemberController {
 	            
 	        }
 	        
-	        	session.setAttribute("member", lvo);             // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
+	        	session.setAttribute("member", mvo);             // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
 	        
 	        	return "redirect:/perfume/home";
 	        

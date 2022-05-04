@@ -43,7 +43,17 @@
     	<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521/xepdb1"/>
     	<beans:property name="username" value="perfume"/>
     	<beans:property name="password" value="0000"/>
-    </beans:bean>   	
+    </beans:bean>   
+    	
+	<!-- 인터셉터 적용 -->
+	<interceptors>
+	
+		<interceptor>
+			<mapping path="/cart/**"/>
+			<beans:bean id="CartIntreceptor" class="com.perfume.exam.interceptor.CartInterceptor"></beans:bean>
+		</interceptor>
+		
+	</interceptors>
 	
 </beans:beans>
 
