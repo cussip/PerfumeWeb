@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.perfume.exam.service.dao.AdminDAO">
+
+	<select id="getNoticeList" resultType="boardVO">
+		<![CDATA[
+			SELECT * FROM board WHERE category = 'notice' ORDER BY notice_id DESC
+		]]>
+	</select>
+ 
+	<select id="getFAQList" resultType="boardVO">
+		<![CDATA[
+			SELECT * FROM board WHERE category = 'faq' ORDER BY notice_id DESC
+		]]>
+	</select>
+	
+	<select id="getEventList" resultType="eventVO">
+		<![CDATA[
+			SELECT * FROM event ORDER BY event_id DESC 
+		]]>
+	</select>
+	
+	<insert id="bwsubmit" parameterType="BoardVO">
+		<![CDATA[
+			INSERT INTO board VALUES (board_seq.nextval, 0, #{title}, #{content}, sysdate, 'notice')
+		]]>
+	</insert>
+
+ 
+</mapper> 

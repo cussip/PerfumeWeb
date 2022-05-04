@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.perfume.exam.service.dao.EventDAO">
+
+	<select id="getEndList" resultType="eventVO">
+		<![CDATA[
+			SELECT * FROM event WHERE to_char(end_date) < to_char(sysdate)	
+		]]>
+	</select>
+ 
+	<select id="getIngList" resultType="eventVO">
+		<![CDATA[
+ 			SELECT * FROM event WHERE to_char(end_date) >= to_char(sysdate)
+		]]>	
+	</select>
+	
+	<select id="getWinnerList" resultType="boardVO">
+		<![CDATA[
+			SELECT * FROM board WHERE category = 'event'
+		]]>
+	</select>
+	
+	<select id="getEvent" resultType="eventVO">
+		<![CDATA[
+			SELECT * FROM event WHERE event_id = #{page}
+		]]>		
+	</select>
+ 
+</mapper> 

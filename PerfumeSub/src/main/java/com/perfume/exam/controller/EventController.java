@@ -9,46 +9,45 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.perfume.exam.entity.Board;
-import com.perfume.exam.entity.Event;
 import com.perfume.exam.service.EventService;
+import com.perfume.exam.vo.BoardVO;
+import com.perfume.exam.vo.EventVO;
 
-@Controller
 @RequestMapping("/event/")
+@Controller
 public class EventController {
 	
 	@Autowired
 	private EventService eventService;
 	
+	@RequestMapping("test")
+	public String test(Model model) throws ClassNotFoundException, SQLException {
+		return "root.event.test"; 
+	}
+	
+	
 	@RequestMapping("event")
 	public String event(Model model) throws ClassNotFoundException, SQLException {
 		
-		List<Event> endList = eventService.getEndList();
-		List<Event> ingList = eventService.getIngList();
-		List<Board> winnerList = eventService.getWinnerList();
+		List<EventVO> endList = eventService.getEndList();
+		List<EventVO> ingList = eventService.getIngList();
+		List<BoardVO> winnerList = eventService.getWinnerList();
 		
 		model.addAttribute("endList", endList);
 		model.addAttribute("ingList", ingList);
 		model.addAttribute("winnerList", winnerList);
-		
+//		
 		return "root.event.event";
-	}
+	}	
+	
 	
 	@RequestMapping("detail")
 	public String detail(@RequestParam(name="p")String page, Model model) throws ClassNotFoundException, SQLException {
 		
-		Event event = eventService.getEvent(page);
+		EventVO event = eventService.getEvent(page);
 		
 		model.addAttribute("event", event);
 		
 		return "root.event.detail";
 	}
 }
-
-
-
-
-
-
-
-
