@@ -50,26 +50,26 @@ public class MyPageController {
 	
 	/*
 	@RequestMapping("deleteorder")
-	public String deleteOrder(@RequestParam("order_id") int order_id, Model model, HttpServletRequest req, HttpServletResponse res)
+	public String deleteOrder(@RequestParam("order_id") int orderId, Model model, HttpServletRequest req, HttpServletResponse res)
 	throws Exception {
 		
 		List<MyOrderVO> order = new ArrayList<>();
 
-		myOrderService.deleteOrder(order_id);
+		myOrderService.deleteOrder(orderId);
 		
 		model.addAttribute("order", order);
 		return "redirect:root.mypage.orderlist";
 	}
 	*/
 	
-	/*
-	@RequestMapping(value="orderlist/delete", method=RequestMethod.GET)
-	public String getDeleteOrder(@RequestParam("order_id") int order_id) throws Exception {
+	
+	@RequestMapping(value="delete", method=RequestMethod.GET)
+	public String getDeleteOrder(@RequestParam("orderId") int orderId) throws Exception {
 		
-		myOrderService.deleteOrderList(order_id);
-		return "redirect:/mypage/orderlist";
+		myOrderService.deleteOrder(orderId);
+		return "redirect:root.mypage.orderlist";
 	}
-	*/	
+		
 	
 	// 문의
 	@RequestMapping("request")

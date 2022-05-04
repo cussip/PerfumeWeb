@@ -28,9 +28,9 @@ public class MyOrderServiceImpl implements MyOrderService {
 	
 	
 	@Override
-	public void deleteOrder(int order_id) throws Exception {
+	public void deleteOrder(int orderId) throws Exception {
 		
-		myOrderDAO.deleteOrder(order_id);
+		myOrderDAO.deleteOrder(orderId);
 		
 	}
 

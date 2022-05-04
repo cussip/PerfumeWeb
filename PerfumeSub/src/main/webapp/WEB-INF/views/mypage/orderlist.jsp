@@ -61,7 +61,7 @@
 						<div class="col-4">
 						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="">리뷰쓰기</button>
 						
-						<a href="/mypage/deleteorder?orderId=${item.orderId }">삭제</a>
+						<a href="/mypage/delete?orderId=${item.orderId }">삭제</a>
 						
 						<button type="button" class="btn btn-outline-danger btn-sm">반품신청</button>
 						</div>
