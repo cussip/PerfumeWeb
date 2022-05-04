@@ -1,7 +1,6 @@
 package com.perfume.exam.controller;
 
-import java.sql.SQLException;
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.perfume.exam.entity.Board;
 import com.perfume.exam.service.AdminService;
+import com.perfume.exam.vo.BoardVO;
+import  com.perfume.exam.vo.EventVO;
 
 @Controller
 @RequestMapping("/admin/")
@@ -19,28 +19,43 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@RequestMapping("boardwrite")
-	public String insertboard(Model model) throws ClassNotFoundException, SQLException {
+	@RequestMapping("board")
+	public String insertboard(Model model) throws Exception {
 		
-		/*
-		 * List<Event> endList = eventService.getEndList(); List<Event> ingList =
-		 * eventService.getIngList(); List<Board> winnerList =
-		 * eventService.getWinnerList();
-		 * 
-		 * model.addAttribute("endList", endList); model.addAttribute("ingList",
-		 * ingList); model.addAttribute("winnerList", winnerList);
-		 */
 		
-		return "root.admin.boardwrite";
+		List<BoardVO> noticeList = adminService.getNoticeList();
+		List<BoardVO> faqList = adminService.getFAQList();
+		
+		model.addAttribute("noticeList", noticeList);
+		model.addAttribute("faqList", faqList);
+	
+		
+		return "admin.board";
+	}
+	
+	@RequestMapping("event")
+	public String insertevent(Model model) throws Exception {
+		
+		
+		List<BoardVO> noticeList = adminService.getNoticeList();
+		List<BoardVO> faqList = adminService.getFAQList();
+		List<EventVO> eventList = adminService.getEventList();
+		
+		model.addAttribute("noticeList", noticeList);
+		model.addAttribute("faqList", faqList);
+		model.addAttribute("eventList", eventList);
+	
+		
+		return "admin.event";
 	}
 	
 	@RequestMapping("bwsubmit")
-	public String bwsubmit(@ModelAttribute Board board) throws SQLException {
+		public String bwsubmit(@ModelAttribute BoardVO board) throws Exception {
 		
 		adminService.bwsubmit(board);
 		
-		return "root.customer.notice";
-	}
+		return "redirect:board";
+	}	
 	
 }
 

@@ -4,7 +4,12 @@
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>  
+
     <typeAliases>
           <typeAlias alias="perfumeVO" type="com.perfume.exam.vo.PerfumeVO"/>
+          <typeAlias alias="boardVO" type="com.perfume.exam.vo.BoardVO"/>
+          <typeAlias alias="eventVO" type="com.perfume.exam.vo.EventVO"/>
     </typeAliases>
+        
+    
 </configuration>

@@ -1,8 +1,8 @@
-package com.perfume.exam.entity;
+package com.perfume.exam.vo;
 
 import java.sql.Date;
 
-public class Board {
+public class BoardVO {
 	
 	int notice_id;
 	int writer_id;
@@ -11,10 +11,10 @@ public class Board {
 	Date regdate;
 	String category;
 	
-	public Board() {
+	public BoardVO() {
 	}
 	
-	public Board(int notice_id, int writer_id, String title, String content, Date regdate, String category) {
+	public BoardVO(int notice_id, int writer_id, String title, String content, Date regdate, String category) {
 		this.notice_id = notice_id;
 		this.writer_id = writer_id;
 		this.title = title;

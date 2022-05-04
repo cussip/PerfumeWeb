@@ -48,6 +48,17 @@
        $progress-bar-transition:           width .6s ease;
 */
 }
+#ml{
+	width: 400px;
+	height: 30px;
+	padding-left: 20px;
+	font-size: 18px;
+	color: gray;
+	border: 1px solid black;
+	border-radius: 1px;
+	
+}
+
 </style>
 <script>
 
@@ -88,7 +99,7 @@ $(document).ready(function(){
 });
 
 
-  	
+
 </script>
 </head>
 <body>
@@ -137,10 +148,11 @@ $(document).ready(function(){
 
 						
 						
-						<select name="ml" id="ml">
-						    <option id="price" value="40ml">40ml</option>
-						    <option id="price2" value="60ml">60ml</option>
-						    <option id="price3" value="120ml">120ml</option>
+						<select name="ml" id="ml">												
+							<option id="" value="40ml">-[필수] 옵션을 선택해 주세요-</option>
+						    <option id="price" value="40ml">40ml </option>
+						    <option id="price2" value="60ml">60ml + 5,000</option>
+						    <option id="price3" value="120ml">120ml + 15,000</option>
 						</select>
 
 
@@ -172,15 +184,12 @@ $(document).ready(function(){
 
 					<div style="display: flex;">
 						<div style="padding-top: 10px; width: 320px;">
-							<a href="#"
-								style="text-decoration: none; color: white; padding-top: 10px;">
-								<div class="border border-white"
-									style="text-align: center; font-size: 20px; font-weight: bold; height: 50px; background-color: black; padding-top: 10px;">
-									장바구니</div>
-							</a>
+						<button type="button" class="addCart_btn" style="text-decoration: none; color: white; height:50px; width: 350px; background-color: black; font-size: 18px; font-weight: bold;">
+							장바구니
+							</button>
 						</div>
-						<div style="padding-left: 10px; padding-top: 10px;">
-							<i class="bi bi-heart" style="font-size: 2rem;"></i>
+						<div style="padding-left: 40px; padding-top: 10px;">
+							<button class="hit" style="background-color: white; border: 0; outline: 0;"><i class="bi bi-heart" style="font-size: 2rem;"></i></button>
 						</div>
 					</div>
 					<br> <span style="font-size: 12px;">회원 가입 시 할인, 포인트 적립

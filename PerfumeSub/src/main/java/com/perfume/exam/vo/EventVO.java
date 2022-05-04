@@ -1,8 +1,8 @@
-package com.perfume.exam.entity;
+package com.perfume.exam.vo;
 
 import java.sql.Date;
 
-public class Event {
+public class EventVO {
 	
 	int event_id;
 	Date start_date;
@@ -14,11 +14,11 @@ public class Event {
 	String img_mini;
 	String img_main;	
 	
-	public Event() {
+	public EventVO() {
 		
 	}
 	
-	public Event(int event_id, Date start_date, Date end_date, String title, Date regdate, int hit, String writer_id,
+	public EventVO(int event_id, Date start_date, Date end_date, String title, Date regdate, int hit, String writer_id,
 			String img_mini, String img_main) {
 		this.event_id = event_id;
 		this.start_date = start_date;
