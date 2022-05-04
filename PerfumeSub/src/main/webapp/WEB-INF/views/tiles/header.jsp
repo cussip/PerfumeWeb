@@ -46,12 +46,12 @@
 	  <div class="col-md-4" style="padding-top: 27px;">	
         <ul class="navbar-nav me-auto mb-2 mb-md-0 justify-content-md-center">
           <li class="nav-item my-icon">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="/member/login">
             	<i class="header-icon bi bi-person-circle" style="font-size: 25px; padding-right: 10px;"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#" >
+            <a class="nav-link" aria-current="page" href="/cart/${member.id}" >
 				<i class="header-icon bi bi-minecart" style="font-size: 25px;"></i>
 			</a>
           </li>

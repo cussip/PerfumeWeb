@@ -28,5 +28,22 @@ public class PerfumeServiceImpl implements PerfumeService {
 		
 		return perfumeDAO.selectGoodsList();
 	}
+		
+	@Override
+	public List<PerfumeVO> selectCategoryList(String param) throws Exception {
+		
+		return perfumeDAO.selectCategoryList(param);
+	}
+
+	@Override
+	public List<PerfumeVO> selectName(String param) throws Exception {
+		
+		return perfumeDAO.selectName(param);
+	}
+
+
+	
+
+	
 
 }
