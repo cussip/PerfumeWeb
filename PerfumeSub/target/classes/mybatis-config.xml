@@ -4,7 +4,19 @@
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>  
+
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
     <typeAliases>
           <typeAlias alias="perfumeVO" type="com.perfume.exam.vo.PerfumeVO"/>
+         
+          
+          
+          <typeAlias alias="myOrderVO" type="com.perfume.exam.vo.MyOrderVO"/>
+          <typeAlias alias="myWishVO" type="com.perfume.exam.vo.MyWishVO"/>
+          
+          
     </typeAliases>
 </configuration>
