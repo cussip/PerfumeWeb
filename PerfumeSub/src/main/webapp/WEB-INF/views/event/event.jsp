@@ -2,10 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<main class="container">
-	
-	<!-- 공통 이미지 부분  -->	
-	<br><br><br><br><br>
+<main class="container-fluid my-5 py-5">
+  <div class="container">
+			
 	<h4 style="text-align:center">EVENT</h4>
 	<br><br>
 	<form action="event">
@@ -142,5 +141,6 @@
 			</div>					
 		 </c:when>		
 	 </c:choose>
-	
+
+  </div>	
 </main>
