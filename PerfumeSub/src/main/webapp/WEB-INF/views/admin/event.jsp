@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
@@ -24,17 +24,17 @@
 				  
 			  <c:forEach var="event" items="${eventList}">
 			    <div class="accordion-item">
-			      <h2 class="accordion-header" id="flush-heading${event.event_id}">
+			      <h2 class="accordion-header" id="flush-heading${event.id}">
 			        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-			        		data-bs-target="#flush-collapse${event.event_id}" aria-expanded="false" 
-			        		aria-controls="flush-collapse${event.event_id}">
+			        		data-bs-target="#flush-collapse${event.id}" aria-expanded="false" 
+			        		aria-controls="flush-collapse${event.id}">
 		     	  	  <div class="col-md-6">${event.title}</div>
-		      	  	  <div class="col-md-3" style="text-align: center;">${event.start_date}</div>
-		      	  	  <div class="col-md-3" style="text-align: center;">${event.end_date}</div>
+		      	  	  <div class="col-md-3" style="text-align: center;">${event.startdate}</div>
+		      	  	  <div class="col-md-3" style="text-align: center;">${event.enddate}</div>
 			        </button>
 			      </h2>
-			      <div id="flush-collapse${event.event_id}" class="accordion-collapse collapse" 
-			      		aria-labelledby="flush-heading${event.event_id}" data-bs-parent="#accordionFlushExample">
+			      <div id="flush-collapse${event.id}" class="accordion-collapse collapse" 
+			      		aria-labelledby="flush-heading${event.id}" data-bs-parent="#accordionFlushExample">
 			        <div class="accordion-body board-content">${event.title}</div>
 			      </div>
 				</div>    
@@ -60,16 +60,16 @@
 			  </div>	
 			  <c:forEach var="winner" items="${winnerList}">
 			    <div class="accordion-item">
-			      <h2 class="accordion-header" id="flush-heading${winner.notice_id}">
+			      <h2 class="accordion-header" id="flush-heading${winner.id}">
 			        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-			        		data-bs-target="#flush-collapse${winner.notice_id}" aria-expanded="false" 
-			        		aria-controls="flush-collapse${winner.notice_id}">
+			        		data-bs-target="#flush-collapse${winner.id}" aria-expanded="false" 
+			        		aria-controls="flush-collapse${winner.id}">
 		     	  	  <div class="col-md-9">${winner.title}</div>
 		      	  	  <div class="col-md-3" style="text-align: center;">${winner.regdate}</div>
 			        </button>
 			      </h2>
-			      <div id="flush-collapse${winner.notice_id}" class="accordion-collapse collapse" 
-			      		aria-labelledby="flush-heading${winner.notice_id}" data-bs-parent="#accordionFlushExample">
+			      <div id="flush-collapse${winner.id}" class="accordion-collapse collapse" 
+			      		aria-labelledby="flush-heading${winner.id}" data-bs-parent="#accordionFlushExample">
 			        <div class="accordion-body">${winner.content}</div>
 			      </div>
 				</div>    

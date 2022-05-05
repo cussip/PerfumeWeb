@@ -80,16 +80,16 @@
 			  
 		  <c:forEach var="notice" items="${noticeList}">
 		    <div class="accordion-item">
-		      <h2 class="accordion-header" id="flush-heading${notice.notice_id}">
+		      <h2 class="accordion-header" id="flush-heading${notice.id}">
 		        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-		        		data-bs-target="#flush-collapse${notice.notice_id}" aria-expanded="false" 
-		        		aria-controls="flush-collapse${notice.notice_id}">
+		        		data-bs-target="#flush-collapse${notice.id}" aria-expanded="false" 
+		        		aria-controls="flush-collapse${notice.id}">
 	     	  	  <div class="col-md-9">${notice.title}</div>
 	      	  	  <div class="col-md-3" style="text-align: center;">${notice.regdate}</div>
 		        </button>
 		      </h2>
-		      <div id="flush-collapse${notice.notice_id}" class="accordion-collapse collapse" 
-		      		aria-labelledby="flush-heading${notice.notice_id}" data-bs-parent="#accordionFlushExample">
+		      <div id="flush-collapse${notice.id}" class="accordion-collapse collapse" 
+		      		aria-labelledby="flush-heading${notice.id}" data-bs-parent="#accordionFlushExample">
 		        <div class="accordion-body board-content">${notice.content}</div>
 		      </div>
 			</div>    
@@ -115,16 +115,16 @@
 		  </div>	
 		  <c:forEach var="faq" items="${faqList}">
 		    <div class="accordion-item">
-		      <h2 class="accordion-header" id="flush-heading${faq.notice_id}">
+		      <h2 class="accordion-header" id="flush-heading${faq.id}">
 		        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-		        		data-bs-target="#flush-collapse${faq.notice_id}" aria-expanded="false" 
-		        		aria-controls="flush-collapse${faq.notice_id}">
+		        		data-bs-target="#flush-collapse${faq.id}" aria-expanded="false" 
+		        		aria-controls="flush-collapse${faq.id}">
 	     	  	  <div class="col-md-9">${faq.title}</div>
 	      	  	  <div class="col-md-3" style="text-align: center;">${faq.regdate}</div>
 		        </button>
 		      </h2>
-		      <div id="flush-collapse${faq.notice_id}" class="accordion-collapse collapse" 
-		      		aria-labelledby="flush-heading${faq.notice_id}" data-bs-parent="#accordionFlushExample">
+		      <div id="flush-collapse${faq.id}" class="accordion-collapse collapse" 
+		      		aria-labelledby="flush-heading${faq.id}" data-bs-parent="#accordionFlushExample">
 		        <div class="accordion-body">${faq.content}</div>
 		      </div>
 			</div>    

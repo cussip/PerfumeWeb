@@ -101,16 +101,16 @@
 				  	
 			  <c:forEach var="winner" items="${winnerList}">	
 				  <div class="accordion-item">
-				    <h2 class="accordion-header" id="flush-heading${winner.notice_id}">
+				    <h2 class="accordion-header" id="flush-heading${winner.id}">
 				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-				      			data-bs-target="#flush-collapse${winner.notice_id}" aria-expanded="false" 
-				      			aria-controls="flush-collapse${winner.notice_id}">
+				      			data-bs-target="#flush-collapse${winner.id}" aria-expanded="false" 
+				      			aria-controls="flush-collapse${winner.id}">
 			     	  	<div class="col-md-9">${winner.title}</div>
 			      	  	<div class="col-md-3" style="text-align: center;">${winner.regdate}</div>
 				      </button>
 				    </h2>
-				    <div id="flush-collapse${winner.notice_id}" class="accordion-collapse collapse" 
-				    				aria-labelledby="flush-heading${winner.notice_id}" data-bs-parent="#accordionFlushExample">
+				    <div id="flush-collapse${winner.id}" class="accordion-collapse collapse" 
+				    				aria-labelledby="flush-heading${winner.id}" data-bs-parent="#accordionFlushExample">
 				      <div class="accordion-body">${winner.content}</div>
 				    </div>
 				  </div>
