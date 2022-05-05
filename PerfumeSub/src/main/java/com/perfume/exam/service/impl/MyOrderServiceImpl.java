@@ -26,13 +26,19 @@ public class MyOrderServiceImpl implements MyOrderService {
 		return myOrderDAO.selectOrderList();
 	}
 	
-	
+	/*
 	@Override
 	public void deleteOrder(int orderId) throws Exception {
 		
 		myOrderDAO.deleteOrder(orderId);
 		
 	}
-
+	*/
+	
+	@Override
+	public int deleteOrder(int orderId) {
+		
+		return myOrderDAO.deleteOrder(orderId);
+	}
 	
 }

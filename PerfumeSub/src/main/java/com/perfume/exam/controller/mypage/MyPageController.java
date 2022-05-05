@@ -11,12 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.perfume.exam.service.MyOrderService;
 import com.perfume.exam.service.MyWishService;
+import com.perfume.exam.service.dao.MyOrderDAO;
 import com.perfume.exam.vo.MyOrderVO;
 import com.perfume.exam.vo.MyWishVO;
 
@@ -46,7 +48,18 @@ public class MyPageController {
 		model.addAttribute("order", order);
 		return "root.mypage.orderlist";
 		
+		
 	}
+	
+	@PostMapping("deleteorder")
+	public String deleteOrderPost(MyOrderVO order) {
+		
+		myOrderService.deleteOrder(order.getOrderId());
+		
+		return "redirect:/mypage/orderlist";
+	}
+	
+	
 	
 	/*
 	@RequestMapping("deleteorder")
@@ -62,14 +75,14 @@ public class MyPageController {
 	}
 	*/
 	
-	
+	/*
 	@RequestMapping(value="delete", method=RequestMethod.GET)
 	public String getDeleteOrder(@RequestParam("orderId") int orderId) throws Exception {
 		
 		myOrderService.deleteOrder(orderId);
 		return "redirect:root.mypage.orderlist";
 	}
-		
+	*/	
 	
 	// 문의
 	@RequestMapping("request")
