@@ -1,6 +1,5 @@
 package com.perfume.exam.controller;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +20,12 @@ public class EventController {
 	private EventService eventService;
 	
 	@RequestMapping("test")
-	public String test(Model model) throws ClassNotFoundException, SQLException {
+	public String test(Model model) throws Exception {
 		return "root.event.test"; 
 	}
 	
-	
 	@RequestMapping("event")
-	public String event(Model model) throws ClassNotFoundException, SQLException {
+	public String event(Model model) throws Exception {
 		
 		List<EventVO> endList = eventService.getEndList();
 		List<EventVO> ingList = eventService.getIngList();
@@ -42,7 +40,7 @@ public class EventController {
 	
 	
 	@RequestMapping("detail")
-	public String detail(@RequestParam(name="p")String page, Model model) throws ClassNotFoundException, SQLException {
+	public String detail(@RequestParam(name="p")String page, Model model) throws Exception {
 		
 		EventVO event = eventService.getEvent(page);
 		

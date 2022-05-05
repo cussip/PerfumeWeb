@@ -20,6 +20,60 @@
 	<title><tiles:getAsString name="title"/></title>
    
 	<style>
+
+		<!-- 사이드 바 관련 설정 -->
+		.bi {
+		  vertical-align: -.125em;
+		  pointer-events: none;
+		  fill: currentColor;
+		}
+		
+		.btn-toggle {
+		  display: inline-flex;
+		  align-items: center;
+		  padding: .25rem .5rem;
+		  font-weight: 600;
+		  color: rgba(0, 0, 0, .65);
+		  background-color: transparent;
+		  border: 0;
+		}
+		.btn-toggle:hover,
+		.btn-toggle:focus {
+		  color: rgba(0, 0, 0, .85);
+		  background-color: #d2f4ea;
+		}
+		
+		.btn-toggle::before {
+		  width: 1.25em;
+		  line-height: 0;
+		  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+		  transition: transform .35s ease;
+		  transform-origin: .5em 50%;
+		}
+		
+		.btn-toggle[aria-expanded="true"] {
+		  color: rgba(0, 0, 0, .85);
+		}
+		.btn-toggle[aria-expanded="true"]::before {
+		  transform: rotate(90deg);
+		}
+		
+		.btn-toggle-nav a {
+		  display: inline-flex;
+		  padding: .1875rem .5rem;
+		  margin-top: .125rem;
+		  margin-left: 1.25rem;
+		  text-decoration: none;
+		}
+		.btn-toggle-nav a:hover,
+		.btn-toggle-nav a:focus {
+		  background-color: #d2f4ea;
+		}
+		
+		.fw-semibold { font-weight: 600; }
+		<!-- 사이드 바 관련 설정 -->
+	
+	
 		.bd-placeholder-img {
 		  font-size: 1.125rem;
 		  text-anchor: middle;
@@ -71,35 +125,13 @@
 		.event-menu:hover {
 			color: black;
 		}
-<<<<<<< HEAD
 			
-=======
-		
-<<<<<<< HEAD
-		
-		#mymenu {
-			color: #555555;
-			text-decoration:none;
-		
-		}
-		
-		#mymenu:hover {
-			color: black;
-			text-decoration:none;
-			font-weight:bold;
-		
-		}	
-		
-		
-=======
->>>>>>> 0200054e5063878d0ddc40147f83aa9d722e1a4a
->>>>>>> 7291d243e8bb034ca6eadadc5e0809df5d3e8acf
 		.header-icon {
-			font-size: 15pt
+			font-size: 20pt
 		}
 		
 		.header-menu-text {
-			font-size: 11pt;
+			font-size: 13pt;
 		}
 		
 		footer li {
@@ -186,19 +218,29 @@
 		}		
 		<!-- 호버링 블랙아웃 이펙트 구현 -->
 	
+	
 		.event-detail {
 			background-color: #F5F5F5;
 		}
+		
+		main {
+			background-color: white;
+		}
+		
+		.board-content {
+			font-size: 14pt;
+		}
+		
 	</style>
 </head>
 
-<body>
+<body style="background-color: #212529">
 
 	<!-- header 부분 -->
 	<tiles:insertAttribute name="header"/>
 	
-	<!-- main 부분 -->
-	<tiles:insertAttribute name="body"/>
+	<!-- main 부분 -->	
+	<tiles:insertAttribute name="main" ignore="true"/>
 	
 	<!-- footer 부분 -->
 	<tiles:insertAttribute name="footer"/>

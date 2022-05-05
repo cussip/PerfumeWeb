@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<main class="container">
-				
-	<br><br><br><br><br>
+<main class="container-fluid my-5 py-5">
+  <div class="container">
+		
 	<h4 style="text-align:center">
 		<c:if test="${param.h == 1}">
 			진행중인 이벤트
@@ -30,9 +30,10 @@
 		  </tbody>
 		  <caption>
 	
-			<img class="img-fluid col-md-12" src="${event.img_mini}" alt="...">	
+			<img class="img-fluid col-md-12" src="${event.image}" alt="...">	
 		  </caption>	
 		</table>
 	</div>
 	
+  </div>				
 </main>
