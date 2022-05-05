@@ -30,7 +30,7 @@
 		  </tbody>
 		  <caption>
 	
-			<img class="img-fluid col-md-12" src="${event.img_mini}" alt="...">	
+			<img class="img-fluid col-md-12" src="${event.image}" alt="...">	
 		  </caption>	
 		</table>
 	</div>

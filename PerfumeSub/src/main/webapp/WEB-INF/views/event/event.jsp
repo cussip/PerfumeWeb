@@ -67,11 +67,11 @@
 			    	<div class="card">			    	
 				    	<form action="detail" method="post">
 				    	  <input type="hidden" name="h" value="1"/>				
-					      <button class="btn" name="p" value="${event.event_id}">
+					      <button class="btn" name="p" value="${event.id}">
 							<figure class="effect-out">
-					      	  <img src="${event.img_mini}" class="card-img-top" alt="">
+					      	  <img src="${event.thumbnail}" class="card-img-top" alt="">
 					      	  <h2>${event.title}</h2>
-					      	  <p>${event.start_date} ~ ${event.end_date} 까지</p>
+					      	  <p>${event.startdate} ~ ${event.enddate} 까지</p>
 							</figure>
 					      </button>				      
 					    </form>			      
@@ -127,11 +127,11 @@
 			    	<div class="card">			    	
 				    	<form action="detail" method="post">
 				    	  <input type="hidden" name="h" value="3"/>				    	
-					      <button class="btn" name="p" value="${event.event_id}">				
+					      <button class="btn" name="p" value="${event.id}">				
 							<figure class="effect-out">
-					      	  <img src="${event.img_mini}" class="card-img-top" alt="">
+					      	  <img src="${event.thumbnail}" class="card-img-top" alt="">
 					      	  <h2>${event.title}</h2>
-					      	  <p>${event.end_date} 종료</p>
+					      	  <p>${event.enddate} 종료</p>
 							</figure>
 					      </button>				      
 				    	</form>			      
