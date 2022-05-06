@@ -5,19 +5,19 @@
 
 	<select id="getNoticeList" resultType="boardVO">
 		<![CDATA[
-			SELECT * FROM board WHERE category = 'notice' ORDER BY notice_id DESC
+			SELECT * FROM board WHERE category = 'notice' ORDER BY id DESC
 		]]>
 	</select>
  
 	<select id="getFAQList" resultType="boardVO">
 		<![CDATA[
-			SELECT * FROM board WHERE category = 'faq' ORDER BY notice_id DESC
+			SELECT * FROM board WHERE category = 'faq' ORDER BY id DESC
 		]]>
 	</select>
 	
 	<select id="getEventList" resultType="eventVO">
 		<![CDATA[
-			SELECT * FROM event ORDER BY event_id DESC 
+			SELECT * FROM event ORDER BY id DESC 
 		]]>
 	</select>
 	

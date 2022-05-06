@@ -2,10 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<main class="container">
+<main class="container-fluid my-5 py-5">
+  <div class="container">	
 	
-	<!-- 공통 이미지 부분  -->
-	<br><br><br><br><br>
 	<h4 style="text-align:center">SERVICE</h4>
 	<br><br>	
 		 	
@@ -38,7 +37,7 @@
 				  <c:if test="${param.type != '3'}">
 				  <div class="col">
 				    <div class="notice-card card">
-				      <a class="btn" href="/">
+				      <a class="btn" href="/mypage/request">
 						<p class="notice-icon bi bi-envelope"/>
 						<p class="notice-icon-text">1:1문의</p>
 					  </a>
@@ -81,17 +80,17 @@
 			  
 		  <c:forEach var="notice" items="${noticeList}">
 		    <div class="accordion-item">
-		      <h2 class="accordion-header" id="flush-heading${notice.notice_id}">
+		      <h2 class="accordion-header" id="flush-heading${notice.id}">
 		        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-		        		data-bs-target="#flush-collapse${notice.notice_id}" aria-expanded="false" 
-		        		aria-controls="flush-collapse${notice.notice_id}">
+		        		data-bs-target="#flush-collapse${notice.id}" aria-expanded="false" 
+		        		aria-controls="flush-collapse${notice.id}">
 	     	  	  <div class="col-md-9">${notice.title}</div>
 	      	  	  <div class="col-md-3" style="text-align: center;">${notice.regdate}</div>
 		        </button>
 		      </h2>
-		      <div id="flush-collapse${notice.notice_id}" class="accordion-collapse collapse" 
-		      		aria-labelledby="flush-heading${notice.notice_id}" data-bs-parent="#accordionFlushExample">
-		        <div class="accordion-body">${notice.content}</div>
+		      <div id="flush-collapse${notice.id}" class="accordion-collapse collapse" 
+		      		aria-labelledby="flush-heading${notice.id}" data-bs-parent="#accordionFlushExample">
+		        <div class="accordion-body board-content">${notice.content}</div>
 		      </div>
 			</div>    
 		  </c:forEach>
@@ -116,16 +115,16 @@
 		  </div>	
 		  <c:forEach var="faq" items="${faqList}">
 		    <div class="accordion-item">
-		      <h2 class="accordion-header" id="flush-heading${faq.notice_id}">
+		      <h2 class="accordion-header" id="flush-heading${faq.id}">
 		        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-		        		data-bs-target="#flush-collapse${faq.notice_id}" aria-expanded="false" 
-		        		aria-controls="flush-collapse${faq.notice_id}">
+		        		data-bs-target="#flush-collapse${faq.id}" aria-expanded="false" 
+		        		aria-controls="flush-collapse${faq.id}">
 	     	  	  <div class="col-md-9">${faq.title}</div>
 	      	  	  <div class="col-md-3" style="text-align: center;">${faq.regdate}</div>
 		        </button>
 		      </h2>
-		      <div id="flush-collapse${faq.notice_id}" class="accordion-collapse collapse" 
-		      		aria-labelledby="flush-heading${faq.notice_id}" data-bs-parent="#accordionFlushExample">
+		      <div id="flush-collapse${faq.id}" class="accordion-collapse collapse" 
+		      		aria-labelledby="flush-heading${faq.id}" data-bs-parent="#accordionFlushExample">
 		        <div class="accordion-body">${faq.content}</div>
 		      </div>
 			</div>    
@@ -137,12 +136,13 @@
 	  <c:when test="${param.type eq '3'}"></c:when>
 	  
 	  <c:when test="${param.type eq '4'}">
-		<div style="margin-top:100px; text-align: center">
+		<div style="margin-top:70px; text-align: center">
 			<h6 style="font:bold; text-align: center">혜택안내<br><br><br></h6>
 			<img class="img-fluid" alt="benefit" src="/img/customer/membership.jpg" 
-				 style="width: 1024px;">	  
+				 style="width: 720px;">	  
 		</div>
 	  </c:when> 
   </c:choose>
-	
+  
+  </div>	
 </main>

@@ -2,10 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<main class="container">
-	
-	<!-- 공통 이미지 부분  -->	
-	<br><br><br><br><br>
+<main class="container-fluid my-5 py-5">
+  <div class="container">
+			
 	<h4 style="text-align:center">EVENT</h4>
 	<br><br>
 	<form action="event">
@@ -68,11 +67,11 @@
 			    	<div class="card">			    	
 				    	<form action="detail" method="post">
 				    	  <input type="hidden" name="h" value="1"/>				
-					      <button class="btn" name="p" value="${event.event_id}">
+					      <button class="btn" name="p" value="${event.id}">
 							<figure class="effect-out">
-					      	  <img src="${event.img_mini}" class="card-img-top" alt="">
+					      	  <img src="${event.thumbnail}" class="card-img-top" alt="">
 					      	  <h2>${event.title}</h2>
-					      	  <p>${event.start_date} ~ ${event.end_date} 까지</p>
+					      	  <p>${event.startdate} ~ ${event.enddate} 까지</p>
 							</figure>
 					      </button>				      
 					    </form>			      
@@ -102,16 +101,16 @@
 				  	
 			  <c:forEach var="winner" items="${winnerList}">	
 				  <div class="accordion-item">
-				    <h2 class="accordion-header" id="flush-heading${winner.notice_id}">
+				    <h2 class="accordion-header" id="flush-heading${winner.id}">
 				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-				      			data-bs-target="#flush-collapse${winner.notice_id}" aria-expanded="false" 
-				      			aria-controls="flush-collapse${winner.notice_id}">
+				      			data-bs-target="#flush-collapse${winner.id}" aria-expanded="false" 
+				      			aria-controls="flush-collapse${winner.id}">
 			     	  	<div class="col-md-9">${winner.title}</div>
 			      	  	<div class="col-md-3" style="text-align: center;">${winner.regdate}</div>
 				      </button>
 				    </h2>
-				    <div id="flush-collapse${winner.notice_id}" class="accordion-collapse collapse" 
-				    				aria-labelledby="flush-heading${winner.notice_id}" data-bs-parent="#accordionFlushExample">
+				    <div id="flush-collapse${winner.id}" class="accordion-collapse collapse" 
+				    				aria-labelledby="flush-heading${winner.id}" data-bs-parent="#accordionFlushExample">
 				      <div class="accordion-body">${winner.content}</div>
 				    </div>
 				  </div>
@@ -128,11 +127,11 @@
 			    	<div class="card">			    	
 				    	<form action="detail" method="post">
 				    	  <input type="hidden" name="h" value="3"/>				    	
-					      <button class="btn" name="p" value="${event.event_id}">				
+					      <button class="btn" name="p" value="${event.id}">				
 							<figure class="effect-out">
-					      	  <img src="${event.img_mini}" class="card-img-top" alt="">
+					      	  <img src="${event.thumbnail}" class="card-img-top" alt="">
 					      	  <h2>${event.title}</h2>
-					      	  <p>${event.end_date} 종료</p>
+					      	  <p>${event.enddate} 종료</p>
 							</figure>
 					      </button>				      
 				    	</form>			      
@@ -142,5 +141,6 @@
 			</div>					
 		 </c:when>		
 	 </c:choose>
-	
+
+  </div>	
 </main>
