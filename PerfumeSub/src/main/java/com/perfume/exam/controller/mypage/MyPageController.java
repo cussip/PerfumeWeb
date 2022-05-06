@@ -26,6 +26,7 @@ import com.perfume.exam.vo.MyWishVO;
 @Controller
 public class MyPageController {
 
+	// 리뷰목록
 	@RequestMapping("myreview")
 	public String myreview(Model model,HttpServletRequest req,HttpServletResponse res) throws Exception {
 		
@@ -51,6 +52,7 @@ public class MyPageController {
 		
 	}
 	
+	/*
 	@PostMapping("deleteorder")
 	public String deleteOrderPost(MyOrderVO order) {
 		
@@ -58,7 +60,7 @@ public class MyPageController {
 		
 		return "redirect:/mypage/orderlist";
 	}
-	
+	*/
 	
 	
 	/*
@@ -75,14 +77,6 @@ public class MyPageController {
 	}
 	*/
 	
-	/*
-	@RequestMapping(value="delete", method=RequestMethod.GET)
-	public String getDeleteOrder(@RequestParam("orderId") int orderId) throws Exception {
-		
-		myOrderService.deleteOrder(orderId);
-		return "redirect:root.mypage.orderlist";
-	}
-	*/	
 	
 	// 문의
 	@RequestMapping("request")
