@@ -9,14 +9,14 @@
 	  
 	    <ul class="list-unstyled ps-0">
 	      <li class="mb-1">
-	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
 	          Board
 	        </button>
 	        <div class="collapse" id="home-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-	            <li><a href="/admin/board?type=1" class="link-dark rounded">공지사항</a></li>
-	            <li><a href="/admin/board?type=2" class="link-dark rounded">FAQ</a></li>
-	            <li><a href="/admin/board?type=3" class="link-dark rounded">혜택안내</a></li>
+	            <li><a href="/admin/board?type=공지사항" class="link-dark rounded">공지사항</a></li>
+	            <li><a href="/admin/board?type=FAQ" class="link-dark rounded">FAQ</a></li>
+	            <li><a href="/admin/board?type=혜택안내" class="link-dark rounded">혜택안내</a></li>
 	          </ul>
 	        </div>
 	      </li>
@@ -26,13 +26,13 @@
 	        </button>
 	        <div class="collapse show" id="dashboard-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-	            <li><a href="/admin/event?type=1" class="link-dark rounded">이벤트 리스트</a></li>
+	            <li><a href="/admin/event?type=이벤트 리스트" class="link-dark rounded">이벤트 리스트</a></li>
 	            <li><a href="/admin/event?type=2" class="link-dark rounded">당첨자 관리</a></li>	            
 	          </ul>
 	        </div>
 	      </li>
 	      <li class="mb-1">
-	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
 	          상품관리
 	        </button>
 	        <div class="collapse" id="orders-collapse">
@@ -65,8 +65,5 @@
 	        </div>
 	      </li>
 	    </ul>
-	    
-		    
-	    
 	  </div>
 	  <!-- 사이드 바 종료 -->
