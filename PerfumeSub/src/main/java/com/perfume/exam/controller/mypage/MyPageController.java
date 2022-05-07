@@ -1,3 +1,4 @@
+/*
 package com.perfume.exam.controller.mypage;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class MyPageController {
 		
 	}
 	
-	/*
+	
 	@PostMapping("deleteorder")
 	public String deleteOrderPost(MyOrderVO order) {
 		
@@ -60,10 +61,10 @@ public class MyPageController {
 		
 		return "redirect:/mypage/orderlist";
 	}
-	*/
 	
 	
-	/*
+	
+	
 	@RequestMapping("deleteorder")
 	public String deleteOrder(@RequestParam("order_id") int orderId, Model model, HttpServletRequest req, HttpServletResponse res)
 	throws Exception {
@@ -75,7 +76,7 @@ public class MyPageController {
 		model.addAttribute("order", order);
 		return "redirect:root.mypage.orderlist";
 	}
-	*/
+	
 	
 	
 	// 문의
@@ -101,3 +102,7 @@ public class MyPageController {
 		return "root.mypage.myedit";
 	}
 }
+
+
+*/
+

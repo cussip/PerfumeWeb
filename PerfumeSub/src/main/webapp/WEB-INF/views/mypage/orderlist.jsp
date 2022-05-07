@@ -2,13 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<<<<<<< HEAD
-=======
+
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 <main style="margin: 100px 150px 100px 150px">
 <h3 style="margin:130px 0 40px 0; text-align:center">마이페이지</h3>
 <hr style="color:#555555">
@@ -36,10 +38,7 @@
 				<div class="col">수량</div>
 				<div class="col">총금액</div>
 			</div>			
-<<<<<<< HEAD
-=======
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 			<!-- 추후에 사진첨부 할것... -->
 			<div class="row" style="border-bottom:1px solid lightgrey">
 				<div class="col-2">2022.04.14</div>
@@ -55,10 +54,7 @@
 				</div>	
 			</div>
 			
-<<<<<<< HEAD
-			
-			
-=======
+
 
 			<c:forEach var="item" items="${order}">
 				<div class="row" style="border-bottom:1px solid lightgrey">
@@ -71,19 +67,33 @@
 						<div class="col-4">
 						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="">리뷰쓰기</button>
 						
-						<a href="/mypage/delete?orderId=${item.orderId }">삭제</a>
+						<button class="delete_order" data-orderid="${item.orderId}">반품신청(삭제)</button>
 						
 						<button type="button" class="btn btn-outline-danger btn-sm">반품신청</button>
 						</div>
 					</div>	
 				</div>
 			</c:forEach>
-
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 		</div>
 	</div>		
+		
+	<!-- 목록 삭제 form -->
+	<form action="/deleteorder" method="post" class="orderlist_delete_form">
+		<input type="hidden" name="orderId" class="delete_orderId">
+	</form>
 			
 </div>
+
+<script>
+/* 목록삭제 */
+$(".delete_order").on("click", function(e){
+	e.preventDefault();
+	const orderId = $(this).data("orderid")
+	$(".delete_orderId").val(orderId);
+	$(".orderlist_delete_form").submit();
+});
+
+</script>
 
 
 </main>
