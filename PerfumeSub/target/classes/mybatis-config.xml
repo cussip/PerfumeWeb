@@ -14,6 +14,7 @@
           <typeAlias alias="eventVO" type="com.perfume.exam.vo.EventVO"/>
           <typeAlias alias="myOrderVO" type="com.perfume.exam.vo.MyOrderVO"/>
           <typeAlias alias="myWishVO" type="com.perfume.exam.vo.MyWishVO"/>
+          <typeAlias alias="myReviewVO" type="com.perfume.exam.vo.MyReviewVO"/>
 
 	 </typeAliases>
    

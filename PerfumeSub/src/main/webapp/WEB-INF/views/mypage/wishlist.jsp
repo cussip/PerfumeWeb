@@ -19,11 +19,11 @@
 		<!-- 좌측 마이페이지 사이드메뉴 -->
 		<div class="col-4" style="padding: 0 100px 0 20px">
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
-   			<li class="list-group-item" ><a href="./orderlist" id="mymenu">주문내역</a></li>
-  			<li class="list-group-item" ><a href="./wishlist" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="./myreview" id="mymenu">나의리뷰</a></li>
-  			<li class="list-group-item" ><a href="./request" id="mymenu">나의문의</a></li>
-  			<li class="list-group-item" ><a href="./myedit" id="mymenu">정보수정</a></li>
+   			<li class="list-group-item" ><a href="/myorder" id="mymenu">주문내역</a></li>
+  			<li class="list-group-item" ><a href="/mywish" id="mymenu">관심상품</a></li>
+  			<li class="list-group-item" ><a href="#" id="mymenu">나의리뷰</a></li>
+  			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
+  			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
 		</ul>
 		</div>
 		<!-- 좌측 마이페이지 사이드메뉴 (End) -->	
@@ -32,20 +32,16 @@
 	
 	<div class="container">
 		<div class="col" id="mywish" style="margin: 0 0 40px 0; color:#555555; font-weight:600">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
-<<<<<<< HEAD
-=======
+
 
 				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt02_1000px_shop1_162253.jpg" class="img-thumbnail" height="60" width="60">
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
+
 				<img src="#" class="img-thumbnail">
 				</div>
 				<!-- 날짜 -->
@@ -100,10 +96,7 @@
 				<!-- 상품이미지 -->
 				<div class="col">
 				<img src="#" class="img-thumbnail">
-<<<<<<< HEAD
-=======
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -124,28 +117,27 @@
 		<br><hr>		
 		</div>
 		
-<<<<<<< HEAD
+
 	<br>	
-=======
+
 
 		
 
 	<br>	
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col">
-<<<<<<< HEAD
+
 				<img src="#" class="img-thumbnail">
-=======
+
 
 				<img src="https://paffem.me/web/upload/NNEditor/20210111/melt01_detail-01_shop1_161557.png" class="img-thumbnail" height="60" width="60">
 
 				<img src="#" class="img-thumbnail">
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
+
 				</div>
 				<!-- 날짜 -->
 				<div class="col">
@@ -166,8 +158,7 @@
 		<br><hr>		
 		</div>
 		
-<<<<<<< HEAD
-=======
+
 
 		<c:forEach var="item" items="${wish}">
 		<!-- 각 관심상품 리스트 -->
@@ -186,7 +177,7 @@
 				${item.price}
 				</div>
 				<div class="col">
-						<button type="button" class="btn btn-outline-secondary btn-sm">구매하기</button>
+						<button type="button" class="btn btn-outline-secondary btn-sm">장바구니</button>
 						<button type="button" class="btn btn-outline-danger btn-sm">삭제하기</button>
 				</div>
 		<br><hr>		
@@ -195,7 +186,7 @@
 		
 		
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
+
 		
 	</div>	
 </div>	
@@ -204,7 +195,4 @@
 	
 </main>	
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 7736c3326a85319351f08562c369b4180eb89da7
