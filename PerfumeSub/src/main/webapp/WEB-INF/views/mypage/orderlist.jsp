@@ -12,6 +12,21 @@
 
 
 <main style="margin: 100px 150px 100px 150px">
+
+<style>
+#mymenu {
+	color:#555555;
+	text-decoration: none;
+}
+
+.list-group-item:hover {
+	background-color: #b6b8bb;
+}
+
+
+
+</style>
+
 <h3 style="margin:130px 0 40px 0; text-align:center">마이페이지</h3>
 <hr style="color:#555555">
 
