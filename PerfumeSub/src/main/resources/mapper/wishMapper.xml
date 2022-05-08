@@ -11,5 +11,13 @@
 
 </select>
 
+<delete id="deleteWish" parameterType="int">
+	<![CDATA[
+		DELETE FROM MY_WISH WHERE WISH_ID = #{WISH_ID}
+	]]>	
+
+</delete>
+
+
 
 </mapper>

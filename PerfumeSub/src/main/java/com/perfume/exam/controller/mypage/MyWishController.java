@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.perfume.exam.service.MyWishService;
 import com.perfume.exam.vo.MyWishVO;
@@ -26,6 +27,15 @@ public class MyWishController {
 		model.addAttribute("wish", wish);
 		
 		return "root.mypage.wishlist";
+		
+	}	
+	
+	@PostMapping("/deletewish")
+	public String deleteWish(MyWishVO mwv) throws Exception {
+		
+		myWishService.deleteWish(mwv.getWish_ID());
+		
+		return "redirect:/mywish";
 		
 	}
 	

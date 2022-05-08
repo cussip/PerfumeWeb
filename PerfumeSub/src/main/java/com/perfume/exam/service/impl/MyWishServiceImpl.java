@@ -25,4 +25,10 @@ public class MyWishServiceImpl implements MyWishService {
 		
 		return myWishDAO.selectWishList();
 	}	
+	
+	@Override
+	public void deleteWish(int wishId) throws Exception{
+	
+		myWishDAO.deleteWish(wishId);	
+	}
 }

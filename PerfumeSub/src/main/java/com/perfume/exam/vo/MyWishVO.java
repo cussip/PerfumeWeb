@@ -11,9 +11,9 @@ public class MyWishVO {
 		
 	}
 					
-	public MyWishVO(int wish_id, String name, int price, String image) {
+	public MyWishVO(int wishId, String name, int price, String image) {
 		super();
-		Wish_ID = wish_id;
+		Wish_ID = wishId;
 		Name 	= name;
 		Price	= price;
 		Image	= image;
@@ -23,8 +23,8 @@ public class MyWishVO {
 		return Wish_ID;
 	}
 
-	public void setWish_ID(int wish_id) {
-		Wish_ID = wish_id;
+	public void setWish_ID(int wishId) {
+		Wish_ID = wishId;
 	}
 
 	public String getName() {

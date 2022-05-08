@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
     
 <main style="margin: 100px 150px 100px 150px">
 <style>
@@ -12,7 +17,6 @@
 .list-group-item:hover {
 	background-color: #b6b8bb;
 }
-
 
 </style>
 <h3 style="margin:130px 0 40px 0; text-align:center">마이페이지</h3>
@@ -43,7 +47,7 @@
 <div class="col-8"  style="padding: 0 0 0 30px">
 	
 	<div class="container">
-		<div class="col" id="mywish" style="color:#555555; font-weight:600">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
+		<div class="col"  style="color:#555555; font-weight:600">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
 
 		
 		<br><hr>
@@ -67,7 +71,12 @@
 				</div>
 				<div class="col">
 						<button type="button" class="btn btn-outline-secondary btn-sm">장바구니</button>
+						 
+				
+						       
+						<%-- 
 						<button type="button" class="btn btn-outline-danger btn-sm">삭제하기</button>
+						--%>
 				</div>
 		<br><hr>		
 		</div>
@@ -76,9 +85,16 @@
 	
 		
 	</div>	
+
 </div>	
 
 </div>
+
+<script>
+
+ 
+</script>
+
 	
 </main>	
 
