@@ -69,6 +69,7 @@
 						
 						<button class="delete_order" data-orderid="${item.orderId}">반품신청(삭제)</button>
 						
+						<!-- 아래 버튼으로 삭제기능 구현 예정 -->
 						<button type="button" class="btn btn-outline-danger btn-sm">반품신청</button>
 						</div>
 					</div>	
@@ -85,13 +86,16 @@
 </div>
 
 <script>
-/* 목록삭제 */
+/* 목록삭제(버튼) */
 $(".delete_order").on("click", function(e){
 	e.preventDefault();
 	const orderId = $(this).data("orderid")
 	$(".delete_orderId").val(orderId);
 	$(".orderlist_delete_form").submit();
 });
+
+/* 목록삭제(버튼_부트스트랩) : 추후 구현 */
+
 
 </script>
 
