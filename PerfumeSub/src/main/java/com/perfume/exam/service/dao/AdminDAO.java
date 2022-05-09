@@ -15,7 +15,7 @@ public interface AdminDAO {
 	List<BoardVO> getFAQList() throws Exception;
 	List<BoardVO> getWinnerList() throws Exception;
 	List<EventVO> getEventList() throws Exception;
-	void boardInsert(@Param("title") String title, @Param("content") String content) throws Exception;
+	void boardInsert(@Param("title") String title, @Param("content") String content, @Param("category") String category) throws Exception;
 	void boardUpdate(@Param("id") int id, @Param("title") String title, @Param("content") String content);
 	
 }

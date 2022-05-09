@@ -49,8 +49,15 @@ public class AdminServiceImpl implements AdminService {
 		
 		String title = board.getTitle();
 		String content = board.getContent();
+		String category = "notice";
 		
-		adminDao.boardInsert(title, content);			
+		if(board.getCategory().equals("공지사항")) {
+			category = "notice";	
+		} else if(board.getCategory().equals("FAQ")) {
+			category = "faq";
+		}
+		
+		adminDao.boardInsert(title, content, category);			
 	}
 
 	@Override

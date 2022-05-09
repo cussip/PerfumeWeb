@@ -46,13 +46,13 @@
 							
 							<div class="input-group">
 							  <span class="input-group-text">내용</span>
-							  <textarea class="form-control" name="content" style="height: 700px" wrap="hard">
-							  </textarea>
+							  <textarea class="form-control" name="content" style="height: 700px" wrap="hard"></textarea>
 							</div>					
 						  </div>
 				
 				      </div>
 				      <div class="modal-footer">
+				        <input type="hidden" name="category" value="${param.type}">
 				        <button type="submit" class="btn btn-primary">저장</button>
 				        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
 				      </div>
@@ -187,6 +187,7 @@
 	    </c:choose>	
 
 	  </div>
+
 
 <script>
 	var staticEdit = document.getElementById('staticEdit')

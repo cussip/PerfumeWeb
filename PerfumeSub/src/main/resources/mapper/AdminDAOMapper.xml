@@ -29,7 +29,7 @@
 	
 	<insert id="boardInsert" parameterType="boardVO">
 		<![CDATA[
-			INSERT INTO board VALUES (board_seq.nextval, 0, #{title}, #{content}, sysdate, 'notice')
+			INSERT INTO board VALUES (board_seq.nextval, 0, #{title}, #{content}, sysdate, #{category})
 		]]>
 	</insert>
 	
