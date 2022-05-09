@@ -23,8 +23,8 @@ public class MyWishController {
 	public String myWishGET(Model model,HttpServletRequest request
 		  	,HttpServletResponse response) throws Exception {
 		
-		List<MyWishVO> wish = myWishService.selectWishList();
-		model.addAttribute("wish", wish);
+		List<MyWishVO> wishes = myWishService.selectWishList();
+		model.addAttribute("wishes", wishes);
 		
 		return "root.mypage.wishlist";
 		
@@ -33,7 +33,7 @@ public class MyWishController {
 	@PostMapping("/deletewish")
 	public String deleteWish(MyWishVO mwv) throws Exception {
 		
-		myWishService.deleteWish(mwv.getWish_ID());
+		myWishService.deleteWish(mwv.getWishId());
 		
 		return "redirect:/mywish";
 		

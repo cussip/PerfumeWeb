@@ -2,7 +2,7 @@ package com.perfume.exam.vo;
 
 public class MyWishVO {
 
-	private int Wish_ID;
+	private int WishId;
 	private String Name;
 	private int Price;
 	private String Image;
@@ -13,18 +13,18 @@ public class MyWishVO {
 					
 	public MyWishVO(int wishId, String name, int price, String image) {
 		super();
-		Wish_ID = wishId;
+		WishId = wishId;
 		Name 	= name;
 		Price	= price;
 		Image	= image;
 	}
 
-	public int getWish_ID() {
-		return Wish_ID;
+	public int getWishId() {
+		return WishId;
 	}
 
-	public void setWish_ID(int wishId) {
-		Wish_ID = wishId;
+	public void setWishId(int wishId) {
+		WishId = wishId;
 	}
 
 	public String getName() {
@@ -53,7 +53,7 @@ public class MyWishVO {
 
 	@Override
 	public String toString() {
-		return "MyWishVO [Wish_ID=" + Wish_ID + ", Name=" + Name + ", Price=" + Price + ", Image=" + Image + "]";
+		return "MyWishVO [WishId=" + WishId + ", Name=" + Name + ", Price=" + Price + ", Image=" + Image + "]";
 	}
 	
 					
