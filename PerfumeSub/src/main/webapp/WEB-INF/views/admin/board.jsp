@@ -101,10 +101,8 @@
 						      </div>
 							  
 							  <!-- 기존 글 수정 및 삭제 -->
-							  <form action="boardUpdate" method="post">
-							  	  <input type="hidden" name="id" value="${notice.id}">
-							      <div class="modal-body">
-							
+							  <form action="boardUpdate" method="post">							  	 
+							      <div class="modal-body">						
 									  <!-- 게시글 작성 부분 -->	
 									  <div class="col-md-auto">
 									    <div class="input-group mb-3">
