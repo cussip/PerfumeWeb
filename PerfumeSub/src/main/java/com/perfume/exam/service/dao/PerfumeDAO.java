@@ -9,5 +9,5 @@ public interface PerfumeDAO {
 	List<PerfumeVO> selectGoodsList() throws Exception;
 	List<PerfumeVO> selectCategoryList(String param) throws Exception;
 	List<PerfumeVO> selectName(String param) throws Exception;
-	
+	public void addProduct(PerfumeVO vo) throws Exception;
 }

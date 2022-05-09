@@ -6,27 +6,32 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import com.perfume.exam.mapper.MemberMapper;
 import com.perfume.exam.model.MemberVO;
+import com.perfume.exam.service.MemberService;
+import com.perfume.exam.service.MemberServiceImpl;
 
 
 public class CartInterceptor implements HandlerInterceptor {
-
+    
+	
+	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		
-		HttpSession session = request.getSession();
-		
-		MemberVO mvo = (MemberVO)session.getAttribute("member");
-		System.out.println("전");
-		if(mvo == null) {
-			 response.sendRedirect(request.getContextPath()+"/perfume/home");
-			 System.out.println("들어감");
-			 return false;
-		} else {
-			System.out.println("else");
-			return true;
+				
+		HttpSession session = request.getSession();				
+	    
+		if(session != null) {
+		Object member = session.getAttribute("member");
+		  if(member != null) {
+			  return true;
+		  }
 		}
+		
+		response.sendRedirect(request.getContextPath()+"/perfume/home");
+		
+		return false;
 	}
 
 }

@@ -41,8 +41,16 @@ public class PerfumeServiceImpl implements PerfumeService {
 		return perfumeDAO.selectName(param);
 	}
 
+	@Override
+	public void addProduct(PerfumeVO vo) throws Exception {
+		
+		perfumeDAO.addProduct(vo);
+		
+	}
 
 	
+
+
 
 	
 

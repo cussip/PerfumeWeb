@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.taglibs.standard.tag.common.fmt.ParseDateSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,7 +116,12 @@ public class ShopController {
 		return "root.shop.detail";
 	}
 		
+	@RequestMapping("register")
+	public String register(HttpSession session, Model model) {
+		
 
+		return "root.shop.register";
+	}
 
 
 }

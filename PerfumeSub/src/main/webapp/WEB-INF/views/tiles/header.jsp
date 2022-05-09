@@ -55,15 +55,17 @@
             </a>
           </li>          
           <li class="nav-item my-icon">
-            <a class="nav-link" aria-current="page" href="/mypage/orderlist">
+            <a class="nav-link" aria-current="page" href="/member/login">
             	<i class="header-icon bi bi-person-circle"></i>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+        
+          <li class="nav-item">          
+            <a class="nav-link" aria-current="page" href="/cart/${item.id}">            
 				<i class="header-icon bi bi-minecart"></i>
-			</a>
+			</a>		
           </li>
+        
         </ul>
       </div>
     </div>
