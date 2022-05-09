@@ -14,6 +14,19 @@ public class EventVO {
 	String thumbnail;
 	String image;	
 	
+	public EventVO(int id, Date startdate, Date enddate, String title, Date regdate, int hit, String writer,
+			String thumbnail, String image) {
+		this.id = id;
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.title = title;
+		this.regdate = regdate;
+		this.hit = hit;
+		this.writer = writer;
+		this.thumbnail = thumbnail;
+		this.image = image;
+	}
+
 	public EventVO() {
 		
 	}
