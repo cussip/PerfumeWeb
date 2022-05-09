@@ -43,7 +43,7 @@
 			</div>  		  
 		  </c:when>
 		  
-		  <c:when test="${param.type eq '2'}">
+		  <c:when test="${param.type eq '당첨자 관리'}">
 	
 			<div style="border-bottom:1px solid black">
 				<h6 style="font:bold">당첨자<br><br><br></h6>

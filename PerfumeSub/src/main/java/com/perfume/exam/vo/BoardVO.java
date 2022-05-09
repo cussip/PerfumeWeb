@@ -11,6 +11,15 @@ public class BoardVO {
 	Date regdate;
 	String category;
 	
+	public BoardVO(int id, int writer, String title, String content, Date regdate, String category) {
+		this.id = id;
+		this.writer = writer;
+		this.title = title;
+		this.content = content;
+		this.regdate = regdate;
+		this.category = category;
+	}
+
 	public BoardVO() {
 	}
 

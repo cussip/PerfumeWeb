@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.perfume.exam.service.AdminService;
@@ -19,8 +21,8 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@RequestMapping("board")
-	public String insertboard(Model model) throws Exception {
+	@GetMapping("board")
+	public String boardList(Model model) throws Exception {
 		
 		
 		List<BoardVO> noticeList = adminService.getNoticeList();
@@ -33,30 +35,35 @@ public class AdminController {
 		return "admin.board";
 	}
 	
-	@RequestMapping("event")
-	public String insertevent(Model model) throws Exception {
+	@PostMapping("board")
+	public String boardInsert(@ModelAttribute BoardVO board) throws Exception {
 		
-		
-		List<BoardVO> noticeList = adminService.getNoticeList();
-		List<BoardVO> faqList = adminService.getFAQList();
-		List<EventVO> eventList = adminService.getEventList();
-		
-		model.addAttribute("noticeList", noticeList);
-		model.addAttribute("faqList", faqList);
-		model.addAttribute("eventList", eventList);
-	
-		
-		return "admin.event";
-	}
-	
-	@RequestMapping("bwsubmit")
-		public String bwsubmit(@ModelAttribute BoardVO board) throws Exception {
-		
-		adminService.bwsubmit(board);
+		adminService.boardInsert(board);
 		
 		return "redirect:board";
 	}	
 	
+	
+	@RequestMapping("event")
+	public String eventList(Model model) throws Exception {
+		
+		List<BoardVO> winnerList = adminService.getWinnerList();
+		List<EventVO> eventList = adminService.getEventList();
+		
+		model.addAttribute("winnerList", winnerList);
+		model.addAttribute("eventList", eventList);
+			
+		return "admin.event";
+	}
+	
+	@PostMapping("boardUpdate")
+	public String boardUpdate(@ModelAttribute BoardVO board) throws Exception {
+		
+		adminService.boardUpdate(board);
+		
+		return "redirect:board";
+	}
+ 	
 }
 
 
