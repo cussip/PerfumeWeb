@@ -40,7 +40,6 @@ public class MyReviewController {
 	}
 	
 	// 나의리뷰 등록 페이지 접속
-	
 	@GetMapping("/enrollreview")
 	public String enrollReviewGET() {
 		
