@@ -36,7 +36,7 @@
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
    			<li class="list-group-item" ><a href="/myorder" id="mymenu">주문내역</a></li>
   			<li class="list-group-item" ><a href="/mywish" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">나의리뷰</a></li>
+  			<li class="list-group-item" ><a href="/myreview" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
 		</ul>
@@ -80,7 +80,8 @@
 					<div class="row">
 						<div class="col-8"></div>
 						<div class="col-4">
-						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="">리뷰쓰기</button>
+						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="" 
+						><a href="/enrollreview">리뷰쓰기</a></button>
 						
 						<button class="delete_order" data-orderid="${item.orderId}">반품신청(삭제)</button>
 						

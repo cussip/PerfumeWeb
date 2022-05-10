@@ -49,7 +49,7 @@
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
    			<li class="list-group-item" ><a href="/myorder" id="mymenu">주문내역</a></li>
   			<li class="list-group-item" ><a href="/mywish" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">나의리뷰</a></li>
+  			<li class="list-group-item" ><a href="/myreview" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
 		</ul>
@@ -65,25 +65,25 @@
 		<br><hr>
 		
 
-		<c:forEach var="item" items="${wish}">
+		<c:forEach var="wi" items="${wishes}">
 		<!-- 각 관심상품 리스트 -->
 		<div class="row">
 				<!-- 상품이미지 -->
 				<div class="col-2">
-				<img src="${item.image}" class="img-thumbnail" height="60" width="60">
+				<img src="${wi.image}" class="img-thumbnail" height="60" width="60">
 				</div>
 				
 				<!-- 상품명 -->
 				<div class="col-3">
-				<a href="#" id="goodsname">${item.name}</a>
+				<a href="#" id="goodsname">${wi.name}</a>
 				</div>
 				<!-- 가격 -->
 				<div class="col-4">
-				<fmt:formatNumber value="${item.price}"/>
+				<fmt:formatNumber value="${wi.price}"/>
 				</div>
 				<div class="col-3">
 						<button type="button" class="btn btn-outline-secondary btn-sm">장바구니</button>
-						<button type="button" class="btn btn-outline-danger btn-sm">삭제하기</button>
+						<button class="delete_wish" data-wishid="${wi.wishId}">삭제</button>
 				</div>
 				
 		</div>
@@ -96,10 +96,22 @@
 
 </div>
 
+<!-- 목록 삭제 form -->
+	<form action="/deletewish" method="post" class="wishlist_delete_form">
+		<input type="hidden" name="wishId" class="delete_wishId">
+	</form>
 
 
 <script>
-
+					
+/* 목록삭제(버튼) */
+$(".delete_wish").on("click", function(e){
+	e.preventDefault();
+	const orderId = $(this).data("wishid")
+	$(".delete_wishId").val(orderId);
+	$(".wishlist_delete_form").submit();
+});						
+				
 </script>
 
 	
