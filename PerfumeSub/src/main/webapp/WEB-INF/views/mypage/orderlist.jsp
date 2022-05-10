@@ -27,7 +27,7 @@
 
 </style>
 
-<h3 style="margin:130px 0 40px 0; text-align:center">마이페이지</h3>
+<h3 style="margin:130px 0 40px 0; text-align:center">${member.id}님의 마이페이지</h3>
 <hr style="color:#555555">
 
 <div class="row">
