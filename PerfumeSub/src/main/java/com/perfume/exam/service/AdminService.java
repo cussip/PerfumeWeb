@@ -16,5 +16,6 @@ public interface AdminService {
 	public void boardUpdate(BoardVO board) throws Exception;
 	public void boardDelete(BoardVO board) throws Exception;
 	public String getBenefit() throws Exception;
+	public void beneSubmit(String fileName) throws Exception;
 	
 }
