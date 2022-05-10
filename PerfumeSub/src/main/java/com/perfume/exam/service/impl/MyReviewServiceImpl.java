@@ -27,4 +27,12 @@ public class MyReviewServiceImpl implements MyReviewService {
 		myReviewDAO.enrollReview(myreview);
 		
 	}
+
+	/*
+	@Override
+	public MyReviewVO getProductIdName(int productId) {
+		
+		return myReviewDAO.getProductIdName(productId);
+	}
+	*/
 }

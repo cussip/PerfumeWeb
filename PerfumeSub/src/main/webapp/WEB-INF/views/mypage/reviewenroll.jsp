@@ -5,6 +5,9 @@
 
 <h1>리뷰등록 페이지입니다</h1>
 
+
+
+
 <form action="/enrollreview" method="post">
 	<div class="input_wrap">
 		<label>제품명</label>

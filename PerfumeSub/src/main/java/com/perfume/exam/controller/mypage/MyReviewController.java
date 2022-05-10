@@ -43,8 +43,11 @@ public class MyReviewController {
 	// 나의리뷰 등록 페이지 접속
 	@GetMapping("/enrollreview")
 	public String enrollReviewGET() {
-		
+		// MyReviewVO mrv = myReviewService.getProductIdName(productId);
+		// model.addAttribute("mrv", mrv);
+	
 		log.info("나의 리뷰등록 페이지 진입했습니다");
+		
 		
 		return "root.mypage.reviewenroll";
 	}

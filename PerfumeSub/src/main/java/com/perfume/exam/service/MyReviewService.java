@@ -10,4 +10,5 @@ public interface MyReviewService {
 	
 	public void enrollReview(MyReviewVO myreview);
 	
+	// public MyReviewVO getProductIdName(int productId);
 }

@@ -10,6 +10,18 @@
 	]]>
 </select>
 
+
+<!-- 리뷰할 제품아이디, 제품이름 조회 -->
+<!-- 
+<select id="getProductIdName" resultType="myReviewVO">
+	<![CDATA[
+		SELECT PRODICT_ID, NAME from MY_REVIEW
+		where PRODUCT_ID = #{productId}
+	]]>
+</select>
+ -->
+
+
 <insert id="enrollReview">
 
 	<![CDATA[

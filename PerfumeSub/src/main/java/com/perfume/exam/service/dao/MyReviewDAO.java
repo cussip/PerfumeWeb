@@ -8,5 +8,7 @@ public interface MyReviewDAO {
 	List<MyReviewVO> selectReviewList() throws Exception;
 	
 	public void enrollReview(MyReviewVO myreview);
+
+	// public MyReviewVO getProductIdName(int productId);
 	
 }
