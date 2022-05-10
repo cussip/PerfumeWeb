@@ -51,6 +51,12 @@
 			<beans:bean id="CartIntreceptor" class="com.perfume.exam.interceptor.CartInterceptor"></beans:bean>
 		</interceptor>
 		
+		<interceptor>
+			<mapping path="/myorder/**"/>
+			<beans:bean id="MyOrderIntreceptor" class="com.perfume.exam.interceptor.MyOrderInterceptor"></beans:bean>	
+		</interceptor>
+		
+
 	</interceptors>
 	
 </beans:beans>
