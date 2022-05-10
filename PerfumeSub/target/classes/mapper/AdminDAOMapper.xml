@@ -21,6 +21,12 @@
 		]]>
 	</select>
 	
+	<select id="getBenefit" resultType="string">
+		<![CDATA[
+ 			SELECT image FROM event WHERE id = 9999
+		]]>		
+	</select>
+	
 	<select id="getWinnerList" resultType="boardVO">
 		<![CDATA[
 			SELECT * FROM board WHERE category = 'event' ORDER BY id DESC
@@ -38,5 +44,13 @@
 			UPDATE board SET title = #{title}, content = #{content} WHERE id = ${id}
 		]]>
 	</update>
+	
+	<delete id="boardDelete" parameterType="boardVO">
+		<![CDATA[
+			DELETE FROM board WHERE id = ${id}
+		]]>
+	</delete>
+	
+	
  
 </mapper> 

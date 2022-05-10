@@ -27,20 +27,28 @@ public class AdminController {
 		
 		List<BoardVO> noticeList = adminService.getNoticeList();
 		List<BoardVO> faqList = adminService.getFAQList();
+		String benefit = adminService.getBenefit();
 		
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("faqList", faqList);
-	
+		model.addAttribute("benefit", benefit);
 		
 		return "admin.board";
 	}
 	
 	@PostMapping("board")
 	public String boardInsert(@ModelAttribute BoardVO board) throws Exception {
-		
+
 		adminService.boardInsert(board);
 		
-		return "redirect:board";
+		String cate = "NOTICE";
+		if(board.getCategory().equals("NOTICE")) {
+			cate = "NOTICE";
+		} else if(board.getCategory().equals("FAQ")) {
+			cate = "FAQ";
+		}
+		
+		return "redirect:board?type=" + cate;
 	}	
 	
 	
@@ -61,7 +69,35 @@ public class AdminController {
 		
 		adminService.boardUpdate(board);
 		
-		return "redirect:board";
+		String cate = "NOTICE";
+		if(board.getCategory().equals("NOTICE")) {
+			cate = "NOTICE";
+		} else if(board.getCategory().equals("FAQ")) {
+			cate = "FAQ";
+		}
+		
+		return "redirect:board?type=" + cate;
+	}
+	
+	@RequestMapping("boardDelete")
+	public String boardDelete(@ModelAttribute BoardVO board) throws Exception {
+		
+		adminService.boardDelete(board);
+		
+		String cate = "NOTICE";
+		if(board.getCategory().equals("NOTICE")) {
+			cate = "NOTICE";
+		} else if(board.getCategory().equals("FAQ")) {
+			cate = "FAQ";
+		}
+		
+		return "redirect:board?type=" + cate;		
+	}
+	
+	@PostMapping("benefitUpdate")
+	public String benefitUpdate() {
+	
+		return null;
 	}
  	
 }

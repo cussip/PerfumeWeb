@@ -11,6 +11,7 @@ public interface CustomerDAO {
 
 	List<BoardVO> getNoticeList() throws Exception;
 	List<BoardVO> getFAQList() throws Exception;
+	String getBenefit() throws Exception;
 
 }
  

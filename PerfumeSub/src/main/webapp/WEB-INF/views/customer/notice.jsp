@@ -138,7 +138,7 @@
 	  <c:when test="${param.type eq '4'}">
 		<div style="margin-top:70px; text-align: center">
 			<h6 style="font:bold; text-align: center">혜택안내<br><br><br></h6>
-			<img class="img-fluid" alt="benefit" src="/img/customer/membership.jpg" 
+			<img class="img-fluid" alt="benefit" src="${benefit}" 
 				 style="width: 720px;">	  
 		</div>
 	  </c:when> 
