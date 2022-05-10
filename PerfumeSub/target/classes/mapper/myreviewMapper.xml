@@ -10,6 +10,15 @@
 	]]>
 </select>
 
+<insert id="enrollReview">
+
+	<![CDATA[
+		INSERT INTO MY_REVIEW (NAME, MY_REVIEW_CONTENT) values (#{name}, #{myReviewContent})
+	]]>
+
+</insert>
+
+
 
 </mapper>
 

@@ -21,4 +21,10 @@ public class MyReviewServiceImpl implements MyReviewService {
 		return myReviewDAO.selectReviewList();
 	}
 	
+	@Override
+	public void enrollReview(MyReviewVO myreview) {
+		
+		myReviewDAO.enrollReview(myreview);
+		
+	}
 }

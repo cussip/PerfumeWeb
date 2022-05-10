@@ -7,4 +7,6 @@ import com.perfume.exam.vo.MyReviewVO;
 public interface MyReviewDAO {
 	List<MyReviewVO> selectReviewList() throws Exception;
 	
+	public void enrollReview(MyReviewVO myreview);
+	
 }

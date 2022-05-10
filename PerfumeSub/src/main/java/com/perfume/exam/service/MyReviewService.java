@@ -8,4 +8,6 @@ public interface MyReviewService {
 	
 	List<MyReviewVO> selectReviewList() throws Exception;
 	
+	public void enrollReview(MyReviewVO myreview);
+	
 }

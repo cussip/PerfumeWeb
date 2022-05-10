@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.perfume.exam.service.MyReviewService;
 
@@ -48,6 +49,17 @@ public class MyReviewController {
 		return "root.mypage.reviewenroll";
 	}
 	
+	// 나의리뷰 등록
+	@PostMapping("/enrollreview") 
+	public String enrollReviewPOST(MyReviewVO myreview){
+		
+		log.info("MyReviewVO : " + myreview);
+		
+		myReviewService.enrollReview(myreview);
+		
+		return "redirect:/myorder";
+		
+	}
 	
 	
 }
