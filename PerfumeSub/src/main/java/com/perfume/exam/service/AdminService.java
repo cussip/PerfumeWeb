@@ -14,5 +14,7 @@ public interface AdminService {
 	public List<BoardVO> getWinnerList() throws Exception;
 	public void boardInsert(BoardVO board) throws Exception;
 	public void boardUpdate(BoardVO board) throws Exception;
+	public void boardDelete(BoardVO board) throws Exception;
+	public String getBenefit() throws Exception;
 	
 }

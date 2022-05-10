@@ -49,8 +49,15 @@ public class AdminServiceImpl implements AdminService {
 		
 		String title = board.getTitle();
 		String content = board.getContent();
+		String category = "notice";
 		
-		adminDao.boardInsert(title, content);			
+		if(board.getCategory().equals("NOTICE")) {
+			category = "notice";	
+		} else if(board.getCategory().equals("FAQ")) {
+			category = "faq";
+		}
+		
+		adminDao.boardInsert(title, content, category);			
 	}
 
 	@Override
@@ -61,6 +68,21 @@ public class AdminServiceImpl implements AdminService {
 		String content = board.getContent();
 		
 		adminDao.boardUpdate(id, title, content);
+	}
+
+	@Override
+	public void boardDelete(BoardVO board) throws Exception {
+		
+		int id = board.getId();
+		
+		adminDao.boardDelete(id);	
+	}
+
+	@Override
+	public String getBenefit() throws Exception {
+
+		String benefit = adminDao.getBenefit();
+		return benefit;
 	}
 
 }

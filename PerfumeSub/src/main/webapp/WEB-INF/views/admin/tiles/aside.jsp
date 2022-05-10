@@ -9,30 +9,30 @@
 	  
 	    <ul class="list-unstyled ps-0">
 	      <li class="mb-1">
-	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#board-collapse" aria-expanded="false">
 	          Board
 	        </button>
-	        <div class="collapse" id="home-collapse">
+	        <div class="collapse" id="board-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-	            <li><a href="/admin/board?type=공지사항" class="link-dark rounded">공지사항</a></li>
+	            <li><a href="/admin/board?type=NOTICE" class="link-dark rounded">공지사항</a></li>
 	            <li><a href="/admin/board?type=FAQ" class="link-dark rounded">FAQ</a></li>
-	            <li><a href="/admin/board?type=혜택안내" class="link-dark rounded">혜택안내</a></li>
+	            <li><a href="/admin/board?type=BENEFIT" class="link-dark rounded">혜택안내</a></li>
 	          </ul>
 	        </div>
 	      </li>
 	      <li class="mb-1">
-	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
 	          Event
 	        </button>
-	        <div class="collapse show" id="dashboard-collapse">
+	        <div class="collapse" id="dashboard-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-	            <li><a href="/admin/event?type=이벤트 리스트" class="link-dark rounded">이벤트 리스트</a></li>
-	            <li><a href="/admin/event?type=당첨자 관리" class="link-dark rounded">당첨자 관리</a></li>	            
+	            <li><a href="/admin/event?type=EVENT" class="link-dark rounded">이벤트 리스트</a></li>
+	            <li><a href="/admin/event?type=WINNER" class="link-dark rounded">당첨자 관리</a></li>	            
 	          </ul>
 	        </div>
 	      </li>
 	      <li class="mb-1">
-	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
+	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
 	          상품관리
 	        </button>
 	        <div class="collapse" id="orders-collapse">
@@ -42,10 +42,10 @@
 	        </div>
 	      </li>
 	      <li class="mb-1">
-	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+	        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#untitle-collapse" aria-expanded="false">
 	          주문관리
 	        </button>
-	        <div class="collapse" id="orders-collapse">
+	        <div class="collapse" id="untitle-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 	            <li><a href="#" class="link-dark rounded">신규주문</a></li>
 	            <li><a href="#" class="link-dark rounded">배송중인 주문</a></li>

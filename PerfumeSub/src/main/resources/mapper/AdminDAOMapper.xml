@@ -21,6 +21,12 @@
 		]]>
 	</select>
 	
+	<select id="getBenefit" resultType="string">
+		<![CDATA[
+ 			SELECT image FROM event WHERE id = 9999
+		]]>		
+	</select>
+	
 	<select id="getWinnerList" resultType="boardVO">
 		<![CDATA[
 			SELECT * FROM board WHERE category = 'event' ORDER BY id DESC
@@ -29,7 +35,7 @@
 	
 	<insert id="boardInsert" parameterType="boardVO">
 		<![CDATA[
-			INSERT INTO board VALUES (board_seq.nextval, 0, #{title}, #{content}, sysdate, 'notice')
+			INSERT INTO board VALUES (board_seq.nextval, 0, #{title}, #{content}, sysdate, #{category})
 		]]>
 	</insert>
 	
@@ -38,5 +44,11 @@
 			UPDATE board SET title = #{title}, content = #{content} WHERE id = ${id}
 		]]>
 	</update>
- 
+	
+	<delete id="boardDelete" parameterType="boardVO">
+		<![CDATA[
+			DELETE FROM board WHERE id = ${id}
+		]]>
+	</delete>
+	
 </mapper> 
