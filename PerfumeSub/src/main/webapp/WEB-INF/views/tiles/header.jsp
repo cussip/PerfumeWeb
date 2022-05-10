@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@	taglib	prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <header>
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
@@ -57,9 +57,17 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="/cart/${member.id}">
 				<i class="header-icon bi bi-minecart"></i>
 			</a>
+            <!-- 로그인 하지 않은 상태 -->
+			<c:if test = "${member == null }">
+				<a href="/member/login">로그인</a>	
+			</c:if>
+			 <!-- 로그인한 상태 -->
+			<c:if test="${ member != null }">
+				<a href="/member/logout.do">로그아웃</a>
+			</c:if>
           </li>
         </ul>
       </div>
