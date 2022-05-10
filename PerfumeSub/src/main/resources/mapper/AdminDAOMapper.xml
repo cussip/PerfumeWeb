@@ -51,4 +51,9 @@
 		]]>
 	</delete>
 	
+	<update id="beneSubmit" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET image = #{fileName} WHERE id = 9999
+		]]>
+	</update>	
 </mapper> 

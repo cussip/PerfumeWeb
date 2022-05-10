@@ -85,4 +85,12 @@ public class AdminServiceImpl implements AdminService {
 		return benefit;
 	}
 
+	@Override
+	public void beneSubmit(String fileName) throws Exception {
+		
+		String path = "/img/customer/" + fileName;
+		
+		adminDao.beneSubmit(path);
+	}
+
 }
