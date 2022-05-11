@@ -28,5 +28,12 @@ public class CustomerServiceImpl implements CustomerService {
 		List<BoardVO> faqList = customerDao.getFAQList();
 		return faqList;		
 	}
+
+	@Override
+	public String getBenefit() throws Exception {
+
+		String benefit = customerDao.getBenefit();
+		return benefit;
+	}
 	
 }

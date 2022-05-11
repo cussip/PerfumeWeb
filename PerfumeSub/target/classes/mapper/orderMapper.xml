@@ -14,7 +14,9 @@
 	, 	NAME AS name
 	, 	PRODUCT_COUNT AS productCount 
 	, 	TOTAL_PRICE AS totalPrice
+	,	ID			AS	id
 	FROM MY_ORDER
+	where ID = #{id}
 	]]>
 
 </select>

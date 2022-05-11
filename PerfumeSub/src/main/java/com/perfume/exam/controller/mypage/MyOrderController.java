@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.perfume.exam.service.MyOrderService;
@@ -19,11 +20,11 @@ public class MyOrderController {
 	@Autowired 
 	private MyOrderService myOrderService;
 	
-	@GetMapping("/myorder")
-	public String myOrderGET(Model model,HttpServletRequest request
+	@GetMapping("/myorder/{id}")
+	public String myOrderGET(@PathVariable("id") String id, Model model,HttpServletRequest request
 			  	,HttpServletResponse response) throws Exception {
 		
-		List<MyOrderVO> order = myOrderService.selectOrderList();
+		List<MyOrderVO> order = myOrderService.selectOrderList(id);
 		
 		model.addAttribute("order", order);
 		

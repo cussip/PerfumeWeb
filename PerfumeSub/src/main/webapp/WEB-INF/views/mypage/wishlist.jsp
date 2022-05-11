@@ -49,7 +49,7 @@
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
    			<li class="list-group-item" ><a href="/myorder" id="mymenu">주문내역</a></li>
   			<li class="list-group-item" ><a href="/mywish" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">나의리뷰</a></li>
+  			<li class="list-group-item" ><a href="/myreview" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
 		</ul>
@@ -96,11 +96,21 @@
 
 </div>
 
+<!-- 목록 삭제 form -->
+	<form action="/deletewish" method="post" class="wishlist_delete_form">
+		<input type="hidden" name="wishId" class="delete_wishId">
+	</form>
 
 
 <script>
 					
-						
+/* 목록삭제(버튼) */
+$(".delete_wish").on("click", function(e){
+	e.preventDefault();
+	const orderId = $(this).data("wishid")
+	$(".delete_wishId").val(orderId);
+	$(".wishlist_delete_form").submit();
+});						
 				
 </script>
 

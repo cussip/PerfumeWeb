@@ -21,9 +21,9 @@ public class MyOrderServiceImpl implements MyOrderService {
 	
 	@Override
 	@Transactional
-	public List<MyOrderVO> selectOrderList() throws Exception {
+	public List<MyOrderVO> selectOrderList(String id) throws Exception {
 		
-		return myOrderDAO.selectOrderList();
+		return myOrderDAO.selectOrderList(id);
 	}
 	
 	

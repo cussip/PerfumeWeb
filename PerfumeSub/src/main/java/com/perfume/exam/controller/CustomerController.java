@@ -22,9 +22,11 @@ public class CustomerController {
 		
 		List<BoardVO> noticeList = customerService.getNoticeList();
 		List<BoardVO> faqList = customerService.getFAQList();
+		String benefit = customerService.getBenefit();
 		
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("faqList", faqList);
+		model.addAttribute("benefit", benefit);
 		
 		return "root.customer.notice";
 	}	

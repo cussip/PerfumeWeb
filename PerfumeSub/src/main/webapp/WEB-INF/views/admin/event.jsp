@@ -6,7 +6,7 @@
 	  <div class="container col-md-8">
 	  
 		<c:choose>
-		  <c:when test="${param.type eq '이벤트 리스트' || param.type eq null}">
+		  <c:when test="${param.type eq 'EVENT' || param.type eq null}">
 			<div style="border-bottom:1px solid black">
 				<h6 style="font:bold">${param.type}<br><br><br></h6>
 			</div>	
@@ -43,10 +43,10 @@
 			</div>  		  
 		  </c:when>
 		  
-		  <c:when test="${param.type eq '당첨자 관리'}">
+		  <c:when test="${param.type eq 'WINNER'}">
 	
 			<div style="border-bottom:1px solid black">
-				<h6 style="font:bold">당첨자<br><br><br></h6>
+				<h6 style="font:bold">${param.type}<br><br><br></h6>
 			</div>	
 				
 			<div class="accordion accordion-flush" id="accordionFlushExample" style="font-size: 12px; text-align: center">		

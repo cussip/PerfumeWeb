@@ -5,13 +5,13 @@
 	
 	<select id="getEndList" resultType="eventVO">
 		<![CDATA[
-			SELECT * FROM event WHERE to_char(enddate) < to_char(sysdate)	
+			SELECT * FROM event WHERE to_char(enddate) < to_char(sysdate) AND id != 9999	
 		]]>
 	</select>
  
 	<select id="getIngList" resultType="eventVO">
 		<![CDATA[
- 			SELECT * FROM event WHERE to_char(enddate) >= to_char(sysdate)
+ 			SELECT * FROM event WHERE to_char(enddate) >= to_char(sysdate) AND id != 9999
 		]]>	
 	</select>
 	
@@ -23,7 +23,7 @@
 	
 	<select id="getEvent" resultType="eventVO">
 		<![CDATA[
-			SELECT * FROM event WHERE id = #{page}
+			SELECT * FROM event WHERE id = #{page} AND id != 9999
 		]]>		
 	</select>
  

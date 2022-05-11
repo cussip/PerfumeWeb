@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.perfume.exam.model.CartDTO;
@@ -32,13 +34,18 @@ public class CartController {
 		if(mvo == null) {
 			return "5";
 		}
-		
+	
 		// 카트 등록
 		int result = cartService.addCart(cart);
 		
 		return result + "";
 	}
-	
+	 //장바구니 페이지이동
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public void cartGET() {
+		
+		
+	}
 	@GetMapping("/cart/{id}")
 	public String cartPageGET(@PathVariable("id") String id, Model model) {
 		

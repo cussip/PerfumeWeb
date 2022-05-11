@@ -9,18 +9,21 @@ public class MyOrderVO {
 	private String Name;
 	private int ProductCount;
 	private int TotalPrice;
+	private String Id;
 	
 	public MyOrderVO() {
 		
 	}
 	
-	public MyOrderVO(int orderId, Date orderDate, String name, int productCount, int totalPrice) {
+	public MyOrderVO(int orderId, Date orderDate, String name, int productCount, int totalPrice
+			, String id) {
 		super();
 		OrderId 	 	= orderId;
 		OrderDate   	= orderDate;	
 		Name		 	= name;	 
 		ProductCount	= productCount; 	
 		TotalPrice 		= totalPrice; 
+		Id				= id;
 	}
 
 	public int getOrderId() {
@@ -63,14 +66,20 @@ public class MyOrderVO {
 		TotalPrice = totalPrice;
 	}
 
+	public String getId() {
+		return Id;
+	}
+
+	public void setId(String id) {
+		Id = id;
+	}
+
 	@Override
 	public String toString() {
 		return "MyOrderVO [OrderId=" + OrderId + ", OrderDate=" + OrderDate + ", Name=" + Name + ", ProductCount="
-				+ ProductCount + ", TotalPrice=" + TotalPrice + "]";
+				+ ProductCount + ", TotalPrice=" + TotalPrice + ", Id=" + Id + "]";
 	}
 
-	
-	
 
 	
 }
