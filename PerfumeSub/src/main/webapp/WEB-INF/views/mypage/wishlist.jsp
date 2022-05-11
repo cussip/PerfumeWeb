@@ -97,8 +97,9 @@
 </div>
 
 <!-- 목록 삭제 form -->
-	<form action="/deletewish" method="post" class="wishlist_delete_form">
+	<form action="/mywish/deletewish" method="post" class="wishlist_delete_form">
 		<input type="hidden" name="wishId" class="delete_wishId">
+		<input type="hidden" name="id" value="${member.id}">
 	</form>
 
 
@@ -107,8 +108,8 @@
 /* 목록삭제(버튼) */
 $(".delete_wish").on("click", function(e){
 	e.preventDefault();
-	const orderId = $(this).data("wishid")
-	$(".delete_wishId").val(orderId);
+	const wishId = $(this).data("wishid")
+	$(".delete_wishId").val(wishId);
 	$(".wishlist_delete_form").submit();
 });						
 				
