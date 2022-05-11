@@ -98,8 +98,6 @@ $(document).ready(function(){
 	});
 });
 
-
-
 </script>
 </head>
 <body>
@@ -108,9 +106,10 @@ $(document).ready(function(){
 
 	<!--  http://drive.google.com/uc?export=view&id=1-3p5BqrlNWPxZ6K2Ztu2ftxLOppfkTXF-->
 
-
+<div style="background-color: white;">
 
 	<div class="container">
+	
 		<div class="row">
 
 			<div class="col-sm-6">
@@ -318,6 +317,8 @@ $(document).ready(function(){
 
      <div class="container" style="padding-bottom: 100px;">
      <div class="border-bottom"></div>
+     </div>
+     
      </div>
 
 

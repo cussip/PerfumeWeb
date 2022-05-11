@@ -77,10 +77,12 @@
 a{
  text-decoration: none;
 }
+
 </style>
 </head>
 <body>
 	<!--  body -->
+	<div style="background-color: white;">
 	
 	<div class="box">
 		<video muted autoplay loop>
@@ -89,17 +91,19 @@ a{
 				type="video/mp4">
 		</video>
 	</div>
-	
-	<div id="text-on-img" class="d-grid gap-2 d-lg-flex justify-content-sm-center">
+	<div id="text-on-img" style="display: flex; justify-content: center;">
+	<div  class="d-grid gap-2 d-lg-flex justify-content-sm-center">
 	<a href="#target1" class="scroll">
        <div class="box2">
           <div class="content">
              <span><br><br><br> &nbsp&nbsp&nbspFind Your Signature</span>  
           </div> 
         </div>
-       </a> 
+       </a>
+</div>       
+        
        <a href="#target2">
-        <div class="box3">
+        <div class="box3">        
           <div class="content">
              <span><br><br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Eco friendly</span>  
           </div> 
@@ -112,7 +116,7 @@ a{
           </div> 
         </div>
         </a>
-   </div>
+  </div>
     
     <div id="target1">
     <div id="target1"></div>
@@ -136,15 +140,16 @@ a{
       2.5ml의 병에 향기를 담습니다.
     </p>
       </div>
-      
+      <div style="background-color: white;">
    <div class="find" style="text-align: center; margin-top: 70px; margin-bottom: 70px;" >
     <img style=" width: 700px; height: 500px;" alt="" src="https://cdn.pixabay.com/photo/2021/07/09/15/42/eau-de-toilette-6399434_960_720.jpg">
     </div>
     <div style="text-align: center;" >
-    <p style="margin-bottom: 100px;">취향에 맞지 않는 향기가 있다면 새로운 향으로 교환해드립니다.
+    <p style="margin: 0;">취향에 맞지 않는 향기가 있다면 새로운 향으로 교환해드립니다.
     </p>
+      </div>
       </div>   
-
+ </div>
     <div class="p-3 mb-2 bg-light text-dark">
     <div id="target2"></div>
     <div>

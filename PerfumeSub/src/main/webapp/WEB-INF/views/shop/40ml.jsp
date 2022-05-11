@@ -70,11 +70,11 @@
   
   </head>
   <body>
-  
+  <div style="background-color: white;">
 
-     <h2 style="text-align: center; margin-top: 200px;  margin-bottom: 30px;">Pick Your Signature!</h2>
-    <p style="text-align: center; margin-bottom: 50px; color: gray; margin-bottom: 300px;">6가지 향을 선택하여 나만의 디스커버리 세트를 구성해보세요</p>
-    <div class="border-bottom">
+     <h2 style="text-align: center; margin-top: 200px;  margin-bottom: 30px; background-color: white;">Pick Your Signature!</h2>
+    <p style="text-align: center; margin-bottom: 50px; color: gray; margin-bottom: 300px; background-color: white;">6가지 향을 선택하여 나만의 디스커버리 세트를 구성해보세요</p>
+    <div class="border-bottom" style="background-color: white;">
     <div class="category" style="display: flex; justify-content: center; margin-bottom: 10px;">
     
       <a href="/shop/40ml?param=All"><div>All </div></a>
@@ -125,7 +125,7 @@
 	</div>
 
 </div>
-
+</div>
 
 
 

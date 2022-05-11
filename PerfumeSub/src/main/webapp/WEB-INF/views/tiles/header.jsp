@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<div class="border-bottom">
+
+=======
 <%@	taglib	prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> 6e51cc31442d52efb29696794da67eb3a0d2ceb8
 <header>
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
@@ -52,10 +59,14 @@
             </a>
           </li>          
           <li class="nav-item my-icon">
-            <a class="nav-link" aria-current="page" href="/myorder/${member.id}">
+
+
+            <a class="nav-link" aria-current="page" href="/member/login">          
+
             	<i class="header-icon bi bi-person-circle"></i>
             </a>
           </li>
+                
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/cart/${member.id}">
 				<i class="header-icon bi bi-minecart"></i>
@@ -68,7 +79,9 @@
 			<c:if test="${ member != null }">
 				<a href="/member/logout.do">로그아웃</a>
 			</c:if>
+
           </li>
+        
         </ul>
       </div>
     </div>
