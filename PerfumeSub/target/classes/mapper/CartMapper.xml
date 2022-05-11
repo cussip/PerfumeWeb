@@ -8,8 +8,17 @@
 	<!-- 카트 추가 -->
 	<insert id="addCart">
 	
-		insert into cart(cart_id, id, product_id, product_count)
-		values(seq_cart.nextval, #{id}, #{product_id}, #{product_count}) 
+		insert into product(product_id, name, price,image)
+		values(#{product_id}, #{name},
+		#{brand}, #{price},#{source1},#{source2},#{source3},#{image}) 
+	
+	</insert>
+	<insert id="newAddCart" parameterType="com.perfume.exam.model.CartDTO">
+	
+		insert into cart(cart_id,product_id,id,product_count)
+		values((select MAX(NVL2(cart_id,cart_id+1,1)) from cart),(select product_id from product where name = #{name} ),#{id},1)
+		
+		 
 	
 	</insert>
 	

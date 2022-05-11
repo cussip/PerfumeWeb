@@ -20,4 +20,6 @@ public interface CartMapper {
 	
 	/* 카트 확인 */
 	public CartDTO checkCart(CartDTO cart);
+
+	public void newAddCart(CartDTO cart);
 }

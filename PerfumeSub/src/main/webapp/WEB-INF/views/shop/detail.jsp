@@ -62,7 +62,7 @@
 </style>
 <script>
 
-$(document).ready(function(){
+
 	$(document).ready(function(){
 		var price;
 		$("#ml").change(function() {
@@ -94,9 +94,32 @@ $(document).ready(function(){
 			
 		});
 		
+		
 
 	});
-});
+	function payment() {
+
+		var params = {
+				user_id      : "${user_id}"
+              , product_id       : "${name}"
+             
+      }
+		$.ajax({
+            type : "POST",            // HTTP method type(GET, POST) 형식이다.
+            url : "detail/cart",      // 컨트롤러에서 대기중인 URL 주소이다.
+            data : params,            // Json 형식의 데이터이다.
+            success : function(res){ // 비동기통신의 성공일경우 success콜백으로 들어옵니다. 'res'는 응답받은 데이터이다.
+                // 응답코드 > 0000
+                alert("장바구니에 추가 되었습니다");
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+                alert("통신 실패.")
+            }
+        });
+		
+	}
+	
+
 
 </script>
 </head>
@@ -183,9 +206,16 @@ $(document).ready(function(){
 
 					<div style="display: flex;">
 						<div style="padding-top: 10px; width: 320px;">
-						<button type="button" class="addCart_btn" style="text-decoration: none; color: white; height:50px; width: 350px; background-color: black; font-size: 18px; font-weight: bold;">
+						
+						
+						
+						<button onclick="payment()" type="button" class="addCart_btn" style="text-decoration: none; color: white; height:50px; width: 350px; background-color: black; font-size: 18px; font-weight: bold;">
 							장바구니
 							</button>
+						
+						
+						
+							
 						</div>
 						<div style="padding-left: 40px; padding-top: 10px;">
 							<button class="hit" style="background-color: white; border: 0; outline: 0;"><i class="bi bi-heart" style="font-size: 2rem;"></i></button>
