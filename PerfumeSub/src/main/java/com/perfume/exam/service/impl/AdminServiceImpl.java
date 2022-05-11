@@ -36,12 +36,31 @@ public class AdminServiceImpl implements AdminService {
 		List<EventVO> eventList = adminDao.getEventList();
 		return eventList;
 	}
+	
+	@Override
+	public List<BoardVO> getWinnerList() throws Exception {
+
+		List<BoardVO> winnerList = adminDao.getWinnerList();
+		return winnerList;
+	}
 
 	@Override
-	public String bwsubmit(BoardVO board) throws Exception {
+	public void boardInsert(BoardVO board) throws Exception {
 		
-		return adminDao.bwsubmit(board);
+		String title = board.getTitle();
+		String content = board.getContent();
 		
+		adminDao.boardInsert(title, content);			
+	}
+
+	@Override
+	public void boardUpdate(BoardVO board) throws Exception {
+
+		int id = board.getId();
+		String title = board.getTitle();
+		String content = board.getContent();
+		
+		adminDao.boardUpdate(id, title, content);
 	}
 
 }

@@ -27,7 +27,7 @@
 	        <div class="collapse show" id="dashboard-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 	            <li><a href="/admin/event?type=이벤트 리스트" class="link-dark rounded">이벤트 리스트</a></li>
-	            <li><a href="/admin/event?type=2" class="link-dark rounded">당첨자 관리</a></li>	            
+	            <li><a href="/admin/event?type=당첨자 관리" class="link-dark rounded">당첨자 관리</a></li>	            
 	          </ul>
 	        </div>
 	      </li>

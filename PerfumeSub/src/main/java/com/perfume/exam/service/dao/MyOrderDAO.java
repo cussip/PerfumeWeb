@@ -9,5 +9,5 @@ public interface MyOrderDAO {
 	 List<MyOrderVO> selectOrderList() throws Exception;
 	
 	 // 주문내역 삭제
-	 public void deleteOrder(int order_id) throws Exception;
+	 public void deleteOrder(int orderId) throws Exception;
 }

@@ -55,7 +55,11 @@
             </a>
           </li>          
           <li class="nav-item my-icon">
+
             <a class="nav-link" aria-current="page" href="/member/login">
+
+            <a class="nav-link" aria-current="page" href="/myorder">
+
             	<i class="header-icon bi bi-person-circle"></i>
             </a>
           </li>

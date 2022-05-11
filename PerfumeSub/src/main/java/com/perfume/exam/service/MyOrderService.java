@@ -10,7 +10,7 @@ import com.perfume.exam.vo.MyOrderVO;
 public interface MyOrderService {
 	List<MyOrderVO> selectOrderList() throws Exception;
 	
-	public void deleteOrder(int order_id) throws Exception;
+	public void deleteOrder(int orderId) throws Exception;
 	 
 	 
 }

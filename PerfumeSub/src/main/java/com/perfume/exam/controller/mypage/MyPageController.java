@@ -1,3 +1,4 @@
+/*
 package com.perfume.exam.controller.mypage;
 
 import java.util.ArrayList;
@@ -11,12 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.perfume.exam.service.MyOrderService;
 import com.perfume.exam.service.MyWishService;
+import com.perfume.exam.service.dao.MyOrderDAO;
 import com.perfume.exam.vo.MyOrderVO;
 import com.perfume.exam.vo.MyWishVO;
 
@@ -24,6 +27,7 @@ import com.perfume.exam.vo.MyWishVO;
 @Controller
 public class MyPageController {
 
+	// 리뷰목록
 	@RequestMapping("myreview")
 	public String myreview(Model model,HttpServletRequest req,HttpServletResponse res) throws Exception {
 		
@@ -46,30 +50,34 @@ public class MyPageController {
 		model.addAttribute("order", order);
 		return "root.mypage.orderlist";
 		
+		
 	}
 	
-	/*
+	
+	@PostMapping("deleteorder")
+	public String deleteOrderPost(MyOrderVO order) {
+		
+		myOrderService.deleteOrder(order.getOrderId());
+		
+		return "redirect:/mypage/orderlist";
+	}
+	
+	
+	
+	
 	@RequestMapping("deleteorder")
-	public String deleteOrder(@RequestParam("order_id") int order_id, Model model, HttpServletRequest req, HttpServletResponse res)
+	public String deleteOrder(@RequestParam("order_id") int orderId, Model model, HttpServletRequest req, HttpServletResponse res)
 	throws Exception {
 		
 		List<MyOrderVO> order = new ArrayList<>();
 
-		myOrderService.deleteOrder(order_id);
+		myOrderService.deleteOrder(orderId);
 		
 		model.addAttribute("order", order);
 		return "redirect:root.mypage.orderlist";
 	}
-	*/
 	
-	/*
-	@RequestMapping(value="orderlist/delete", method=RequestMethod.GET)
-	public String getDeleteOrder(@RequestParam("order_id") int order_id) throws Exception {
-		
-		myOrderService.deleteOrderList(order_id);
-		return "redirect:/mypage/orderlist";
-	}
-	*/	
+	
 	
 	// 문의
 	@RequestMapping("request")
@@ -94,3 +102,7 @@ public class MyPageController {
 		return "root.mypage.myedit";
 	}
 }
+
+
+*/
+

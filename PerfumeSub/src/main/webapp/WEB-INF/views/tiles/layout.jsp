@@ -237,11 +237,13 @@
 <body style="background-color: #212529">
 
 	<div style="background-color: white">
+	
 	<!-- header 부분 -->
 	<tiles:insertAttribute name="header"/>
 	
 	<!-- main 부분 -->	
 	<tiles:insertAttribute name="main" ignore="true"/>
+	
 	</div>
 	
 	<!-- footer 부분 -->

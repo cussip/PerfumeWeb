@@ -19,11 +19,16 @@
 
 </select>
 
+
+ 
 <delete id="deleteOrder" parameterType="int" >
 	<![CDATA[
-		DELETE * FROM MY_ORDER where order_id = #{order_id}
+		DELETE FROM MY_ORDER where order_id = #{order_id}
 	]]>
 
 </delete>
+
 	
+	
+
 </mapper>
