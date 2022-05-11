@@ -59,25 +59,14 @@
             </a>
           </li>          
           <li class="nav-item my-icon">
-<<<<<<< HEAD
 
-            <a class="nav-link" aria-current="page" href="/member/login">
 
-            <a class="nav-link" aria-current="page" href="/myorder">
+            <a class="nav-link" aria-current="page" href="/member/login">          
 
             	<i class="header-icon bi bi-person-circle"></i>
             </a>
           </li>
-        
-          <li class="nav-item">          
-            <a class="nav-link" aria-current="page" href="/cart/${item.id}">            
-				<i class="header-icon bi bi-minecart"></i>
-			</a>		
-=======
-            <a class="nav-link" aria-current="page" href="/myorder/${member.id}">
-            	<i class="header-icon bi bi-person-circle"></i>
-            </a>
-          </li>
+                
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/cart/${member.id}">
 				<i class="header-icon bi bi-minecart"></i>
@@ -90,7 +79,7 @@
 			<c:if test="${ member != null }">
 				<a href="/member/logout.do">로그아웃</a>
 			</c:if>
->>>>>>> 6e51cc31442d52efb29696794da67eb3a0d2ceb8
+
           </li>
         
         </ul>

@@ -21,19 +21,10 @@ public class CartInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-<<<<<<< HEAD
+
 				
 		HttpSession session = request.getSession();				
-	    
-		if(session != null) {
-		Object member = session.getAttribute("member");
-		  if(member != null) {
-			  return true;
-		  }
-=======
-		
-		HttpSession session = request.getSession();
-		
+	    	
 		MemberVO mvo = (MemberVO)session.getAttribute("member");
 		System.out.println("interceptor 진입");
 		if(mvo == null) {
@@ -52,12 +43,11 @@ public class CartInterceptor implements HandlerInterceptor {
 			System.out.println("interceptor 로그인 상태");
 			
 			return true;
->>>>>>> 6e51cc31442d52efb29696794da67eb3a0d2ceb8
+
 		}
 		
-		response.sendRedirect(request.getContextPath()+"/perfume/home");
 		
-		return false;
 	}
 
 }
+
