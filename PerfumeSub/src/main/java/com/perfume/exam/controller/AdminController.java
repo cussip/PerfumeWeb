@@ -50,12 +50,14 @@ public class AdminController {
 		
 		String cate = "NOTICE";
 		if(board.getCategory().equals("NOTICE")) {
-			cate = "NOTICE";
+			cate = "board?type=NOTICE";
 		} else if(board.getCategory().equals("FAQ")) {
-			cate = "FAQ";
+			cate = "board?type=FAQ";
+		} else if(board.getCategory().equals("WINNER")) {
+			cate = "event?type=WINNER";
 		}
 		
-		return "redirect:board?type=" + cate;
+		return "redirect:" + cate;
 	}	
 	
 	@PostMapping("boardUpdate")
@@ -65,12 +67,14 @@ public class AdminController {
 		
 		String cate = "NOTICE";
 		if(board.getCategory().equals("NOTICE")) {
-			cate = "NOTICE";
+			cate = "board?type=NOTICE";
 		} else if(board.getCategory().equals("FAQ")) {
-			cate = "FAQ";
+			cate = "board?type=FAQ";
+		} else if(board.getCategory().equals("WINNER")) {
+			cate = "event?type=WINNER";
 		}
 		
-		return "redirect:board?type=" + cate;
+		return "redirect:" + cate;
 	}
 	
 	@RequestMapping("boardDelete")
@@ -80,12 +84,14 @@ public class AdminController {
 		
 		String cate = "NOTICE";
 		if(board.getCategory().equals("NOTICE")) {
-			cate = "NOTICE";
+			cate = "board?type=NOTICE";
 		} else if(board.getCategory().equals("FAQ")) {
-			cate = "FAQ";
+			cate = "board?type=FAQ";
+		} else if(board.getCategory().equals("WINNER")) {
+			cate = "event?type=WINNER";
 		}
 		
-		return "redirect:board?type=" + cate;		
+		return "redirect:" + cate;		
 	}
 	
 	@PostMapping("beneImgAdd")

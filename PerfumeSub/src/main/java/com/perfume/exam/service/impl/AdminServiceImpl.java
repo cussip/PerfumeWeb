@@ -56,6 +56,8 @@ public class AdminServiceImpl implements AdminService {
 			category = "notice";	
 		} else if(board.getCategory().equals("FAQ")) {
 			category = "faq";
+		} else if(board.getCategory().equals("WINNER")) {
+			category = "winner";
 		}
 		
 		adminDao.boardInsert(title, content, category);			

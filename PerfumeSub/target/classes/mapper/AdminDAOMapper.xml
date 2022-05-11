@@ -29,7 +29,7 @@
 	
 	<select id="getWinnerList" resultType="boardVO">
 		<![CDATA[
-			SELECT * FROM board WHERE category = 'event' ORDER BY id DESC
+			SELECT * FROM board WHERE category = 'winner' ORDER BY id DESC
 		]]>
 	</select>
 	

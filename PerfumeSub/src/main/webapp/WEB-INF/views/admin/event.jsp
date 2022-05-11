@@ -69,7 +69,6 @@
 	 	  
 		<c:choose>
 		  
-		  
 		  <c:when test="${param.type eq 'WINNER'}">	
 		    <table class="table" style="border-top:1px solid black">
 		      <thead>
@@ -103,7 +102,7 @@
 						      </div>
 							  
 							  <!-- 기존 글 수정 및 삭제 -->
-							  <form action="winnerUpdate" method="post">							  	 
+							  <form action="boardUpdate" method="post">							  	 
 							      <div class="modal-body">						
 									  <!-- 게시글 작성 부분 -->	
 									  <div class="col-md-auto">
@@ -166,25 +165,21 @@
 		var idExt = button.getAttribute('data-bs-id')
 		var titleExt = button.getAttribute('data-bs-title')
 		var contentExt = button.getAttribute('data-bs-content')
-		var startdateExt = button.getAttribute('data-bs-startdate')
-		var enddateExt = button.getAttribute('data-bs-enddate')
 		var	regdateExt = button.getAttribute('data-bs-regdate')
 		
 		var titleInj = staticEdit.querySelector('.modTitle')
 		var contentInj = staticEdit.querySelector('.modContent')
 		var idInj = staticEdit.querySelector('.modId')
-		var startdateInj = staticEdit.querySelector('.modStartdate')
-		var enddateInj = staticEdit.querySelector('.modEnddate')
 		var regdateInj = staticEdit.querySelector('.modRegdate')
 		
 		titleInj.value = titleExt
 		contentInj.value = contentExt
 		idInj.value = idExt
-		startdateInj.value = startdateExt
-		enddateInj.value = enddateExt
 		regdateInj.value = regdateExt
 	})
+	
 </script>
+
 
 
 
