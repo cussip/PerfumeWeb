@@ -19,5 +19,6 @@ public interface AdminDAO {
 	void boardUpdate(@Param("id") int id, @Param("title") String title, @Param("content") String content);
 	void boardDelete(@Param("id") int id) throws Exception;
 	String getBenefit() throws Exception;
+	void beneSubmit(@Param("fileName") String fileName) throws Exception;
 	
 }

@@ -1,6 +1,9 @@
 package com.perfume.exam.controller;
 
+import java.io.File;
 import java.util.List;
+
+import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.perfume.exam.service.AdminService;
 import com.perfume.exam.vo.BoardVO;
@@ -20,6 +24,9 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private ServletContext ctx;
 	
 	@GetMapping("board")
 	public String boardList(Model model) throws Exception {
@@ -94,12 +101,27 @@ public class AdminController {
 		return "redirect:board?type=" + cate;		
 	}
 	
-	@PostMapping("benefitUpdate")
-	public String benefitUpdate() {
-	
-		return null;
+	@PostMapping("beneImgAdd")
+	public String beneImgAdd(MultipartFile image) throws Exception {	
+
+		String fileName = image.getOriginalFilename();
+		String webPath = "resources/img/customer";
+		String realPath = ctx.getRealPath(webPath);
+		
+		File savePath = new File(realPath);
+		if(!savePath.exists()) {
+			savePath.mkdirs();
+		}
+				
+		realPath += File.separator + fileName;
+		File saveFile = new File(realPath);		
+		image.transferTo(saveFile);
+		
+		adminService.beneSubmit(fileName);
+		
+		return "redirect:board?type=BENEFIT";
 	}
- 	
+	
 }
 
 

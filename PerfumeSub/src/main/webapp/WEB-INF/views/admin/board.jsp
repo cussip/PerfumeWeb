@@ -82,20 +82,20 @@
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 					  
-					  <form action="benefitUpdate" method="post">
+					  <form action="beneImgAdd" method="post" enctype="multipart/form-data">
 					      <div class="modal-body">
 					
 							  <!-- 게시글 작성 부분 -->	
 							  <div class="col-md-auto">
 								<div class="input-group mb-3">							  
-								  <input type="file" class="form-control" name="benefit">
+								  <input type="file" class="form-control" name="image" id="image">
 								</div>		
 							  </div>
 					
 					      </div>
 					      <div class="modal-footer">
-					        <input type="hidden" name="category" value="${param.type}">
-					        <button type="submit" class="btn btn-primary">저장</button>
+					        
+					        <button type="submit" class="btn btn-primary" id="beneSubmit">저장</button>
 					        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
 					      </div>
 					  </form>
@@ -315,6 +315,7 @@
 		idInj.value = idExt
 		regdateInj.value = regdateExt
 	})
+	
 </script>
 
 
