@@ -58,19 +58,6 @@ public class AdminController {
 		return "redirect:board?type=" + cate;
 	}	
 	
-	
-	@RequestMapping("event")
-	public String eventList(Model model) throws Exception {
-		
-		List<BoardVO> winnerList = adminService.getWinnerList();
-		List<EventVO> eventList = adminService.getEventList();
-		
-		model.addAttribute("winnerList", winnerList);
-		model.addAttribute("eventList", eventList);
-			
-		return "admin.event";
-	}
-	
 	@PostMapping("boardUpdate")
 	public String boardUpdate(@ModelAttribute BoardVO board) throws Exception {
 		
@@ -122,6 +109,25 @@ public class AdminController {
 		return "redirect:board?type=BENEFIT";
 	}
 	
+	@RequestMapping("event")
+	public String eventList(Model model) throws Exception {
+		
+		List<BoardVO> winnerList = adminService.getWinnerList();
+		List<EventVO> eventList = adminService.getEventList();
+		
+		model.addAttribute("winnerList", winnerList);
+		model.addAttribute("eventList", eventList);
+			
+		return "admin.event";
+	}
+	
+	@PostMapping("eventInsert")
+	public String eventUpdate(@ModelAttribute EventVO event) throws Exception {
+		
+		adminService.eventInsert(event);
+
+		return "redirect:board?type=EVENT";		
+	}
 }
 
 

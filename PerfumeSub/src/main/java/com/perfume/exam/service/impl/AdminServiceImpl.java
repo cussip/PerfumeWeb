@@ -1,12 +1,13 @@
 package com.perfume.exam.service.impl;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.perfume.exam.service.dao.AdminDAO;
 import com.perfume.exam.service.AdminService;
+import com.perfume.exam.service.dao.AdminDAO;
 import com.perfume.exam.vo.BoardVO;
 import com.perfume.exam.vo.EventVO;
 
@@ -93,4 +94,17 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.beneSubmit(path);
 	}
 
+	@Override
+	public void eventInsert(EventVO event) throws Exception {
+		
+		int id = event.getId();
+		String title = event.getTitle();
+		String thumbnail = event.getThumbnail();
+		String image = event.getImage();
+		Date startdate = event.getStartdate();
+		Date enddate = event.getEnddate();
+		
+		adminDao.eventInsert(id, title, thumbnail, image, startdate, enddate);
+		
+	}
 }
