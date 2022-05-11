@@ -32,7 +32,7 @@
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 					  
-					  <form action="winnerInsert" method="post">
+					  <form action="board" method="post">
 					      <div class="modal-body">
 					
 							  <!-- 게시글 작성 부분 -->	
