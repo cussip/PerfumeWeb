@@ -310,6 +310,14 @@
 				    <i class="bi bi-star-fill" style="font-size: 4rem; margin-top: 20px;"> 4.6</i><br>
 				    90%의 구매자가 이 상품을 좋아합니다.<br>
 				    <button type="button" class="btn btn-lg btn btn-dark" style="margin-top: 20px;">상품 리뷰 작성하기</button>				      
+			   
+			   	<%-- 로그인 시에만 보이는 버튼 --%>
+			   	<c:if test="${member != null}">
+			   		<div class="review_button_wrap">
+			   			<button>리뷰작성하기</button> 
+			   		</div>
+			   	</c:if>	
+			   		
 			   </div>
 			  
 			  
@@ -351,6 +359,22 @@
      
      </div>
 
+<script>
+$(".review_button_wrap").on("click", function(e) {
+	
+	e.preventDefault();
+	
+	const id		= '${member.id}'; 
+	const product_id	= '${productInfo.product_id}';		
+	
+	let popUrl = "/reviewEnroll/" + id + "?product_id=" + product_id;
+	console.log(popUrl);
+	let popOption = "width = 490px, height=490px, top=300px, left=300px, scrollbars=yes";
+	window.open(popUrl,"리뷰작성하기", popOption);
+	
+});	
+	
+</script>
 
 
 

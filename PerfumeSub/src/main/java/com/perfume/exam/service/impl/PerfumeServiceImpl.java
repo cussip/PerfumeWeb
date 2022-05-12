@@ -49,7 +49,13 @@ public class PerfumeServiceImpl implements PerfumeService {
 	}
 
 	
-
+	@Override
+	// 상품 id, 이름 가져오기
+	public PerfumeVO getProductIdName(int product_id) {
+		
+			return perfumeDAO.getProductIdName(product_id);
+		
+	}
 
 
 	
