@@ -28,24 +28,9 @@
  <!-- 향수명으로 조회 -->
  <select id="selectName" resultType="perfumeVO" parameterType = "String">
    <![CDATA[
-      select * from PRODUCT where NAME like '%'||#{param}||'%'
+      select * from PRODUCT where NAME =#{param}
       ]]>
  </select>
  
- <!--  상품 추가-->
-<insert id="addProduct">
-		insert into product(product_id, name, brand, price,
-		price2, price3, source, source2,source3,image)
-		values(#{product_id}, #{name},
-		#{brand}, #{price1}, #{price2}, #{price3}, #{source1},#{source2},#{source3}, #{image})
-	</insert>
-<!-- 
-	Product_id = product_id;
-		Name = name;
-		Brand = brand;
-		Price = price;
-		Source1 = source1;
-		Source2 = source2;
-		Source3 = source3;
-		Image = image; -->
+ 
 </mapper>

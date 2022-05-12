@@ -17,4 +17,6 @@ public interface CartService {
 	
 	/* 카트 삭제 */
 	public int deleteCart(int cart_id);
+
+	public void newAddCart(CartDTO cart);
 }
