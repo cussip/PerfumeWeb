@@ -41,8 +41,22 @@ public class PerfumeServiceImpl implements PerfumeService {
 		return perfumeDAO.selectName(param);
 	}
 
+	@Override
+	public void addProduct(PerfumeVO vo) throws Exception {
+		
+		perfumeDAO.addProduct(vo);
+		
+	}
 
 	
+	@Override
+	// 상품 id, 이름 가져오기
+	public PerfumeVO getProductIdName(int product_id) {
+		
+			return perfumeDAO.getProductIdName(product_id);
+		
+	}
+
 
 	
 

@@ -56,7 +56,13 @@
 			<beans:bean id="MyOrderIntreceptor" class="com.perfume.exam.interceptor.MyOrderInterceptor"></beans:bean>	
 		</interceptor>
 		
-
+		  
+		<interceptor>
+			<mapping path="/mywish/**"/>
+			<beans:bean id="MyWishIntreceptor" class="com.perfume.exam.interceptor.MyWishInterceptor"></beans:bean>	
+		</interceptor>
+		
+	
 	</interceptors>
 	
 </beans:beans>

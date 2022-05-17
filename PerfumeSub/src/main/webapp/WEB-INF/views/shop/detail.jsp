@@ -62,7 +62,7 @@
 </style>
 <script>
 
-$(document).ready(function(){
+
 	$(document).ready(function(){
 		var price;
 		$("#ml").change(function() {
@@ -94,10 +94,31 @@ $(document).ready(function(){
 			
 		});
 		
+		
 
 	});
-});
+	function payment() {
 
+		var params = {
+				user_id      : "${user_id}"
+              , product_id       : "${name}"
+             
+      }
+		$.ajax({
+            type : "POST",            // HTTP method type(GET, POST) 형식이다.
+            url : "detail/cart",      // 컨트롤러에서 대기중인 URL 주소이다.
+            data : params,            // Json 형식의 데이터이다.
+            success : function(res){ // 비동기통신의 성공일경우 success콜백으로 들어옵니다. 'res'는 응답받은 데이터이다.
+                // 응답코드 > 0000
+                alert("장바구니에 추가 되었습니다");
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+                alert("통신 실패.")
+            }
+        });
+		
+	}
+	
 
 
 </script>
@@ -108,9 +129,10 @@ $(document).ready(function(){
 
 	<!--  http://drive.google.com/uc?export=view&id=1-3p5BqrlNWPxZ6K2Ztu2ftxLOppfkTXF-->
 
-
+<div style="background-color: white;">
 
 	<div class="container">
+	
 		<div class="row">
 
 			<div class="col-sm-6">
@@ -184,9 +206,16 @@ $(document).ready(function(){
 
 					<div style="display: flex;">
 						<div style="padding-top: 10px; width: 320px;">
-						<button type="button" class="addCart_btn" style="text-decoration: none; color: white; height:50px; width: 350px; background-color: black; font-size: 18px; font-weight: bold;">
+						
+						
+						
+						<button onclick="payment()" type="button" class="addCart_btn" style="text-decoration: none; color: white; height:50px; width: 350px; background-color: black; font-size: 18px; font-weight: bold;">
 							장바구니
 							</button>
+						
+						
+						
+							
 						</div>
 						<div style="padding-left: 40px; padding-top: 10px;">
 							<button class="hit" style="background-color: white; border: 0; outline: 0;"><i class="bi bi-heart" style="font-size: 2rem;"></i></button>
@@ -281,6 +310,14 @@ $(document).ready(function(){
 				    <i class="bi bi-star-fill" style="font-size: 4rem; margin-top: 20px;"> 4.6</i><br>
 				    90%의 구매자가 이 상품을 좋아합니다.<br>
 				    <button type="button" class="btn btn-lg btn btn-dark" style="margin-top: 20px;">상품 리뷰 작성하기</button>				      
+			   
+			   	<%-- 로그인 시에만 보이는 버튼 --%>
+			   	<c:if test="${member != null}">
+			   		<div class="review_button_wrap">
+			   			<button>리뷰작성하기</button> 
+			   		</div>
+			   	</c:if>	
+			   		
 			   </div>
 			  
 			  
@@ -319,7 +356,25 @@ $(document).ready(function(){
      <div class="container" style="padding-bottom: 100px;">
      <div class="border-bottom"></div>
      </div>
+     
+     </div>
 
+<script>
+$(".review_button_wrap").on("click", function(e) {
+	
+	e.preventDefault();
+	
+	const id		= '${member.id}'; 
+	const product_id	= '${productInfo.product_id}';		
+	
+	let popUrl = "/reviewEnroll/" + id + "?product_id=" + product_id;
+	console.log(popUrl);
+	let popOption = "width = 490px, height=490px, top=300px, left=300px, scrollbars=yes";
+	window.open(popUrl,"리뷰작성하기", popOption);
+	
+});	
+	
+</script>
 
 
 

@@ -54,4 +54,10 @@ public class CartServiceImpl implements CartService {
 		// TODO Auto-generated method stub
 		return cartMapper.deleteCart(cart_id);
 	}
+
+	@Override
+	public void newAddCart(CartDTO cart) {
+		cartMapper.newAddCart(cart);
+		
+	}
 }

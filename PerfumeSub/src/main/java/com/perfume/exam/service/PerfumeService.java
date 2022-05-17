@@ -11,4 +11,8 @@ public interface PerfumeService {
 	List<PerfumeVO> selectGoodsList() throws Exception;	
 	List<PerfumeVO> selectCategoryList(String param) throws Exception;
 	List<PerfumeVO> selectName(String param) throws Exception;	
+	public void addProduct(PerfumeVO vo) throws Exception;
+	
+	// 상품 id, 이름 가져오기
+	public PerfumeVO getProductIdName(int product_id);
 }

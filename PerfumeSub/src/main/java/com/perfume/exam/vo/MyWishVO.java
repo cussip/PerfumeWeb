@@ -6,17 +6,27 @@ public class MyWishVO {
 	private String Name;
 	private int Price;
 	private String Image;
+	private String Id;
 	
 	public MyWishVO() {
 		
 	}
 					
-	public MyWishVO(int wishId, String name, int price, String image) {
+	public MyWishVO(int wishId, String name, int price, String image, String id) {
 		super();
 		WishId = wishId;
 		Name 	= name;
 		Price	= price;
 		Image	= image;
+		Id		= id;
+	}
+
+	public String getId() {
+		return Id;
+	}
+
+	public void setId(String id) {
+		Id = id;
 	}
 
 	public int getWishId() {
@@ -53,9 +63,10 @@ public class MyWishVO {
 
 	@Override
 	public String toString() {
-		return "MyWishVO [WishId=" + WishId + ", Name=" + Name + ", Price=" + Price + ", Image=" + Image + "]";
+		return "MyWishVO [WishId=" + WishId + ", Name=" + Name + ", Price=" + Price + ", Image=" + Image + ", Id=" + Id
+				+ "]";
 	}
-	
+
 					
 }
 

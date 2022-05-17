@@ -21,9 +21,9 @@ public class MyWishServiceImpl implements MyWishService {
 	
 	@Override
 	@Transactional
-	public List<MyWishVO> selectWishList() throws Exception {
+	public List<MyWishVO> selectWishList(String id) throws Exception {
 		
-		return myWishDAO.selectWishList();
+		return myWishDAO.selectWishList(id);
 	}	
 	
 	@Override

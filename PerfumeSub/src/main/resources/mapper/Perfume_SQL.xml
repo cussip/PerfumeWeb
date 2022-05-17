@@ -28,9 +28,17 @@
  <!-- 향수명으로 조회 -->
  <select id="selectName" resultType="perfumeVO" parameterType = "String">
    <![CDATA[
-      select * from PRODUCT where NAME like '%'||#{param}||'%'
+      select * from PRODUCT where NAME =#{param}
       ]]>
  </select>
  
-
+ <!-- 리뷰를 위한 상품 id, 상품명 조회 -->
+  <select id="getProductIdName" resultType="perfumeVO" parameterType = "String">
+   <![CDATA[
+      select product_id, name from PRODUCT
+      where product_id = #{product_id}
+      ]]>
+ </select>
+ 
+ 
 </mapper>

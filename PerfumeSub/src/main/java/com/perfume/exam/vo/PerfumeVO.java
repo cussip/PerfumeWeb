@@ -29,6 +29,21 @@ public class PerfumeVO {
 		Image = image;
 	}
 	
+	public PerfumeVO(int product_id, String name, String brand, int price,int price2,int price3, String source1, String source2,
+			String source3) {
+		super();
+		Product_id = product_id;
+		Name = name;
+		Brand = brand;
+		Price = price;
+		Price2 = price2;
+		Price3 = price3;
+		Source1 = source1;
+		Source2 = source2;
+		Source3 = source3;
+		
+	}
+	
 
 	public int getPrice2() {
 		return Price2;
