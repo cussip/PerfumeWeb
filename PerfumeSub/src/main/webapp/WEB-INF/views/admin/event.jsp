@@ -402,8 +402,7 @@
 	}
 	
 	document.querySelector("#thumbnailAdd").addEventListener("change", thnChange)		
-	document.querySelector("#imageAdd").addEventListener("change", imgChange)	
-		
+	document.querySelector("#imageAdd").addEventListener("change", imgChange)			
 	
 </script>
 
