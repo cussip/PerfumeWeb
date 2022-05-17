@@ -2,6 +2,8 @@ package com.perfume.exam.vo;
 
 import java.sql.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class EventVO {
 	
 	int id;
@@ -12,10 +14,14 @@ public class EventVO {
 	int hit;
 	String writer;
 	String thumbnail;
-	String image;	
+	String image;
+	MultipartFile thnFile; 
+	MultipartFile imgFile;
 	
+	
+
 	public EventVO(int id, Date startdate, Date enddate, String title, Date regdate, int hit, String writer,
-			String thumbnail, String image) {
+			String thumbnail, String image, MultipartFile thnFile, MultipartFile imgFile) {
 		this.id = id;
 		this.startdate = startdate;
 		this.enddate = enddate;
@@ -25,11 +31,11 @@ public class EventVO {
 		this.writer = writer;
 		this.thumbnail = thumbnail;
 		this.image = image;
+		this.thnFile = thnFile;
+		this.imgFile = imgFile;
 	}
 
-	public EventVO() {
-		
-	}
+	public EventVO() {}
 
 	public int getId() {
 		return id;
@@ -102,4 +108,21 @@ public class EventVO {
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+	public MultipartFile getThnFile() {
+		return thnFile;
+	}
+
+	public void setThnFile(MultipartFile thnFile) {
+		this.thnFile = thnFile;
+	}
+
+	public MultipartFile getImgFile() {
+		return imgFile;
+	}
+
+	public void setImgFile(MultipartFile imgFile) {
+		this.imgFile = imgFile;
+	}
+
 }

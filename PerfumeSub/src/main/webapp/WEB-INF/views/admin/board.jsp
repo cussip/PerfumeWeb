@@ -82,7 +82,7 @@
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 					  
-					  <form action="beneImgAdd" method="post" enctype="multipart/form-data">
+					  <form action="beneSubmit" method="post" enctype="multipart/form-data">
 					      <div class="modal-body">
 					
 							  <!-- 게시글 작성 부분 -->	

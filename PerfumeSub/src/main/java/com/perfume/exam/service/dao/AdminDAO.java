@@ -24,7 +24,10 @@ public interface AdminDAO {
 	String getBenefit() throws Exception;
 	void beneSubmit(@Param("fileName") String fileName) throws Exception;
 	
-	void eventInsert(@Param("id") int id, @Param("title") String title, @Param("thumbnail") String thumbnail, 
-			@Param("image") String image, @Param("startdate") Date startdate, @Param("enddate") Date enddate);
+	void eventUpdate(@Param("id") int id, @Param("title") String title, @Param("thumbnail") String thumbnail, 
+			@Param("image") String image, @Param("startdate") Date startdate, @Param("enddate") Date enddate) throws Exception;
+	
+	void eventInsert(@Param("title") String title, @Param("thumbnail") String thumbnail, @Param("image") String image, 
+			@Param("startdate") Date startdate, @Param("enddate") Date enddate) throws Exception;
 	
 }

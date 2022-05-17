@@ -97,16 +97,30 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void eventInsert(EventVO event) throws Exception {
+	public void eventUpdate(EventVO event) throws Exception {
 		
 		int id = event.getId();
 		String title = event.getTitle();
-		String thumbnail = event.getThumbnail();
-		String image = event.getImage();
+		String thumbnail = "/img/event/" + event.getThumbnail();
+		String image = "/img/event/" + event.getImage();
 		Date startdate = event.getStartdate();
 		Date enddate = event.getEnddate();
 		
-		adminDao.eventInsert(id, title, thumbnail, image, startdate, enddate);
+		adminDao.eventUpdate(id, title, thumbnail, image, startdate, enddate);
 		
 	}
+
+	@Override
+	public void eventInsert(EventVO event) throws Exception {
+		
+		String title = event.getTitle();
+		String thumbnail = "/img/event/" + event.getThumbnail();
+		String image = "/img/event/" + event.getImage();
+		Date startdate = event.getStartdate();
+		Date enddate = event.getEnddate();
+		
+		adminDao.eventInsert(title, thumbnail, image, startdate, enddate);
+		
+	}
+
 }

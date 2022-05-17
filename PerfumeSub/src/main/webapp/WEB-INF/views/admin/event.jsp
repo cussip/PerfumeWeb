@@ -13,9 +13,7 @@
 		  <div class="col-md-9" align="right">
 			
 		    <!-- 모달 시작 -->			    
-		    <c:choose>	    		  	
-			
-			  		    
+		    <c:choose>	    		  	  		    
 		      <c:when test="${param.type eq 'WINNER'}">		      
 		    
 				<!-- Button trigger modal -->
@@ -60,7 +58,75 @@
 				  </div>
 				</div>
 				<!-- 모달 종료 -->
-			  </c:when>				
+			  </c:when>
+			  
+		      <c:when test="${param.type eq 'EVENT'}">		      
+		    
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticNew">
+				  New
+				</button>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="staticNew" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticNewLabel" aria-hidden="true">
+				  <div class="modal-lg modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="staticNewLabel">새 이벤트 등록</h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+					  
+					  <form action="event" method="post" enctype="multipart/form-data">							  	 
+					      <div class="modal-body">						
+							  <!-- 게시글 작성 부분 -->	
+							  <div class="col-md-auto">
+							    
+							    <div class="input-group mb-3">
+							      <span class="input-group-text">시작일</span>
+							      <input type="date" class="form-control" name="startdate">
+							      <span class="input-group-text">종료일</span>
+							      <input type="date" class="form-control" name="enddate">
+							    </div>
+							  
+								<div class="input-group mb-3">										 
+								  <span class="input-group-text">제목</span>
+								  <input type="text" class="form-control modTitle" name="title">									  
+								</div>
+								
+								<div class="form-control mb-3">
+									<div class="input-group mb-3">										 
+									  <span class="input-group-text">썸네일</span>
+									  <input type="image" id="thumbnailExt-name" src="#" style="width: 400px">
+									</div>
+									<div class="mb-3">
+									  <input type="file" class="form-control" id="thumbnailAdd" name="thnFile">											 									  								  										
+									</div>
+								</div>
+								
+								<div class="form-control">
+									<div class="input-group mb-3">										 
+									  <span class="input-group-text">이미지</span>
+									  <input type="image" id="imageExt-name" src="#" style="width: 400px">										  
+									</div>
+									<div class="mb-3">
+									  <input type="file" class="form-control" id="imageAdd" name="imgFile">
+									</div>
+								</div>								
+							  </div>
+					
+					      </div>
+					      <div class="modal-footer">
+					        <button type="submit" class="btn btn-primary">등록</button>
+					        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+					      </div>
+					  </form>
+					  
+				    </div>
+				  </div>
+				</div>
+				<!-- 모달 종료 -->
+			  </c:when>		
+			  		  				
 			</c:choose>						
 							
 		  </div>			
@@ -68,6 +134,118 @@
 
 	 	  
 		<c:choose>
+		  
+		  <c:when test="${param.type eq 'EVENT'}">	
+		    <table class="table" style="border-top:1px solid black">
+		      <thead>
+		        <tr align="center">
+		          <th scope="col">No.</th>
+		          <th scope="col">제목</th>
+		          <th scope="col">이벤트 기간</th>
+		          <th scope="col">작성일</th>
+		          <th scope="col"></th>
+		        </tr>	
+		      </thead>
+		    
+		      <tbody align="center">
+		        <c:forEach var="event" items="${eventList}">	
+		          <tr valign="middle">	
+		            <td>${event.id}</td>	         
+		            <td align="left">              	
+		              	<!-- 모달 시작 -->	
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-outling-*" data-bs-toggle="modal" data-bs-target="#eventEdit" 
+								data-bs-id="${event.id}" data-bs-title="${event.title}" data-bs-regdate="${event.regdate}"
+								data-bs-startdate="${event.startdate}" data-bs-enddate="${event.enddate}"
+								data-bs-thumbnail="${event.thumbnail}" data-bs-image="${event.image}" data-bs-kind="event">	
+						  ${event.title}
+						</button>
+					
+						<!-- Modal -->
+						<div class="modal fade" id="eventEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eventEditLabel" aria-hidden="true">
+						  <div class="modal-lg modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="eventEditLabel">이벤트 수정</h5>
+						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						      </div>
+							  
+							  <!-- 기존 글 수정 및 삭제 -->
+							  <form action="eventUpdate" method="post" enctype="multipart/form-data">							  	 
+							      <div class="modal-body">						
+									  <!-- 게시글 작성 부분 -->	
+									  <div class="col-md-auto">
+									    <div class="input-group mb-3">
+									      <span class="input-group-text">No</span>
+									      <input readonly type="text" class="form-control modId" name="id" id="idExt-name">	
+									      <span class="input-group-text">게시일</span>
+									      <input readonly type="text" class="form-control modRegdate" name="regdate" id="regdateExt-name">										      
+									    </div>
+									    
+									    <div class="input-group mb-3">
+									      <span class="input-group-text">시작일</span>
+									      <input type="date" class="form-control modStartdate" name="startdate" id="startdateExt-name">
+									      <span class="input-group-text">종료일</span>
+									      <input type="date" class="form-control modEnddate" name="enddate" id="enddateExt-name">
+									    </div>
+									  
+										<div class="input-group mb-3">										 
+										  <span class="input-group-text">제목</span>
+										  <input type="text" class="form-control modTitle" name="title" id="titleExt-name">									  
+										</div>
+										
+										<div class="form-control mb-3">
+											<div class="input-group mb-3">										 
+											  <span class="input-group-text">썸네일</span>
+											  <input type="image" class="modThumbnail" id="thumbnailExt-name" src="#" style="width: 400px">
+											</div>
+											<div class="mb-3">
+											  <input type="file" class="form-control" id="thumbnailAdd" name="thnFile">											 									  								  										
+											</div>
+										</div>
+										
+										<div class="form-control">
+											<div class="input-group mb-3">										 
+											  <span class="input-group-text">이미지</span>
+											  <input type="image" class="modImage" id="imageExt-name" src="#" style="width: 400px">										  
+											</div>
+											<div class="mb-3">
+											  <input type="file" class="form-control" id="imageAdd" name="imgFile">
+											</div>
+										</div>
+	
+										
+									  </div>
+							
+							      </div>
+							      <div class="modal-footer">
+							        <button type="submit" class="btn btn-primary">수정</button>
+							        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+							      </div>
+							  </form>
+							  
+						    </div>
+						  </div>
+						</div>
+						<!-- 모달 종료 -->	
+			
+		            </td>			          
+		            <td>${event.startdate}<br> ~ ${event.enddate}</td>    
+		            <td>${event.regdate}</td>
+		            <td>
+		            	<form action="boardDelete">
+		            		<input type="hidden" name="id" value="${event.id}">
+		            	    <input type="hidden" name="category" value="${param.type}">
+			            	<button type="submit" class="btn btn-danger btn-sm">삭제</button>
+		            	</form>
+		            </td>
+		          </tr>		        
+		        </c:forEach>  	
+		      </tbody>
+		    </table>	  	  	  
+		  </c:when>
+		  
+		  
 		  
 		  <c:when test="${param.type eq 'WINNER'}">	
 		    <table class="table" style="border-top:1px solid black">
@@ -87,17 +265,18 @@
 		            <td align="left">              	
 		              	<!-- 모달 시작 -->	
 						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-outling-*" data-bs-toggle="modal" data-bs-target="#staticEdit" 
-							data-bs-id="${winner.id}" data-bs-title="${winner.title}" data-bs-content="${winner.content}" data-bs-regdate="${winner.regdate}">
+						<button type="button" class="btn btn-outling-*" data-bs-toggle="modal" data-bs-target="#eventEdit" 
+							data-bs-id="${winner.id}" data-bs-title="${winner.title}" data-bs-content="${winner.content}" 
+							data-bs-regdate="${winner.regdate}" data-bs-kind="winner">
 						  ${winner.title}
 						</button>
 					
 						<!-- Modal -->
-						<div class="modal fade" id="staticEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticEditLabel" aria-hidden="true">
+						<div class="modal fade" id="eventEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eventEditLabel" aria-hidden="true">
 						  <div class="modal-lg modal-dialog">
 						    <div class="modal-content">
 						      <div class="modal-header">
-						        <h5 class="modal-title" id="staticEditLabel">게시글 수정</h5>
+						        <h5 class="modal-title" id="eventEditLabel">게시글 수정</h5>
 						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						      </div>
 							  
@@ -158,30 +337,75 @@
 
 
 <script>
-	var staticEdit = document.getElementById('staticEdit')
-	staticEdit.addEventListener('show.bs.modal', function (event) {
+
+	var eventEdit = document.getElementById('eventEdit')
+	eventEdit.addEventListener('show.bs.modal', function (event) {
 		var button = event.relatedTarget
 		
-		var idExt = button.getAttribute('data-bs-id')
-		var titleExt = button.getAttribute('data-bs-title')
-		var contentExt = button.getAttribute('data-bs-content')
-		var	regdateExt = button.getAttribute('data-bs-regdate')
-		
-		var titleInj = staticEdit.querySelector('.modTitle')
-		var contentInj = staticEdit.querySelector('.modContent')
-		var idInj = staticEdit.querySelector('.modId')
-		var regdateInj = staticEdit.querySelector('.modRegdate')
-		
-		titleInj.value = titleExt
-		contentInj.value = contentExt
-		idInj.value = idExt
-		regdateInj.value = regdateExt
+			var idExt = button.getAttribute('data-bs-id')
+			var titleExt = button.getAttribute('data-bs-title')
+			var	regdateExt = button.getAttribute('data-bs-regdate')
+
+			var idInj = eventEdit.querySelector('.modId')
+			var titleInj = eventEdit.querySelector('.modTitle')
+			var regdateInj = eventEdit.querySelector('.modRegdate')
+
+			idInj.value = idExt
+			titleInj.value = titleExt
+			regdateInj.value = regdateExt
+
+		if(button.getAttribute('data-bs-kind') == 'winner') {
+
+			var contentExt = button.getAttribute('data-bs-content')
+			
+			var contentInj = eventEdit.querySelector('.modContent')
+			
+			contentInj.value = contentExt	
+			
+		} else if(button.getAttribute('data-bs-kind') == 'event') {
+			
+			var	startdateExt = button.getAttribute('data-bs-startdate')
+			var	enddateExt = button.getAttribute('data-bs-enddate')
+			var thumbnailExt = button.getAttribute('data-bs-thumbnail')
+			var imageExt = button.getAttribute('data-bs-image')
+				
+			var startdateInj = eventEdit.querySelector('.modStartdate')
+			var enddateInj = eventEdit.querySelector('.modEnddate')
+			var thumbnailInj = eventEdit.querySelector('.modThumbnail')
+			var imageInj = eventEdit.querySelector('.modImage')
+					
+			startdateInj.value = startdateExt
+			enddateInj.value = enddateExt
+			thumbnailInj.src = thumbnailExt
+			imageInj.src = imageExt
+		}		
 	})
+ 	
+	const thnReader = new FileReader();		
+	thnReader.onload = function (readerEvent) {	
+	    document.querySelector("#thumbnailExt-name").setAttribute("src", readerEvent.target.result);			
+	};
+
+	const imgReader = new FileReader();		
+	imgReader.onload = function (readerEvent) {
+		document.querySelector("#imageExt-name").setAttribute("src", readerEvent.target.result);
+	};
+	
+	var thnChange = function (changeEvent) {
+	    const imgFile = changeEvent.target.files[0];
+	    thnReader.readAsDataURL(imgFile);
+	}
+
+	var imgChange = function (changeEvent) {
+	    const imgFile = changeEvent.target.files[0];
+	    imgReader.readAsDataURL(imgFile);
+	}
+	
+	document.querySelector("#thumbnailAdd").addEventListener("change", thnChange)		
+	document.querySelector("#imageAdd").addEventListener("change", imgChange)	
+		
 	
 </script>
-
-
-
 
 
 
