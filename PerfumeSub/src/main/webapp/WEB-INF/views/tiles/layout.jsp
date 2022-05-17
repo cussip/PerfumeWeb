@@ -238,16 +238,18 @@
 
 	<div style="background-color: white">
 	
-	<!-- header 부분 -->
-	<tiles:insertAttribute name="header"/>
-	
-	<!-- main 부분 -->	
-	<tiles:insertAttribute name="main" ignore="true"/>
-	
+		<!-- header 부분 -->
+		<tiles:insertAttribute name="header"/>
+		
+		<!-- main 부분 -->	
+		<tiles:insertAttribute name="main" ignore="true"/>
+		
 	</div>
 	
 	<!-- footer 부분 -->
-	<tiles:insertAttribute name="footer"/>
+	<div style="background-color: #212529">
+		<tiles:insertAttribute name="footer"/>
+	</div>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
 		  
