@@ -51,10 +51,10 @@
 		
 	</div>
 
-	
+	<!--  
 	<h2>${perfumeInfo}</h2>
 	<h2>${id}</h2>
-	
+	-->
 	 
 	<script>
 	
