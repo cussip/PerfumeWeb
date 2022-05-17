@@ -19,60 +19,58 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 <title>Hello, world!</title>
 <style>
-.box video {
-	width: 100%;
-	height: auto;
-}
-.box2 {
-  background-image: url("https://cdn.pixabay.com/photo/2014/06/24/17/38/smoke-376543_960_720.jpg");
-  background-size: 100% 100%;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 250px;  
-}
-.box3 {
-  background-image: url("https://cdn.pixabay.com/photo/2018/11/11/09/30/dark-green-plant-3808354_960_720.jpg");
-  background-size: 100% 100%;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 250px;
-}
-.box4 {
-  background-image: url("https://cdn.pixabay.com/photo/2019/10/04/18/36/milky-way-4526277_960_720.jpg");
-  background-size: 100% 100%;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 250px;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-}
-.content span {
-  color: white;
-}
-.content span:nth-child(1) {
-  font-size: 25px;
-  font-weight: bold;
-}
-.content span:nth-child(2) {
-  font-size: 20px;
-}
-#text-on-img{
-  display: flex;
-}
-a{
- text-decoration: none;
-}
-main {
-	padding:0 !important;
-	margin:0 !important;
-}
-
-
+	.box video {
+		width: 100%;
+		height: auto;
+	}
+	.box2 {
+	  background-image: url("https://cdn.pixabay.com/photo/2014/06/24/17/38/smoke-376543_960_720.jpg");
+	  background-size: 100% 100%;
+	  justify-content: center;
+	  align-items: center;
+	  width: 300px;
+	  height: 250px;  
+	}
+	.box3 {
+	  background-image: url("https://cdn.pixabay.com/photo/2018/11/11/09/30/dark-green-plant-3808354_960_720.jpg");
+	  background-size: 100% 100%;
+	  justify-content: center;
+	  align-items: center;
+	  width: 300px;
+	  height: 250px;
+	}
+	.box4 {
+	  background-image: url("https://cdn.pixabay.com/photo/2019/10/04/18/36/milky-way-4526277_960_720.jpg");
+	  background-size: 100% 100%;
+	  justify-content: center;
+	  align-items: center;
+	  width: 300px;
+	  height: 250px;
+	}
+	.content {
+	  display: flex;
+	  flex-direction: column;
+	}
+	.content span {
+	  color: white;
+	}
+	.content span:nth-child(1) {
+	  font-size: 25px;
+	  font-weight: bold;
+	}
+	.content span:nth-child(2) {
+	  font-size: 20px;
+	}
+	#text-on-img{
+	  display: flex;
+	}
+	a{
+	 text-decoration: none;
+	}
+	main {
+		padding:0 !important;
+		margin:0 !important;
+	}
 </style>
 </head>
 
