@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
-<div class="border-bottom">
-
-
-<%@	taglib	prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <header>
 
@@ -66,22 +60,27 @@
             	<i class="header-icon bi bi-person-circle"></i>
             </a>
           </li>
-                
-          <li class="nav-item">
+
+          <li class="nav-item my-icon">             
             <a class="nav-link" aria-current="page" href="/cart/${member.id}">
 				<i class="header-icon bi bi-minecart"></i>
 			</a>
+          </li>
+          
+          <li class="nav-item my-icon">
             <!-- 로그인 하지 않은 상태 -->
 			<c:if test = "${member == null }">
-				<a href="/member/login">로그인</a>	
+				<a class="nav-link" aria-current="page" href="/member/login">
+					<i class="header-icon bi bi-box-arrow-in-up"></i>
+				</a>	
 			</c:if>
 			 <!-- 로그인한 상태 -->
-			<c:if test="${ member != null }">
-				<a href="/member/logout.do">로그아웃</a>
+			<c:if test="${member != null }">
+				<a class="nav-link" aria-current="page" href="/member/logout.do">
+					<i class="header-icon bi bi-box-arrow-up"></i>
+				</a>
 			</c:if>
-
           </li>
-        
         </ul>
       </div>
     </div>
