@@ -3,6 +3,7 @@ package com.perfume.exam.service.dao;
 import java.util.List;
 
 import com.perfume.exam.vo.PerfumeVO;
+import com.perfume.exam.vo.ReviewVO;
 
 public interface PerfumeDAO {
 	List<PerfumeVO> selectPerfumeList() throws Exception;
@@ -11,8 +12,6 @@ public interface PerfumeDAO {
 	List<PerfumeVO> selectName(String param) throws Exception;
 	public void addProduct(PerfumeVO vo) throws Exception;
 	
-	// 상품 id, 이름 가져오기
-	public PerfumeVO getProductIdName(int product_id);
 	
 	
 }

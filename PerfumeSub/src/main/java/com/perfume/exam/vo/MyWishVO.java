@@ -12,9 +12,9 @@ public class MyWishVO {
 		
 	}
 					
-	public MyWishVO(int wishId, String name, int price, String image, String id) {
+	public MyWishVO(int wishid, String name, int price, String image, String id) {
 		super();
-		WishId = wishId;
+		WishId = wishid;
 		Name 	= name;
 		Price	= price;
 		Image	= image;
@@ -33,8 +33,8 @@ public class MyWishVO {
 		return WishId;
 	}
 
-	public void setWishId(int wishId) {
-		WishId = wishId;
+	public void setWishId(int wishid) {
+		WishId = wishid;
 	}
 
 	public String getName() {

@@ -4,6 +4,7 @@ import com.perfume.exam.vo.ReviewVO;
 
 public interface ReviewService {
 
-	public int enrollReview(ReviewVO rvo);		
+	// 상품리뷰 등록
+	public int enrollReview(ReviewVO rvo);
 	
 }

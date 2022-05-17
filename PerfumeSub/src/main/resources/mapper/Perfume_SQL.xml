@@ -32,13 +32,6 @@
       ]]>
  </select>
  
- <!-- 리뷰를 위한 상품 id, 상품명 조회 -->
-  <select id="getProductIdName" resultType="perfumeVO" parameterType = "String">
-   <![CDATA[
-      select product_id, name from PRODUCT
-      where product_id = #{product_id}
-      ]]>
- </select>
- 
+   
  
 </mapper>

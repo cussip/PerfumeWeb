@@ -5,14 +5,12 @@
   
 <mapper namespace="com.perfume.exam.service.dao.ReviewDAO">
 		
+	<!-- 상품리뷰 등록 -->	
 	<insert id="enrollReview">
-	
-		<![CDATA[
-			insert into REVIEW(reviewId, productId, writerId, 
-			regDate, content) values(#{reviewId}, #{productId}, #{writerId}, 
-			#{regDate}, #{content})
-		]]>
-	
+		
+		insert into review(reviewId, productId, writerId, regDate, content, rating)
+		values (seq_review.nextval, #{productId}, #{writerId}, sysdate, #{content}, #{rating})
+		
 	</insert>	
 		
 </mapper>  

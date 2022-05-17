@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.perfume.exam.service.PerfumeService;
 import com.perfume.exam.service.dao.PerfumeDAO;
 import com.perfume.exam.vo.PerfumeVO;
+import com.perfume.exam.vo.ReviewVO;
 
 @Service("perfumeService")
 public class PerfumeServiceImpl implements PerfumeService {
@@ -47,17 +48,6 @@ public class PerfumeServiceImpl implements PerfumeService {
 		perfumeDAO.addProduct(vo);
 		
 	}
-
-	
-	@Override
-	// 상품 id, 이름 가져오기
-	public PerfumeVO getProductIdName(int product_id) {
-		
-			return perfumeDAO.getProductIdName(product_id);
-		
-	}
-
-
 	
 
 }
