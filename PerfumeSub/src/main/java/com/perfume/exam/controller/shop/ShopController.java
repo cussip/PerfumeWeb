@@ -167,10 +167,12 @@ public class ShopController {
 		return "root.shop.register";
 	}
 
+	// 리뷰 작성
 	@GetMapping("/reviewEnroll/{id}")
-	public String reviewEnrollGET(@PathVariable("id") String id, 
-			Model model) throws Exception {
+	public String reviewEnrollGET(@PathVariable("id") String id, int product_id, Model model) throws Exception {
 	
+		PerfumeVO perfume = perfumeservice.getProductIdName(product_id);
+		model.addAttribute("perfumeInfo", perfume);
 		model.addAttribute("id", id);
 		
 		return "/reviewEnroll";

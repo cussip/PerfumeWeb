@@ -12,6 +12,7 @@ public interface PerfumeDAO {
 	List<PerfumeVO> selectName(String param) throws Exception;
 	public void addProduct(PerfumeVO vo) throws Exception;
 	
-	
+	// 제품번호, 이름 조회
+	public PerfumeVO getProductIdName(int product_id);
 	
 }

@@ -49,5 +49,13 @@ public class PerfumeServiceImpl implements PerfumeService {
 		
 	}
 	
+	@Override
+	public PerfumeVO getProductIdName(int product_id) {
+		
+		return perfumeDAO.getProductIdName(product_id); 
+	}
 
 }
+
+
+

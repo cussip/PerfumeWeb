@@ -371,9 +371,10 @@ $(".reply_button_wrap").on("click", function(e){
 	e.preventDefault();			
 
 	const id = '${member.id}';
+	const product_id = '${product_id}';
 	
 	
-	let popUrl = "/shop/reviewEnroll/" + id;
+	let popUrl = "/shop/reviewEnroll/" + id + "?product_id=" + product_id;
 	console.log(popUrl);
 	let popOption = "width = 490px, height=490px, top=300px, left=300px, scrollbars=yes";
 	
