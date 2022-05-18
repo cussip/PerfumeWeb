@@ -64,6 +64,11 @@
 
 
 	$(document).ready(function(){
+		var price_result;
+		$("#ml").change(function(){	
+			price_result = $(this).val(); //text값 가져오기
+			alert(price_result);
+		});
 		var price;
 		$("#ml").change(function() {
 			if ($("#ml").val() == '40ml') {
@@ -102,6 +107,8 @@
 		var params = {
 				user_id      : "${user_id}"
               , product_id       : "${name}"
+              ,price_result : price_result 
+                
              
       }
 		$.ajax({
@@ -171,10 +178,9 @@
 						
 						
 						<select name="ml" id="ml">												
-							<option id="" value="40ml">-[필수] 옵션을 선택해 주세요-</option>
-						    <option id="price" value="40ml">40ml </option>
-						    <option id="price2" value="60ml">60ml + 5,000</option>
-						    <option id="price3" value="120ml">120ml + 15,000</option>
+						    <option value="price">40ml </option>
+						    <option value="price2">60ml + 5,000</option>
+						    <option value="price3">120ml + 15,000</option>
 						</select>
 
 

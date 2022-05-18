@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <div class="border-bottom">
 
-=======
+
 <%@	taglib	prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
->>>>>>> 6e51cc31442d52efb29696794da67eb3a0d2ceb8
+
 <header>
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >

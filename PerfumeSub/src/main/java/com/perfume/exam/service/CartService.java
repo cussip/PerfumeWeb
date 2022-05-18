@@ -1,22 +1,21 @@
 package com.perfume.exam.service;
 
 import java.util.List;
+import java.util.Map;
 
-import com.perfume.exam.model.CartDTO;
+import com.perfume.exam.vo.CartVO;
 
 public interface CartService {
 	
 	/* 장바구니 추가 */
-	public int addCart(CartDTO cart);
+	public void newAddCart(CartVO cart);
 	
 	/* 장바구니 정보 리스트 */
-	public List<CartDTO> getCartList(String id);
-	
-	/* 카트 수량 수정 */
-	public int modifyCount(CartDTO cart);
-	
-	/* 카트 삭제 */
-	public int deleteCart(int cart_id);
+	public List<CartVO> getCart(String id);
 
-	public void newAddCart(CartDTO cart);
+	public void deleteCart(int cart_id);
+
+	public void cartModify(Map<String, Object> map);
+	
+
 }

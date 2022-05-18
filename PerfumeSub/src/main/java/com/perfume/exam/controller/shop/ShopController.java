@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.perfume.exam.model.CartDTO;
 import com.perfume.exam.model.MemberVO;
 import com.perfume.exam.service.CartService;
 import com.perfume.exam.service.PerfumeService;
+import com.perfume.exam.vo.CartVO;
 import com.perfume.exam.vo.PerfumeVO;
 
 @RequestMapping("/shop/")
@@ -134,27 +134,22 @@ public class ShopController {
 
 		return "root.shop.detail";
 	}
+	
 	@RequestMapping(value = "detail/cart",method = RequestMethod.POST)
     @ResponseBody
-    public String payment(@RequestParam("user_id") String user_id,@RequestParam("product_id") String product_id){
-		CartDTO cart = new CartDTO();
+    public String payment(@RequestParam("user_id") String user_id,@RequestParam("product_id") String product_id,@RequestParam("price_result")String price_result){
+		
+	  List<CartVO> list =  new ArrayList<>();
+		CartVO cart = new CartVO();
 		cart.setId(user_id);
 		cart.setName(product_id);
+		//이미지 값 아님
+		cart.setImage(price_result);
         cartservice.newAddCart(cart);
         
-        
-        
-        
+       
         return "success";
         
     }
-		
-	@RequestMapping("register")
-	public String register(HttpSession session, Model model) {
-		
-
-		return "root.shop.register";
-	}
-
 
 }
