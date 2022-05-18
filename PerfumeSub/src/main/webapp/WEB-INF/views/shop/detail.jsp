@@ -358,10 +358,35 @@
      <div class="border-bottom"></div>
      </div>
     
-
+    <!-- 리뷰 목록 -->
+    <%--
+    <div class="container" style="padding-bottom: 200px;">	
+     <div class="table_review">
+     	<table>
+     		<thead>
+     			<tr>
+     				<th class="regdate_width">작성일</th>
+     				<th class="rating_width">평점</th>
+     				<th class="product_width">상품번호</th>
+     				<th class="content_width">내용</th>
+ 				</tr>
+     		</thead>
+     		<c:forEach var="revList" items="${revList}">
+     			<tr>
+					<td><c:out value="${revlist.regDate}"></c:out></td>
+ 					<td><c:out value="${revlist.rating}"></c:out></td>
+ 					<td><c:out value="${revlist.productId}"></c:out></td>
+ 					<td><c:out value="${revlist.content}"></c:out></td>
+ 				</tr>     			
+     		</c:forEach>
+     	</table>	
      
-     
-     </div>
+     </div>		
+	</div>
+			
+				
+      --%>		
+</div>
 
 <script>
 

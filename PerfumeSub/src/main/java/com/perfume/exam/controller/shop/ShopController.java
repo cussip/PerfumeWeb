@@ -28,6 +28,7 @@ import com.perfume.exam.model.CartDTO;
 import com.perfume.exam.model.MemberVO;
 import com.perfume.exam.service.CartService;
 import com.perfume.exam.service.PerfumeService;
+import com.perfume.exam.service.ReviewService;
 import com.perfume.exam.vo.PerfumeVO;
 import com.perfume.exam.vo.ReviewVO;
 
@@ -40,6 +41,10 @@ public class ShopController {
 	
 	@Autowired
 	private CartService cartservice;
+	
+	@Autowired
+	private ReviewService reviewservice;
+	
 
 	@RequestMapping("40ml")
 	public String shop(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -141,7 +146,8 @@ public class ShopController {
 		
 		model.addAttribute("user_id",vo.getId());
 		
-		
+		// 하단 리뷰목록 
+		// model.addAttribute("revList", reviewservice.getReviewList());
 	
 		return "root.shop.detail";
 	}

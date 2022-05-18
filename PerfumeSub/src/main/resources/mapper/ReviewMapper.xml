@@ -12,6 +12,13 @@
 		values (seq_review.nextval, #{productId}, #{writerId}, sysdate, #{content}, #{rating})
 		
 	</insert>	
+	
+	<!-- 
+	<select id="getReviewList" resultType="com.perfume.exam.vo.ReviewVO">
+	
+		select * from review
 		
+	</select>
+	 -->	
 </mapper>  
   
