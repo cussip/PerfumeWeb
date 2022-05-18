@@ -75,4 +75,14 @@ public class CartController {
 		
 	}
 	
+	@GetMapping("/order/{id}")
+	public String orderPageGET(@PathVariable("id") String id, Model model) {
+		
+		
+		model.addAttribute("cartInfo", cartService.getCartList(id));
+		System.out.println("주문페이지 진입");
+		return "/order";
+	}
+	
+
 }
