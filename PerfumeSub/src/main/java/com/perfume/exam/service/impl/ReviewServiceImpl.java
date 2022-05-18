@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.perfume.exam.service.ReviewService;
 import com.perfume.exam.service.dao.ReviewDAO;
+import com.perfume.exam.vo.Criteria;
+import com.perfume.exam.vo.PageVO;
+import com.perfume.exam.vo.ReviewPageVO;
 import com.perfume.exam.vo.ReviewVO;
 
 @Service
@@ -23,12 +26,16 @@ public class ReviewServiceImpl implements ReviewService{
 		
 	}
 	
-	// 상품리뷰 목록 : detail(제품상세) 페이지에 표시
-	/*
+	// 리뷰 페이징
 	@Override
-	public List<ReviewVO> getReviewList() {
+	public ReviewPageVO reviewList(Criteria cri) {
+		ReviewPageVO vo = new ReviewPageVO(); 	
+			
+		vo.setList(reviewDAO.getReviewList(cri));
+		vo.setPageInfo(new PageVO(cri, reviewDAO.getReviewTotal(cri.getProductId())));
 		
-		return reviewDAO.getReviewList();
+		return vo;
+		
 	}
-	*/
+	
 }

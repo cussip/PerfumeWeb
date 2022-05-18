@@ -13,12 +13,29 @@
 		
 	</insert>	
 	
-	<!-- 
+	<!-- 리뷰 페이징 -->
 	<select id="getReviewList" resultType="com.perfume.exam.vo.ReviewVO">
 	
-		select * from review
-		
+  		<![CDATA[
+		select * from(  		
+			select rownum as rn, reviewId, productId, memberId, content, rating, regDate
+			from REVIEW
+			where rownum <= #{pageNum} * #{amount}  and bookId = #{bookId}	
+			order by regDate desc  	
+  			)
+  		where rn > (#{pageNum} -1) * #{amount}
+  		]]>				
+
 	</select>
-	 -->	
+
+  	<select id="getReviewTotal" resultType="int">
+  	
+  		select count(*)
+  		from REVIEW
+  		where productId = #{productId}
+  	
+  	</select>
+	
+	
 </mapper>  
   

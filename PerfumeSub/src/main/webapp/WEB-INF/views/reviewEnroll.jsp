@@ -86,7 +86,11 @@
 				type : 'POST',
 				url : '/review/enroll',
 				success : function(result){
-						window.close();
+						
+					/* 댓글 초기화 */
+					$(opener.location).attr("href", "javascript:reviewListInit();");						
+					
+					window.close();						
 				}
 		
 		});

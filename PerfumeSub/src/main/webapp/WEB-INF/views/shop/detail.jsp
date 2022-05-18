@@ -357,6 +357,52 @@
      <div class="container" style="padding-bottom: 100px;">
      <div class="border-bottom"></div>
      </div>
+     
+     <div class="review_not_div">
+     
+     </div>
+     <ul class="review_content_ul">
+     <!--  
+     	<li>
+     		<div class="comment_wrap">
+     			<div class="review_top">
+    				<span class="id_span">admin</span>
+    				<span class="date_span">2022-01-01</span>
+    				<span class="rating_span">평점 : <span class="rating_value_span">3.5</span>점</span>
+    				<a class="update_review_btn">수정</a><a class="update_review_btn">삭제</a>	
+     			</div>
+     			<div class="review_bottom">
+     				<div class="review_bottom_txt">
+     					내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+     				</div>
+     			</div>
+     		</div>
+     	</li>
+     -->
+     </ul>   
+      
+     <div class="review_pageInfo_div">
+ 		<ul class="pageMaker">
+ 	<!--	
+			<li class="pageMaker_btn prev">
+				<a>이전</a>
+			</li>
+			<li class="pageMaker_btn">
+				<a>1</a>
+			</li>
+			<li class="pageMaker_btn">
+				<a>2</a>
+			</li>
+			<li class="pageMaker_btn active">
+				<a>3</a>
+			</li>													
+			<li class="pageMaker_btn next">
+				<a>다음</a>
+			</li>
+	-->
+		</ul>    
+     </div>
+       
     
     <!-- 리뷰 목록 -->
     <%--
@@ -434,6 +480,112 @@ $(".hit").on("click", function(e){
 		}
 	})
 });
+
+/* 리뷰 리스트 출력 */
+const product_id = '${product_id}';
+
+$.getJSON("/review/list", {product_id : product_id}, function(obj){
+	
+	makeReviewContent(obj);
+	
+});
+	
+	/* 댓글(리뷰) 동적 생성 메서드 */
+	function makeReviewContent(obj){
+
+		if(obj.list.length === 0){
+			$(".review_not_div").html('<span>리뷰가 없습니다.</span>');
+			$(".review_content_ul").html('');
+			$(".pageMaker").html('');
+		} else{
+			
+			$(".review_not_div").html('');
+			
+			const list = obj.list;
+			const pf = obj.pageInfo;
+			const userId = '${member.id}';		
+			
+			/* list */
+			
+			let review_list = '';			
+			
+			$(list).each(function(i,obj){
+				review_list += '<li>';
+				review_list += '<div class="comment_wrap">';
+				review_list += '<div class="review_top">';
+				/* 아이디 */
+				review_list += '<span class="id_span">'+ obj.id+'</span>';
+				/* 날짜 */
+				review_list += '<span class="date_span">'+ obj.regDate +'</span>';
+				/* 평점 */
+				review_list += '<span class="rating_span">평점 : <span class="rating_value_span">'+ obj.rating +'</span>점</span>';
+				if(obj.id === userId){
+					review_list += '<a class="update_review_btn" href="'+ obj.reviewId +'">수정</a><a class="delete_review_btn" href="'+ obj.reviewId +'">삭제</a>';
+				}
+				review_list += '</div>'; //<div class="review_top">
+				review_list += '<div class="review_bottom">';
+				review_list += '<div class="review_bottom_txt">'+ obj.content +'</div>';
+				review_list += '</div>';//<div class="review_bottom">
+				review_list += '</div>';//<div class="comment_wrap">
+				review_list += '</li>';
+			});		
+			
+			$(".review_content_ul").html(review_list);			
+			
+			/* 페이지 버튼 */
+			
+			let review_pageMaker = '';	
+			
+				/* prev */
+				if(pf.prev){
+					let prev_num = pf.pageStart -1;
+					review_pageMaker += '<li class="pageMaker_btn prev">';
+					review_pageMaker += '<a href="'+ prev_num +'">이전</a>';
+					review_pageMaker += '</li>';	
+				}
+				/* numbre btn */
+				for(let i = pf.pageStart; i < pf.pageEnd+1; i++){
+					review_pageMaker += '<li class="pageMaker_btn"> ';
+					if(pf.cri.pageNum === i){
+						review_pageMaker += 'active';
+					}
+					review_pageMaker += '">';
+					review_pageMaker += '<a href="'+i+'">'+i+'</a>';
+					review_pageMaker += '</li>';
+				}
+				/* next */
+				if(pf.next){
+					let next_num = pf.pageEnd +1;
+					review_pageMaker += '<li class="pageMaker_btn next">';
+					review_pageMaker += '<a href="'+ next_num +'">다음</a>';
+					review_pageMaker += '</li>';	
+				}	
+				
+			$(".pageMaker").html(review_pageMaker);				
+			
+		}		
+		
+	}	
+	// END - function makeReviewContent(obj) 	
+
+	/* 리뷰 페이지 정보 */
+ 
+	const cri = {
+			product_id = '${product_id}',	
+			pageNum : 1,
+			amount : 10
+				
+	}
+
+	/* 댓글 데이터 서버 요청 및 댓글 동적 생성 메서드 */
+	let reviewListInit = function(){
+			$.getJSON("/review/list/", cri, function(obj){
+				
+				makeReviewContent(obj);
+				
+			});	
+	
+	}
 
 
 </script>
