@@ -37,7 +37,7 @@ public class MyOrderController {
 		
 		myOrderService.deleteOrder(mov.getOrderId());
 		
-		return "redirect:/myorder"; 
+		return "redirect:/myorder/" + mov.getId(); 
 	}
 	
 	

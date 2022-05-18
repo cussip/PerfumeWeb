@@ -174,7 +174,7 @@ $(document).ready(function() {
 	</tr>
 	
 </table>
-<p><button type="button" class="btn btn-primary btn-block">주문하기</button></p>
+<p><a href="${pageContext.request.contextPath}/order/${member.id}"><button type="button" class="btn btn-primary btn-block">주문하기</button></a></p>
 
 	<!-- 수량 조정 form -->
 	<form action="/cart/update" method="post" class="quantity_update_form">

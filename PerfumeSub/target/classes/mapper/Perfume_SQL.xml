@@ -32,5 +32,15 @@
       ]]>
  </select>
  
+ <!-- 리뷰를 위한 향수명, 제품번호 조회 -->  
+ <select id="getProductIdName" resultType="perfumeVO">
+   <![CDATA[
+      select product_id, name from product
+      where  product_id = #{product_id}
+      ]]>
+ </select> 
+ 
+ 
+ 
  
 </mapper>

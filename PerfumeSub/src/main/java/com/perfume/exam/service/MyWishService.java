@@ -6,8 +6,9 @@ import java.util.List;
 import com.perfume.exam.vo.MyWishVO;
 
 public interface MyWishService {
-	List<MyWishVO> selectWishList() throws Exception;
+	List<MyWishVO> selectWishList(String id) throws Exception;
 	
-	public void deleteWish(int wishId) throws Exception;
+	public void deleteWish(int wishid) throws Exception;
 	
+	public int addWish(MyWishVO wish) throws Exception;
 }

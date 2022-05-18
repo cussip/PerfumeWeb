@@ -17,7 +17,7 @@
 	
 	<select id="getEventList" resultType="eventVO">
 		<![CDATA[
-			SELECT * FROM event ORDER BY id DESC 
+			SELECT * FROM event WHERE id != 9999 ORDER BY id DESC
 		]]>
 	</select>
 	
@@ -29,7 +29,7 @@
 	
 	<select id="getWinnerList" resultType="boardVO">
 		<![CDATA[
-			SELECT * FROM board WHERE category = 'event' ORDER BY id DESC
+			SELECT * FROM board WHERE category = 'winner' ORDER BY id DESC
 		]]>
 	</select>
 	
@@ -56,4 +56,35 @@
 			UPDATE event SET image = #{fileName} WHERE id = 9999
 		]]>
 	</update>	
+	
+	<update id="eventUpdate" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET 
+				title = #{title}, 
+				startDate = #{startdate}, 
+				enddate = #{enddate}, 
+				thumbnail = #{thumbnail}, 
+				image = #{image} 
+			WHERE id = ${id}
+		]]>
+	</update>
+	
+	<insert id="eventInsert" parameterType="eventVO">
+		<![CDATA[
+			INSERT INTO event 
+			VALUES (
+						board_seq.nextval, 
+						#{startdate}, 
+						#{enddate}, 
+						#{title}, 
+						sysdate, 
+						0, 
+						0,
+						#{thumbnail},
+						#{image}
+				  	)
+		]]>
+	</insert>
+
+	
 </mapper> 

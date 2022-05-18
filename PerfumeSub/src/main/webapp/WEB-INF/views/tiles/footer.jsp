@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
- <footer class="container">	
+ <footer class="container" style="background-color: #212529">	
 	
 	<div class="row" style="text-align: center">
 		

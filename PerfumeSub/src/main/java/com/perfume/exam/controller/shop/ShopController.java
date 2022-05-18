@@ -1,6 +1,7 @@
 package com.perfume.exam.controller.shop;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,9 @@ import org.apache.taglibs.standard.tag.common.fmt.ParseDateSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +29,7 @@ import com.perfume.exam.service.CartService;
 import com.perfume.exam.service.PerfumeService;
 import com.perfume.exam.vo.CartVO;
 import com.perfume.exam.vo.PerfumeVO;
+import com.perfume.exam.vo.ReviewVO;
 
 @RequestMapping("/shop/")
 @Controller
@@ -126,12 +131,18 @@ public class ShopController {
 		
 		model.addAttribute("list", list);
 		//가격 값만 따로 넘겨줘서  price 3개로나눔(PerfumeVO에 price2 price3 추가)
+		model.addAttribute("product_id",list.get(0).getProduct_id());
 		model.addAttribute("name",list.get(0).getName());
 		model.addAttribute("price", list.get(0).getPrice());
 		model.addAttribute("price2", list.get(0).getPrice2());
 		model.addAttribute("price3", list.get(0).getPrice3());
+		
+		model.addAttribute("image", list.get(0).getImage());
+		
 		model.addAttribute("user_id",vo.getId());
-
+		
+		
+	
 		return "root.shop.detail";
 	}
 	
@@ -151,5 +162,34 @@ public class ShopController {
         return "success";
         
     }
+<<<<<<< HEAD
+=======
+		
+	@RequestMapping("register")
+	public String register(HttpSession session, Model model) {
+		
 
+		return "root.shop.register";
+	}
+
+	// 리뷰 작성
+	@GetMapping("/reviewEnroll/{id}")
+	public String reviewEnrollGET(@PathVariable("id") String id, int product_id, Model model) throws Exception {
+	
+		PerfumeVO perfume = perfumeservice.getProductIdName(product_id);
+		model.addAttribute("perfumeInfo", perfume);
+		model.addAttribute("id", id);
+		
+		return "/reviewEnroll";
+		
+	}
+	
+	
 }
+
+
+
+
+
+>>>>>>> 9c0352050145e0c4eb35e575b619527629a3afa8
+

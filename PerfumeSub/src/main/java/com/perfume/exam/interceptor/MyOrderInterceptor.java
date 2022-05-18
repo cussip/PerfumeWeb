@@ -1,13 +1,13 @@
 package com.perfume.exam.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import com.perfume.exam.model.MemberVO;
-import com.perfume.exam.vo.MyOrderVO;
 
 public class MyOrderInterceptor implements HandlerInterceptor {
 

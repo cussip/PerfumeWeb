@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -160,7 +161,7 @@
 					style="padding-top: 100px; padding-left: 100px;">
 					<h4>
 						<strong><c:forEach var="item" items="${list}" >${item.name} </c:forEach></strong>
-
+										
 					</h4>
 					<div class="produc_price">
 						<c:forEach var="item" items="${list}" >
@@ -296,6 +297,8 @@
 						<a href="#target2" style="color: black; text-decoration: none;"><span><strong>리뷰</strong></span></a>
 						<div class="border-bottom border border-dark"></div>
 					</div>
+					
+								
 
 				</div>
 
@@ -316,6 +319,12 @@
 				    <i class="bi bi-star-fill" style="font-size: 4rem; margin-top: 20px;"> 4.6</i><br>
 				    90%의 구매자가 이 상품을 좋아합니다.<br>
 				    <button type="button" class="btn btn-lg btn btn-dark" style="margin-top: 20px;">상품 리뷰 작성하기</button>				      
+				<c:if test="${member != null}">
+					<div class="reply_button_wrap">
+					<button>리뷰 쓰기</button>
+					</div>
+				</c:if>	
+			   		
 			   </div>
 			  
 			  
@@ -354,9 +363,61 @@
      <div class="container" style="padding-bottom: 100px;">
      <div class="border-bottom"></div>
      </div>
+    
+
+     
      
      </div>
 
+<script>
+
+/* 리뷰쓰기 */
+$(".reply_button_wrap").on("click", function(e){
+	
+	e.preventDefault();			
+
+	const id = '${member.id}';
+	const product_id = '${product_id}';
+	
+	
+	let popUrl = "/shop/reviewEnroll/" + id + "?product_id=" + product_id;
+	console.log(popUrl);
+	let popOption = "width = 490px, height=490px, top=300px, left=300px, scrollbars=yes";
+	
+	window.open(popUrl,"리뷰 쓰기",popOption);
+});
+
+/* 관심상품 추가 동작 */
+const form = {
+		id : '${member.id}',
+		name : '${name}',
+		image : '${image}',
+		price : '${price}'
+}
+
+/* 관심상품 추가 버튼 (♡) */
+$(".hit").on("click", function(e){
+	
+	$.ajax({
+		url: '/mywish/add',
+		type: 'POST',
+		data: form,
+		success: function(result){
+			if(result == '0') {
+				 alert("관심상품 목록 추가에 실패하였습니다.");
+			} else if(result == '1'){
+				alert("관심상품 목록에 추가되었습니다.");
+			} else if(result == '2'){
+				alert("관심상품 목록에 이미 추가되었습니다.");
+			} else if(result == '5'){
+				alert("로그인이 필요합니다.");
+			}
+		}
+	})
+});
+
+
+</script>
 
 
 

@@ -12,10 +12,15 @@ public interface AdminService {
 	public List<BoardVO> getFAQList() throws Exception;
 	public List<EventVO> getEventList() throws Exception;
 	public List<BoardVO> getWinnerList() throws Exception;
+	
 	public void boardInsert(BoardVO board) throws Exception;
 	public void boardUpdate(BoardVO board) throws Exception;
 	public void boardDelete(BoardVO board) throws Exception;
+	
 	public String getBenefit() throws Exception;
 	public void beneSubmit(String fileName) throws Exception;
+	
+	public void eventUpdate(EventVO event) throws Exception;
+	public void eventInsert(EventVO event) throws Exception;
 	
 }
