@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -93,20 +94,17 @@ public class CartController {
 		return "success"; 
 	}
 	
-<<<<<<< HEAD
-	
-	
-=======
+
 	@GetMapping("/order/{id}")
 	public String orderPageGET(@PathVariable("id") String id, Model model) {
 		
 		
-		model.addAttribute("cartInfo", cartService.getCartList(id));
+		model.addAttribute("cartInfo", cartService.getCart(id));
 		System.out.println("주문페이지 진입");
 		return "/order";
 	}
 	
 
->>>>>>> 9c0352050145e0c4eb35e575b619527629a3afa8
+
 }
 

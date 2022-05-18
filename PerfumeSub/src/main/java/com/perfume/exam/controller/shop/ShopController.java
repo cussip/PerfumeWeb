@@ -1,24 +1,17 @@
 package com.perfume.exam.controller.shop;
 
 import java.util.ArrayList;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
-import org.apache.taglibs.standard.tag.common.fmt.ParseDateSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,7 +22,6 @@ import com.perfume.exam.service.CartService;
 import com.perfume.exam.service.PerfumeService;
 import com.perfume.exam.vo.CartVO;
 import com.perfume.exam.vo.PerfumeVO;
-import com.perfume.exam.vo.ReviewVO;
 
 @RequestMapping("/shop/")
 @Controller
@@ -162,8 +154,7 @@ public class ShopController {
         return "success";
         
     }
-<<<<<<< HEAD
-=======
+
 		
 	@RequestMapping("register")
 	public String register(HttpSession session, Model model) {
@@ -191,5 +182,5 @@ public class ShopController {
 
 
 
->>>>>>> 9c0352050145e0c4eb35e575b619527629a3afa8
+
 
