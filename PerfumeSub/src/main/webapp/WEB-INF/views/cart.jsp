@@ -135,7 +135,7 @@ $(document).ready(function() {
                  <!-- 여기서는 금액을 표현할 때 사용 -->
                  <!-- ex) 5,000 / 10,000 등등등-->
                  
-         <td><input type="number" name="product_count" style="width:45px;" value="${ci.product_count}" class="product_count" />
+         <td><input type="number" min=1 name="product_count" style="width:45px;" value="${ci.product_count}" class="product_count" />
                 <a class="quantity_modify_btn" data-cart_id="${ci.cart_id}">
                 	<button type="button" class="btn btn-primary btn-sm btn_modify"  data-cart_id="${ci.cart_id}">변경</button>
                 </a>        
