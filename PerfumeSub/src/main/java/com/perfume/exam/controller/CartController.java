@@ -1,6 +1,7 @@
 package com.perfume.exam.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.perfume.exam.model.MemberVO;
 import com.perfume.exam.service.CartService;
 import com.perfume.exam.vo.CartVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 @Controller
 public class CartController {
@@ -53,21 +55,31 @@ public class CartController {
 	public String cartPageGET(@PathVariable("id") String id, Model model) {
 		
 		List<CartVO> list = new ArrayList();
-		
+		List<PerfumeVO> list2 = new ArrayList();
+		Map<String, Object> map = new HashMap<String, Object>();
+				
 		
 		list = cartService.getCart(id);
 		int total = 0;
 		int total_Price = 0;
 		for (int i = 0; i < list.size(); i++) {
+			map.put("state", list.get(i).getState());
+			map.put("product_id", list.get(i).getProduct_id());
+			list2 = cartService.loadPrice(map);
+			list.get(i).setPrice(list2.get(0).getPrice());
+			map.clear();
+			
+			
+		}
+		for (int i = 0; i < list.size(); i++) {
 			total += list.get(i).getProduct_count();
+			total_Price += list.get(i).getPrice()*list.get(i).getProduct_count();
 			
 		}
 		
-		for (int i = 0; i < list.size(); i++) {
-			total_Price += list.get(i).getPrice();
-			
-		}
-				
+		
+		
+		
 		model.addAttribute("cartInfo", list);
 		model.addAttribute("total",total);
 		model.addAttribute("total_Price",total_Price);

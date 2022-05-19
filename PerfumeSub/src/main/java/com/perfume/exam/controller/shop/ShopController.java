@@ -140,29 +140,22 @@ public class ShopController {
 	
 	@RequestMapping(value = "detail/cart",method = RequestMethod.POST)
     @ResponseBody
-    public String payment(@RequestParam("user_id") String user_id,@RequestParam("product_id") String product_id,@RequestParam("price_result")String price_result){
+    public String payment(@RequestParam("user_id") String user_id,@RequestParam("product_id") String product_id,@RequestParam("price")String price){
 		
 	  List<CartVO> list =  new ArrayList<>();
+	  	
 		CartVO cart = new CartVO();
 		cart.setId(user_id);
 		cart.setName(product_id);
-		//이미지 값 아님
-		cart.setImage(price_result);
+		cart.setImage(price);
+		
         cartservice.newAddCart(cart);
         
        
         return "success";
         
     }
-
-		
-	@RequestMapping("register")
-	public String register(HttpSession session, Model model) {
-		
-
-		return "root.shop.register";
-	}
-
+			
 	// 리뷰 작성
 	@GetMapping("/reviewEnroll/{id}")
 	public String reviewEnrollGET(@PathVariable("id") String id, int product_id, Model model) throws Exception {

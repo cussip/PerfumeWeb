@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.perfume.exam.service.CartService;
 import com.perfume.exam.service.dao.CartDAO;
 import com.perfume.exam.vo.CartVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -51,6 +52,14 @@ public List<CartVO> getCart(String id) {
 		// TODO Auto-generated method stub
 		cartDAO.cartModify(map);
 		
+	}
+
+
+
+	@Override
+	public List<PerfumeVO> loadPrice(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return cartDAO.loadPrice(map);
 	}
 
 

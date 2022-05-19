@@ -65,50 +65,45 @@
 
 
 	$(document).ready(function(){
-		var price_result;
-		$("#ml").change(function(){	
-			price_result = $(this).val(); //text값 가져오기
-			alert(price_result);
-		});
+		
 		var price;
 		$("#ml").change(function() {
-			if ($("#ml").val() == '40ml') {
+			if ($("#ml").val() == 'price') {
 				price = ${price}
 				const cn1 = price.toString()
 				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 				price = '<strong>'+cn1+' 원</strong>'
 				$("#p").text("");
 				$("#p").append(price);
-			}else if ($("#ml").val() == '60ml') {
+			}else if ($("#ml").val() == 'price2') {
 				price = ${price2}
 				const cn1 = price.toString()
 				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 				price = '<strong>'+cn1+' 원</strong>'
 				$("#p").text("");
 				$("#p").append(price);
-			}else if ($("#ml").val() == '120ml') {
+			}else if ($("#ml").val() == 'price3') {
 				price = ${price3}
 				const cn1 = price.toString()
 				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 				price = '<strong>'+cn1+' 원</strong>'
 				$("#p").text("");
 				$("#p").append(price);
-			}
-			
-			
-			
-			
-		});
-		
-		
-
+			}											
+		});				
 	});
+	
 	function payment() {
-
+		var price = $("#ml option:selected").val();
+		
+		
+		
+		
 		var params = {
 				user_id      : "${user_id}"
               , product_id       : "${name}"
-              ,price_result : price_result 
+              , price : price
+              
                 
              
       }
@@ -128,6 +123,8 @@
 	}
 	
 
+		
+	
 
 </script>
 </head>
@@ -183,7 +180,7 @@
 						    <option value="price2">60ml + 5,000</option>
 						    <option value="price3">120ml + 15,000</option>
 						</select>
-
+                        
 
 
 

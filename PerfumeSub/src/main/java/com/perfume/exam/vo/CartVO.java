@@ -13,6 +13,28 @@ public class CartVO {
 		private String Image;
 		private String Name;	
 		private int Price;
+		private int Price2;
+		private int Price3;
+		private String state;
+		
+		public String getState() {
+			return state;
+		}
+		public void setState(String state) {
+			this.state = state;
+		}
+		public int getPrice2() {
+			return Price2;
+		}
+		public void setPrice2(int price2) {
+			Price2 = price2;
+		}
+		public int getPrice3() {
+			return Price3;
+		}
+		public void setPrice3(int price3) {
+			Price3 = price3;
+		}
 		private int TotalPrice;
 		
 		public int getCart_id() {

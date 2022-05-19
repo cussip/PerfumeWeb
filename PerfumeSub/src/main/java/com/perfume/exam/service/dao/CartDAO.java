@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.perfume.exam.vo.CartVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 public interface CartDAO {
 	
@@ -15,4 +16,6 @@ public interface CartDAO {
 	public int deleteCart(int cart_id);
 
 	public void cartModify(Map<String, Object> map);
+
+	public List<PerfumeVO> loadPrice(Map<String, Object> map);
 }
