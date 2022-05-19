@@ -57,7 +57,7 @@
 		]]>
 	</update>	
 	
-	<update id="eventUpdate" parameterType="eventVO">
+	<update id="eventUpdateMax" parameterType="eventVO">
 		<![CDATA[
 			UPDATE event SET 
 				title = #{title}, 
@@ -68,6 +68,38 @@
 			WHERE id = ${id}
 		]]>
 	</update>
+	
+	<update id="eventUpdateThn" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET 
+				title = #{title}, 
+				startDate = #{startdate}, 
+				enddate = #{enddate}, 
+				thumbnail = #{thumbnail}
+			WHERE id = ${id}
+		]]>
+	</update>
+	
+	<update id="eventUpdateImg" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET 
+				title = #{title}, 
+				startDate = #{startdate}, 
+				enddate = #{enddate}, 
+				image = #{image} 
+			WHERE id = ${id}
+		]]>
+	</update>
+	
+	<update id="eventUpdateMin" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET 
+				title = #{title}, 
+				startDate = #{startdate}, 
+				enddate = #{enddate}
+			WHERE id = ${id}
+		]]>
+	</update>			
 	
 	<insert id="eventInsert" parameterType="eventVO">
 		<![CDATA[
@@ -85,6 +117,11 @@
 				  	)
 		]]>
 	</insert>
-
+	
+	<delete id="eventDelete" parameterType="eventVO">
+		<![CDATA[
+			DELETE FROM event WHERE id = ${id}
+		]]>
+	</delete>	
 	
 </mapper> 

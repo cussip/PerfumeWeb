@@ -37,12 +37,12 @@
 							  <div class="col-md-auto">
 								<div class="input-group mb-3">
 								  <span class="input-group-text">제목</span>
-								  <input type="text" class="form-control" name="title">
+								  <input type="text" class="form-control" name="title" required>
 								</div>
 								
 								<div class="input-group">
 								  <span class="input-group-text">내용</span>
-								  <textarea class="form-control" name="content" style="height: 700px" wrap="hard"></textarea>
+								  <textarea class="form-control" name="content" style="height: 700px" wrap="hard" required></textarea>
 								</div>					
 							  </div>
 					
@@ -68,7 +68,7 @@
 				</button>
 				
 				<!-- Modal -->
-				<div class="modal fade" id="staticNew" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticNewLabel" aria-hidden="true">
+				<div class="modal fade" id="staticNew" data-bs-kind="event" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticNewLabel" aria-hidden="true">
 				  <div class="modal-lg modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -83,33 +83,37 @@
 							    
 							    <div class="input-group mb-3">
 							      <span class="input-group-text">시작일</span>
-							      <input type="date" class="form-control" name="startdate">
+							      <input type="date" class="form-control" name="startdate" required>
 							      <span class="input-group-text">종료일</span>
-							      <input type="date" class="form-control" name="enddate">
+							      <input type="date" class="form-control" name="enddate" required>
 							    </div>
 							  
 								<div class="input-group mb-3">										 
 								  <span class="input-group-text">제목</span>
-								  <input type="text" class="form-control modTitle" name="title">									  
+								  <input type="text" class="form-control modTitle" name="title" required>									  
 								</div>
 								
 								<div class="form-control mb-3">
 									<div class="input-group mb-3">										 
 									  <span class="input-group-text">썸네일</span>
-									  <input type="image" id="thumbnailExt-name" src="#" style="width: 400px">
+									  <div class="form-control" align="center">
+									    <img id="thnExt-name" src="" style="width: 400px">
+									  </div>
 									</div>
 									<div class="mb-3">
-									  <input type="file" class="form-control" id="thumbnailAdd" name="thnFile">											 									  								  										
+									  <input type="file" class="form-control" id="thnAdd" name="thnFile" required>											 									  								  										
 									</div>
 								</div>
 								
 								<div class="form-control">
 									<div class="input-group mb-3">										 
 									  <span class="input-group-text">이미지</span>
-									  <input type="image" id="imageExt-name" src="#" style="width: 400px">										  
+									  <div class="form-control" align="center">
+  									    <img id="imgExt-name" src="" style="width: 400px">										  
+									  </div>
 									</div>
 									<div class="mb-3">
-									  <input type="file" class="form-control" id="imageAdd" name="imgFile">
+									  <input type="file" class="form-control" id="imgAdd" name="imgFile" required>
 									</div>
 								</div>								
 							  </div>
@@ -125,6 +129,7 @@
 				  </div>
 				</div>
 				<!-- 모달 종료 -->
+				
 			  </c:when>		
 			  		  				
 			</c:choose>						
@@ -154,10 +159,10 @@
 		            <td align="left">              	
 		              	<!-- 모달 시작 -->	
 						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-outling-*" data-bs-toggle="modal" data-bs-target="#eventEdit" 
+						<button id="eventUpdateButton" type="button" class="btn btn-outling-*" data-bs-toggle="modal" data-bs-target="#eventEdit" 
 								data-bs-id="${event.id}" data-bs-title="${event.title}" data-bs-regdate="${event.regdate}"
 								data-bs-startdate="${event.startdate}" data-bs-enddate="${event.enddate}"
-								data-bs-thumbnail="${event.thumbnail}" data-bs-image="${event.image}" data-bs-kind="event">	
+								data-bs-thumbnail="${event.thumbnail}" data-bs-image="${event.image}" data-bs-kind="eventEdit">	
 						  ${event.title}
 						</button>
 					
@@ -184,20 +189,22 @@
 									    
 									    <div class="input-group mb-3">
 									      <span class="input-group-text">시작일</span>
-									      <input type="date" class="form-control modStartdate" name="startdate" id="startdateExt-name">
+									      <input type="date" class="form-control modStartdate" name="startdate" id="startdateExt-name" required>
 									      <span class="input-group-text">종료일</span>
-									      <input type="date" class="form-control modEnddate" name="enddate" id="enddateExt-name">
+									      <input type="date" class="form-control modEnddate" name="enddate" id="enddateExt-name" required>
 									    </div>
 									  
 										<div class="input-group mb-3">										 
 										  <span class="input-group-text">제목</span>
-										  <input type="text" class="form-control modTitle" name="title" id="titleExt-name">									  
+										  <input type="text" class="form-control modTitle" name="title" id="titleExt-name" required>									  
 										</div>
 										
 										<div class="form-control mb-3">
 											<div class="input-group mb-3">										 
 											  <span class="input-group-text">썸네일</span>
-											  <input type="image" class="modThumbnail" id="thumbnailExt-name" src="#" style="width: 400px">
+											  <div class="form-control" align="center">
+												<img class="modThumbnail" id="thumbnailExt-name" src="#" style="width: 400px" align="middle">
+											  </div>
 											</div>
 											<div class="mb-3">
 											  <input type="file" class="form-control" id="thumbnailAdd" name="thnFile">											 									  								  										
@@ -207,13 +214,14 @@
 										<div class="form-control">
 											<div class="input-group mb-3">										 
 											  <span class="input-group-text">이미지</span>
-											  <input type="image" class="modImage" id="imageExt-name" src="#" style="width: 400px">										  
+											  <div class="form-control" align="center">
+											  	<img class="modImage" id="imageExt-name" src="#" style="width: 400px;">										  											  						  
+											  </div>
 											</div>
 											<div class="mb-3">
 											  <input type="file" class="form-control" id="imageAdd" name="imgFile">
 											</div>
 										</div>
-	
 										
 									  </div>
 							
@@ -233,9 +241,10 @@
 		            <td>${event.startdate}<br> ~ ${event.enddate}</td>    
 		            <td>${event.regdate}</td>
 		            <td>
-		            	<form action="boardDelete">
+		            	<form action="eventDelete">
+		            		<input type="hidden" name="image" value="${event.image}">
+		            		<input type="hidden" name="thumbnail" value="${event.thumbnail}">
 		            		<input type="hidden" name="id" value="${event.id}">
-		            	    <input type="hidden" name="category" value="${param.type}">
 			            	<button type="submit" class="btn btn-danger btn-sm">삭제</button>
 		            	</form>
 		            </td>
@@ -294,12 +303,12 @@
 									  
 										<div class="input-group mb-3">										 
 										  <span class="input-group-text">제목</span>
-										  <input type="text" class="form-control modTitle" name="title" id="titleExt-name">									  
+										  <input type="text" class="form-control modTitle" name="title" id="titleExt-name" required>									  
 										</div>
 										
 										<div class="input-group">
 										  <span class="input-group-text">내용</span>
-										  <textarea class="form-control modContent" name="content" style="height: 700px" id="contentExt-name"></textarea>
+										  <textarea class="form-control modContent" name="content" style="height: 700px" id="contentExt-name" required></textarea>
 										</div>					
 									  </div>
 							
@@ -361,8 +370,19 @@
 			var contentInj = eventEdit.querySelector('.modContent')
 			
 			contentInj.value = contentExt	
-			
+		
 		} else if(button.getAttribute('data-bs-kind') == 'event') {
+			
+			var thnExt = button.getAttribute('data-bs-thumbnail')
+			var imgExt = button.getAttribute('data-bs-image')
+			
+			var thnInj = eventEdit.querySelector('.modThumbnail')
+			var imgInj = eventEdit.querySelector('.modImage')
+			
+			thnInj.src = thnExt
+			imgInj.src = imgExt
+			
+		} else if(button.getAttribute('data-bs-kind') == 'eventEdit') {
 			
 			var	startdateExt = button.getAttribute('data-bs-startdate')
 			var	enddateExt = button.getAttribute('data-bs-enddate')
@@ -401,8 +421,32 @@
 	    imgReader.readAsDataURL(imgFile);
 	}
 	
-	document.querySelector("#thumbnailAdd").addEventListener("change", thnChange)		
-	document.querySelector("#imageAdd").addEventListener("change", imgChange)			
+	document.querySelector("#thumbnailAdd").addEventListener("change", thnChange);		
+	document.querySelector("#imageAdd").addEventListener("change", imgChange);			
+ 	
+	const thnAddReader = new FileReader();		
+	thnAddReader.onload = function (readerEvent) {	
+	    document.querySelector("#thnExt-name").setAttribute("src", readerEvent.target.result);			
+	};
+
+	const imgAddReader = new FileReader();		
+	imgAddReader.onload = function (readerEvent) {
+		document.querySelector("#imgExt-name").setAttribute("src", readerEvent.target.result);
+	};
+	
+	var thnAddChange = function (changeEvent) {
+	    const imgFile = changeEvent.target.files[0];
+	    thnAddReader.readAsDataURL(imgFile);
+	}
+
+	var imgAddChange = function (changeEvent) {
+	    const imgFile = changeEvent.target.files[0];
+	    imgAddReader.readAsDataURL(imgFile);
+	}
+	
+	document.querySelector("#thnAdd").addEventListener("change", thnAddChange);		
+	document.querySelector("#imgAdd").addEventListener("change", imgAddChange);			
+	
 	
 </script>
 

@@ -1,6 +1,8 @@
 package com.perfume.exam.controller;
 
 import java.io.File;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -47,7 +49,7 @@ public class AdminController {
 
 		adminService.boardInsert(board);
 
-		String cate = "NOTICE";
+		String cate = "board?type=NOTICE";
 		if (board.getCategory().equals("NOTICE")) {
 			cate = "board?type=NOTICE";
 		} else if (board.getCategory().equals("FAQ")) {
@@ -64,7 +66,7 @@ public class AdminController {
 
 		adminService.boardUpdate(board);
 
-		String cate = "NOTICE";
+		String cate = "board?type=NOTICE";
 		if (board.getCategory().equals("NOTICE")) {
 			cate = "board?type=NOTICE";
 		} else if (board.getCategory().equals("FAQ")) {
@@ -81,7 +83,7 @@ public class AdminController {
 
 		adminService.boardDelete(board);
 
-		String cate = "NOTICE";
+		String cate = "board?type=NOTICE";
 		if (board.getCategory().equals("NOTICE")) {
 			cate = "board?type=NOTICE";
 		} else if (board.getCategory().equals("FAQ")) {
@@ -131,17 +133,18 @@ public class AdminController {
 		
     	MultipartFile thumbnail = event.getThnFile();
     	MultipartFile image = event.getImgFile();
+
+    	Timestamp timestamp = new Timestamp(System.currentTimeMillis());       
+    	SimpleDateFormat sdf = new SimpleDateFormat ("yyMMddhhmmss");
     	
-	    String thnName = thumbnail.getOriginalFilename(); 
-	    String imgName = image.getOriginalFilename();
+	    String thnName = sdf.format(timestamp) + "_" + thumbnail.getOriginalFilename(); 
+	    String imgName = sdf.format(timestamp) + "_" + image.getOriginalFilename();
 	    
 	    event.setThumbnail(thnName);
 	    event.setImage(imgName);
 	    
-	    String webPath = "resources/img/event"; 
-	  
-	    String thnPath = ctx.getRealPath(webPath); 
-	    String imgPath = ctx.getRealPath(webPath);
+	    String thnPath = ctx.getRealPath("resources/img/event/thumbnail"); 
+	    String imgPath = ctx.getRealPath("resources/img/event/image");
 	  
 	    File saveThnPath = new File(thnPath); 
 	    File saveImgPath = new File(imgPath);
@@ -166,39 +169,70 @@ public class AdminController {
 	
     @PostMapping("eventUpdate") 
     public String eventUpdate(@ModelAttribute EventVO event) throws Exception {
-	  
-    	MultipartFile thumbnail = event.getThnFile();
-    	MultipartFile image = event.getImgFile();
+
+    	Timestamp timestamp = new Timestamp(System.currentTimeMillis());       
+    	SimpleDateFormat sdf = new SimpleDateFormat ("yyMMddhhmmss");
     	
-	    String thnName = thumbnail.getOriginalFilename(); 
-	    String imgName = image.getOriginalFilename();
-	    
-	    event.setThumbnail(thnName);
-	    event.setImage(imgName);
-	    
-	    String webPath = "resources/img/event"; 
-	  
-	    String thnPath = ctx.getRealPath(webPath); 
-	    String imgPath = ctx.getRealPath(webPath);
-	  
-	    File saveThnPath = new File(thnPath); 
-	    File saveImgPath = new File(imgPath);
-	  
-	    if(!saveThnPath.exists()) { saveThnPath.mkdirs(); } 
-	    if(!saveImgPath.exists()) { saveImgPath.mkdirs(); }
-	  
-	    thnPath += File.separator + thnName; 
-	  	imgPath += File.separator + imgName;
-	  
-	  	File saveThnFile = new File(thnPath); 
-	  	File saveImgFile = new File(imgPath);
-	  
-	  	thumbnail.transferTo(saveThnFile); 
-	  	image.transferTo(saveImgFile);
-	  
+		MultipartFile thumbnail = event.getThnFile();		
+		if(!thumbnail.isEmpty()) {			
+			String thnName = sdf.format(timestamp) + "_" + thumbnail.getOriginalFilename(); 			
+			String thnPath = ctx.getRealPath("resources/img/event/thumbnail");     		
+			
+			File saveThnPath = new File(thnPath); 
+			if(!saveThnPath.exists()) { saveThnPath.mkdirs(); } 
+			
+			thnPath += File.separator + thnName; 
+			File saveThnFile = new File(thnPath); 
+
+			event.setThumbnail(thnName);
+			thumbnail.transferTo(saveThnFile); 
+			
+		} else {
+			event.setThumbnail("");
+		}
+				
+		MultipartFile image = event.getImgFile();
+		if(!image.isEmpty()) {			
+			String imgName = sdf.format(timestamp) + "_" + image.getOriginalFilename();			
+			String imgPath = ctx.getRealPath("resources/img/event/image");
+			
+			File saveImgPath = new File(imgPath);
+			if(!saveImgPath.exists()) { saveImgPath.mkdirs(); }
+			
+			imgPath += File.separator + imgName;
+			File saveImgFile = new File(imgPath);
+
+			event.setImage(imgName);			
+			image.transferTo(saveImgFile);
+			
+		} else {
+			event.setImage("");
+		}
+	
 	  	adminService.eventUpdate(event);
 	  
 	  	return "redirect:event?type=EVENT"; 
     }
 
+	@GetMapping("eventDelete")
+	public String eventDelete(@ModelAttribute EventVO event) throws Exception {
+		
+		String thnPath = File.separator + "resources" + event.getThumbnail();
+		String imgPath = File.separator + "resources" + event.getImage();
+		
+		String realThnPath = ctx.getRealPath(thnPath);
+		String realImgPath = ctx.getRealPath(imgPath);
+				
+		File delThnPath = new File(realThnPath);
+		File delImgPath = new File(realImgPath);
+		
+		delThnPath.delete();
+		delImgPath.delete();
+
+		adminService.eventDelete(event);
+
+		return "redirect:event?type=EVENT";
+		
+	}    
+    
 }
