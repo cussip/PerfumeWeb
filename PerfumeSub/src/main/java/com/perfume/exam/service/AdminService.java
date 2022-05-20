@@ -22,5 +22,6 @@ public interface AdminService {
 	
 	public void eventUpdate(EventVO event) throws Exception;
 	public void eventInsert(EventVO event) throws Exception;
+	public void eventDelete(EventVO event) throws Exception;
 	
 }
