@@ -10,6 +10,7 @@ import com.perfume.exam.service.AdminService;
 import com.perfume.exam.service.dao.AdminDAO;
 import com.perfume.exam.vo.BoardVO;
 import com.perfume.exam.vo.EventVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -46,6 +47,16 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
+	public List<PerfumeVO> getProductList() throws Exception {
+
+		List<PerfumeVO> productList = adminDao.getProductList();
+		return productList;
+	}
+	
+	//-------------------------------------------------------------------------------------------
+	// Board Service
+	//-------------------------------------------------------------------------------------------
+	@Override
 	public void boardInsert(BoardVO board) throws Exception {
 		
 		String title = board.getTitle();
@@ -81,6 +92,9 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.boardDelete(id);	
 	}
 
+	//-------------------------------------------------------------------------------------------
+	// Benefit Service
+	//-------------------------------------------------------------------------------------------
 	@Override
 	public String getBenefit() throws Exception {
 
@@ -96,6 +110,9 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.beneSubmit(path);
 	}
 
+	//-------------------------------------------------------------------------------------------
+	// Event Service
+	//-------------------------------------------------------------------------------------------	
 	@Override
 	public void eventUpdate(EventVO event) throws Exception {
 		
@@ -150,5 +167,28 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.eventDelete(id);
 		
 	}
+
+	
+	//-------------------------------------------------------------------------------------------
+	// Product Service
+	//-------------------------------------------------------------------------------------------
+	@Override
+	public void productUpdate(PerfumeVO perfume) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void productInsert(PerfumeVO perfume) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void productDelete(PerfumeVO perfume) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

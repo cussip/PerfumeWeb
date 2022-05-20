@@ -3,6 +3,8 @@
 
 <mapper namespace="com.perfume.exam.service.dao.AdminDAO">
 
+	<!--=================================List Query=================================-->
+	<!--=================================List Query=================================-->
 	<select id="getNoticeList" resultType="boardVO">
 		<![CDATA[
 			SELECT * FROM board WHERE category = 'notice' ORDER BY id DESC
@@ -33,6 +35,16 @@
 		]]>
 	</select>
 	
+	<select id="getProductList" resultType="perfumeVO">
+		<![CDATA[
+			SELECT * FROM product
+		]]>	
+	</select>
+	
+	
+	
+	<!--=================================Board Query=================================-->
+	<!--=================================Board Query=================================-->
 	<insert id="boardInsert" parameterType="boardVO">
 		<![CDATA[
 			INSERT INTO board VALUES (board_seq.nextval, 0, #{title}, #{content}, sysdate, #{category})
@@ -45,11 +57,16 @@
 		]]>
 	</update>
 	
+	
+	
+	<!--=================================Benefit Query=================================-->
+	<!--=================================Benefit Query=================================-->
 	<delete id="boardDelete" parameterType="boardVO">
 		<![CDATA[
 			DELETE FROM board WHERE id = ${id}
 		]]>
 	</delete>
+	
 	
 	<update id="beneSubmit" parameterType="eventVO">
 		<![CDATA[
@@ -57,6 +74,10 @@
 		]]>
 	</update>	
 	
+	
+	
+	<!--=================================Event Query=================================-->
+	<!--=================================Event Query=================================-->
 	<update id="eventUpdateMax" parameterType="eventVO">
 		<![CDATA[
 			UPDATE event SET 
@@ -124,4 +145,23 @@
 		]]>
 	</delete>	
 	
+	
+	
+	<!--=================================Product Query=================================-->
+	<!--=================================Product Query=================================-->
+	
+	
+	
+	
+	
+	
+	
 </mapper> 
+
+
+
+
+
+
+
+

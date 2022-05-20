@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.perfume.exam.vo.BoardVO;
 import com.perfume.exam.vo.EventVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 @Mapper
 public interface AdminDAO {
@@ -16,6 +17,8 @@ public interface AdminDAO {
 	List<BoardVO> getFAQList() throws Exception;
 	List<BoardVO> getWinnerList() throws Exception;
 	List<EventVO> getEventList() throws Exception;
+	List<PerfumeVO> getProductList() throws Exception;
+	
 	void boardInsert(@Param("title") String title, @Param("content") String content, 
 			@Param("category") String category) throws Exception;
 	

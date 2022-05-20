@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.perfume.exam.service.AdminService;
 import com.perfume.exam.vo.BoardVO;
 import com.perfume.exam.vo.EventVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 @Controller
 @RequestMapping("/admin/")
@@ -30,6 +31,9 @@ public class AdminController {
 	@Autowired
 	private ServletContext ctx;
 
+	//-------------------------------------------------------------------------------------------
+	// Board Controller
+	//-------------------------------------------------------------------------------------------	
 	@GetMapping("board")
 	public String boardList(Model model) throws Exception {
 
@@ -95,6 +99,10 @@ public class AdminController {
 		return "redirect:" + cate;
 	}
 
+	
+	//-------------------------------------------------------------------------------------------
+	// Benefit Controller
+	//-------------------------------------------------------------------------------------------	
 	@PostMapping("beneSubmit")
 	public String beneSubmit(MultipartFile image) throws Exception {
 
@@ -116,6 +124,10 @@ public class AdminController {
 		return "redirect:board?type=BENEFIT";
 	}
 
+	
+	//-------------------------------------------------------------------------------------------
+	// Event Controller
+	//-------------------------------------------------------------------------------------------	
 	@GetMapping("event")
 	public String eventList(Model model) throws Exception {
 
@@ -247,5 +259,20 @@ public class AdminController {
 
 		return "redirect:event?type=EVENT";
 		
-	}      
+	}      	
+
+	//-------------------------------------------------------------------------------------------
+	// Product Controller
+	//-------------------------------------------------------------------------------------------		
+	@GetMapping("product")
+	public String productList(Model model) throws Exception {
+
+		List<PerfumeVO> productList = adminService.getProductList();
+		
+		model.addAttribute("productList", productList);
+		
+		return "admin.product";
+	}
+	
+	
 }

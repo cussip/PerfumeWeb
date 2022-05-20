@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.perfume.exam.vo.BoardVO;
 import com.perfume.exam.vo.EventVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 
 public interface AdminService {
@@ -12,6 +13,7 @@ public interface AdminService {
 	public List<BoardVO> getFAQList() throws Exception;
 	public List<EventVO> getEventList() throws Exception;
 	public List<BoardVO> getWinnerList() throws Exception;
+	public List<PerfumeVO> getProductList() throws Exception;
 	
 	public void boardInsert(BoardVO board) throws Exception;
 	public void boardUpdate(BoardVO board) throws Exception;
@@ -23,5 +25,9 @@ public interface AdminService {
 	public void eventUpdate(EventVO event) throws Exception;
 	public void eventInsert(EventVO event) throws Exception;
 	public void eventDelete(EventVO event) throws Exception;
+	
+	public void productUpdate(PerfumeVO perfume) throws Exception;
+	public void productInsert(PerfumeVO perfume) throws Exception;
+	public void productDelete(PerfumeVO perfume) throws Exception;	
 	
 }
