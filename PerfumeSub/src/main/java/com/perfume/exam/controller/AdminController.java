@@ -173,9 +173,18 @@ public class AdminController {
     	Timestamp timestamp = new Timestamp(System.currentTimeMillis());       
     	SimpleDateFormat sdf = new SimpleDateFormat ("yyMMddhhmmss");
     	
-		MultipartFile thumbnail = event.getThnFile();		
-		if(!thumbnail.isEmpty()) {			
-			String thnName = sdf.format(timestamp) + "_" + thumbnail.getOriginalFilename(); 			
+		MultipartFile thnFile = event.getThnFile();		
+		if(!thnFile.isEmpty()) {			
+			//기존 이미지 파일의 삭제
+			String befThnPath = File.separator + "resources" + event.getThumbnail();
+			System.out.println(event.getThumbnail());
+			String realBefThnPath = ctx.getRealPath(befThnPath);
+			System.out.println(realBefThnPath);
+			File delThnPath = new File(realBefThnPath);
+			delThnPath.delete();
+
+			//신규 이미지 파일의 등록
+			String thnName = sdf.format(timestamp) + "_" + thnFile.getOriginalFilename(); 			
 			String thnPath = ctx.getRealPath("resources/img/event/thumbnail");     		
 			
 			File saveThnPath = new File(thnPath); 
@@ -185,15 +194,21 @@ public class AdminController {
 			File saveThnFile = new File(thnPath); 
 
 			event.setThumbnail(thnName);
-			thumbnail.transferTo(saveThnFile); 
-			
+			thnFile.transferTo(saveThnFile); 		
 		} else {
 			event.setThumbnail("");
 		}
 				
-		MultipartFile image = event.getImgFile();
-		if(!image.isEmpty()) {			
-			String imgName = sdf.format(timestamp) + "_" + image.getOriginalFilename();			
+		MultipartFile imgFile = event.getImgFile();
+		if(!imgFile.isEmpty()) {			
+			//기존 이미지 파일의 삭제
+			String befImgPath = File.separator + "resources" + event.getImage();		
+			String realBefImgPath = ctx.getRealPath(befImgPath);
+			File delImgPath = new File(realBefImgPath);
+			delImgPath.delete();
+
+			//신규 이미지 파일의 등록
+			String imgName = sdf.format(timestamp) + "_" + imgFile.getOriginalFilename();			
 			String imgPath = ctx.getRealPath("resources/img/event/image");
 			
 			File saveImgPath = new File(imgPath);
@@ -203,8 +218,7 @@ public class AdminController {
 			File saveImgFile = new File(imgPath);
 
 			event.setImage(imgName);			
-			image.transferTo(saveImgFile);
-			
+			imgFile.transferTo(saveImgFile);			
 		} else {
 			event.setImage("");
 		}
@@ -233,6 +247,5 @@ public class AdminController {
 
 		return "redirect:event?type=EVENT";
 		
-	}    
-    
+	}      
 }

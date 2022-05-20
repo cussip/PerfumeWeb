@@ -227,6 +227,8 @@
 							
 							      </div>
 							      <div class="modal-footer">
+							        <input type="text" class="modHidThn" id="hidThnExt-name" name="thumbnail">
+							        <input type="text" class="modHidImg" id="hidImgExt-name" name="image">							      
 							        <button type="submit" class="btn btn-primary">수정</button>
 							        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
 							      </div>
@@ -314,7 +316,7 @@
 							
 							      </div>
 							      <div class="modal-footer">
-							        <input type="hidden" name="category" value="${param.type}">
+							        <input type="hidden" name="category" value="${param.type}">>
 							        <button type="submit" class="btn btn-primary">수정</button>
 							        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
 							      </div>
@@ -388,16 +390,23 @@
 			var	enddateExt = button.getAttribute('data-bs-enddate')
 			var thumbnailExt = button.getAttribute('data-bs-thumbnail')
 			var imageExt = button.getAttribute('data-bs-image')
+			var hidThnExt = button.getAttribute('data-bs-thumbnail')
+			var hidImgExt = button.getAttribute('data-bs-image')
 				
 			var startdateInj = eventEdit.querySelector('.modStartdate')
 			var enddateInj = eventEdit.querySelector('.modEnddate')
 			var thumbnailInj = eventEdit.querySelector('.modThumbnail')
 			var imageInj = eventEdit.querySelector('.modImage')
+			var hidThnInj = eventEdit.querySelector('.modHidThn')
+			var hidImgInj = eventEdit.querySelector('.modHidImg')
 					
 			startdateInj.value = startdateExt
 			enddateInj.value = enddateExt
 			thumbnailInj.src = thumbnailExt
 			imageInj.src = imageExt
+			hidThnInj.value = hidThnExt
+			hidImgInj.value = hidImgExt
+			
 		}		
 	})
  	
