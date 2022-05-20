@@ -227,8 +227,8 @@
 							
 							      </div>
 							      <div class="modal-footer">
-							        <input type="text" class="modHidThn" id="hidThnExt-name" name="thumbnail">
-							        <input type="text" class="modHidImg" id="hidImgExt-name" name="image">							      
+							        <input type="hidden" class="modHidThn" id="hidThnExt-name" name="thumbnail">
+							        <input type="hidden" class="modHidImg" id="hidImgExt-name" name="image">							      
 							        <button type="submit" class="btn btn-primary">수정</button>
 							        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
 							      </div>
