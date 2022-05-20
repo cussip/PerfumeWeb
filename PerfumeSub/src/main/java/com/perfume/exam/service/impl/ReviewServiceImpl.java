@@ -2,6 +2,7 @@ package com.perfume.exam.service.impl;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class ReviewServiceImpl implements ReviewService{
 		
 	}
 	
-	// 리뷰 페이징
+	// 리뷰목록 페이징
 	@Override
 	public ReviewPageVO reviewList(Criteria cri) {
 		ReviewPageVO vo = new ReviewPageVO(); 	

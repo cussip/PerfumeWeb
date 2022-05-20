@@ -88,7 +88,7 @@
 				success : function(result){
 						
 					/* 댓글 초기화 */
-					$(opener.location).attr("href", "javascript:reviewListInit();");						
+					// $(opener.location).attr("href", "javascript:reviewListInit();");						
 					
 					window.close();						
 				}

@@ -18,9 +18,9 @@
 	
   		<![CDATA[
 		select * from(  		
-			select rownum as rn, reviewId, productId, memberId, content, rating, regDate
+			select rownum as rn, reviewId, productId, writerId, content, rating, regDate
 			from REVIEW
-			where rownum <= #{pageNum} * #{amount}  and bookId = #{bookId}	
+			where rownum <= #{pageNum} * #{amount}  and productId = #{productId}	
 			order by regDate desc  	
   			)
   		where rn > (#{pageNum} -1) * #{amount}
@@ -28,6 +28,7 @@
 
 	</select>
 
+	<!-- 총 리뷰갯수 -->
   	<select id="getReviewTotal" resultType="int">
   	
   		select count(*)

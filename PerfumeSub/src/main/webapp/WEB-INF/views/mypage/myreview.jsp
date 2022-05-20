@@ -34,9 +34,9 @@
 		<!-- 좌측 마이페이지 사이드메뉴 -->
 		<div class="col-4" style="padding: 0 80px 0 20px">
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
-  			<li class="list-group-item" ><a href="/myorder" id="mymenu">주문내역</a></li>
-  			<li class="list-group-item" ><a href="/mywish" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="/myreview" id="mymenu">나의리뷰</a></li>
+  			<li class="list-group-item" ><a href="#" id="mymenu">주문내역</a></li>
+  			<li class="list-group-item" ><a href="#" id="mymenu">관심상품</a></li>
+  			<li class="list-group-item" ><a href="#" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
 		</ul>
@@ -45,21 +45,17 @@
 
 	<div class="col-8">
 	<div class="container">
-			<div class="row" style="margin: 0 0 40px 0; color:#555555; font-weight:600">고객님께서 구매하신 상품의 리뷰를 관리하는 공간입니다.</div>		
+			<div class="row" style="color:#555555; font-weight:600">고객님께서 구매하신 상품의 리뷰를 관리하는 공간입니다.</div>		
 			
+			<br><hr>
+		
 			<c:forEach var="rvs" items="${reviews}">
-				<div class="row">
-				<div class="col-6">${rvs.name }</div><div class="col-3">2022.05.05</div>
-				<br><br>
-				<p>${rvs.myReviewContent}</p>
-				<br>
-				<div class="col-8"></div>
-				<div class="col-4">
-				<button type="button" class="btn btn-outline-dark">수정</button>
-				<button type="button" class="btn btn-outline-danger">삭제</button>
-				</div>	
-				</div>
-				<hr>	
+					
+			<div class="row">
+			<div class="col">${rvs.productId}</div>
+			<div class="col">${rvs.writerId}</div>
+			</div>		
+			<br><hr>		
 			</c:forEach>	
 	</div> 
 	</div>	

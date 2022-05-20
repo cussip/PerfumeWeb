@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.perfume.exam.service.MyReviewService;
 import com.perfume.exam.service.dao.MyReviewDAO;
 import com.perfume.exam.vo.MyReviewVO;
+import com.perfume.exam.vo.ReviewVO;
 
 @Service("myReviewService")
 public class MyReviewServiceImpl implements MyReviewService {
@@ -16,9 +17,9 @@ public class MyReviewServiceImpl implements MyReviewService {
 	private MyReviewDAO myReviewDAO;
 	
 	@Override
-	public List<MyReviewVO> selectReviewList() throws Exception {
+	public List<ReviewVO> selectReviewList(String id) throws Exception {
 		
-		return myReviewDAO.selectReviewList();
+		return myReviewDAO.selectReviewList(id);
 	}
 	
 	@Override

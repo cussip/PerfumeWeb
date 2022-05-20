@@ -146,8 +146,7 @@ public class ShopController {
 		
 		model.addAttribute("user_id",vo.getId());
 		
-		// 하단 리뷰목록 
-		// model.addAttribute("revList", reviewservice.getReviewList());
+
 	
 		return "root.shop.detail";
 	}

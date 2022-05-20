@@ -61,9 +61,7 @@
 	<div class="container">
 		<div class="col"  style="color:#555555; font-weight:600">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
 
-		
 		<br><hr>
-		
 
 		<c:forEach var="wi" items="${wishes}">
 		<!-- 각 관심상품 리스트 -->

@@ -9,16 +9,17 @@ public class Criteria {
 	private int amount;
 	
 	/* 검색 타입 */
-	private String type;
+	// private String type;
 	
 	/* 검색 키워드 */
-	private String keyword;	
+	// private String keyword;	
 	
 	/* 카테고리 코드 */
-	private String cateCode;	
+	// private String cateCode;	
 	
 	// 상품 번호(리뷰 기능에 사용)
 	private int productId;
+	
 	
 	// Criteria 생성자
 	public Criteria(int pageNum, int amount) {
@@ -32,10 +33,12 @@ public class Criteria {
 	}
 	
 	/* 검색 타입 데이터 배열 변환 */
+	/*
 	public String[] getTypeArr() {
 		return type == null? new String[] {}:type.split("");
 	}
-
+	*/
+	
 	public int getPageNum() {
 		return pageNum;
 	}
@@ -52,6 +55,7 @@ public class Criteria {
 		this.amount = amount;
 	}
 
+	/*
 	public String getType() {
 		return type;
 	}
@@ -75,7 +79,8 @@ public class Criteria {
 	public void setCateCode(String cateCode) {
 		this.cateCode = cateCode;
 	}
-
+	*/
+	
 	public int getProductId() {
 		return productId;
 	}
@@ -86,8 +91,8 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", type=" + type + ", keyword=" + keyword
-				+ ", cateCode=" + cateCode + ", productId=" + productId + "]";
+		return "Criteria [pageNum=" + pageNum + ", amount=" + amount 
+				+ ", productId=" + productId + "]";
 	}	
 
 	

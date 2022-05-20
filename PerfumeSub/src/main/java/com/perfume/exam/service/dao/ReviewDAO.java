@@ -11,7 +11,7 @@ public interface ReviewDAO {
 	// 상품리뷰 등록
 	public int enrollReview(ReviewVO rvo);
 	
-	// 리뷰 페이징
+	// 리뷰목록 페이징
 	public List<ReviewVO> getReviewList(Criteria cri);
 
 	// 리뷰 총 개수 (페이징)

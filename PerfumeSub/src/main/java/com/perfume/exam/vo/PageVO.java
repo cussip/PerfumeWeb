@@ -34,7 +34,7 @@ public class PageVO {
 		int realEnd = (int)(Math.ceil(total*1.0/cri.getAmount()));
 		
 		/* 페이지 끝 번호 유효성 체크 */
-		if(realEnd < pageEnd) {
+		if(realEnd < this.pageEnd) {
 			this.pageEnd = realEnd;
 		}
 		
