@@ -48,12 +48,20 @@
 			<div class="row" style="color:#555555; font-weight:600">고객님께서 구매하신 상품의 리뷰를 관리하는 공간입니다.</div>		
 			
 			<br><hr>
-		
+			
+			<!-- 목록이 들어갈 곳 -->
 			<c:forEach var="rvs" items="${reviews}">
-					
+			<!-- 추후에 상품이름 목록에 추가 -->		
 			<div class="row">
-			<div class="col">${rvs.productId}</div>
-			<div class="col">${rvs.writerId}</div>
+			<div class="col">${rvs.regDate}</div>
+			<div class="col">${rvs.name}</div>
+			<div class="col">${rvs.rating} / 5.0 </div>		
+				
+			<%--<div class="col">${rvs.writerId}</div>  --%>
+			<br>
+			<p>${rvs.content}</p>
+			
+			
 			</div>		
 			<br><hr>		
 			</c:forEach>	

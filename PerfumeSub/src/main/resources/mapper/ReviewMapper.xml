@@ -8,8 +8,8 @@
 	<!-- 상품리뷰 등록 -->	
 	<insert id="enrollReview">
 		
-		insert into review(reviewId, productId, writerId, regDate, content, rating)
-		values (seq_review.nextval, #{productId}, #{writerId}, sysdate, #{content}, #{rating})
+		insert into review(reviewId, productId, writerId, regDate, content, rating, name)
+		values (seq_review.nextval, #{productId}, #{writerId}, sysdate, #{content}, #{rating}, #{name})
 		
 	</insert>	
 	

@@ -10,20 +10,21 @@ public class ReviewVO {
 	private Date RegDate;
 	private String Content;
 	private double Rating;
+	private String Name;
 	
 	public ReviewVO() {
 		
 	}
 
 	public ReviewVO(int reviewId, int productId, String writerId, Date regDate, String content, 
-			double rating) {
+			double rating, String name) {
 		this.ReviewId = reviewId;
 		this.ProductId = productId;
 		this.WriterId = writerId;
 		this.RegDate = regDate;
 		this.Content = content;
 		this.Rating = rating;
-		
+		this.Name	= name;
 	}
 
 	public int getReviewId() {
@@ -74,13 +75,20 @@ public class ReviewVO {
 		Rating = rating;
 	}
 
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
 	@Override
 	public String toString() {
 		return "ReviewVO [ReviewId=" + ReviewId + ", ProductId=" + ProductId + ", WriterId=" + WriterId + ", RegDate="
-				+ RegDate + ", Content=" + Content + ", Rating=" + Rating + "]";
+				+ RegDate + ", Content=" + Content + ", Rating=" + Rating + ", Name=" + Name + "]";
 	}
 
-		
-		
+	
 		
 }

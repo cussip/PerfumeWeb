@@ -70,14 +70,16 @@
 		const productId = '${perfumeInfo.product_id}'; 
 		const writerId = '${id}';
 		const content = $("textarea").val();
-		const rating = $("select").val();		
+		const rating = $("select").val();	
+		const name	= '${perfumeInfo.name}';
 		
 		const data = {
 	
 				productId : productId, 
 				writerId : writerId,
 				content  : content,
-				rating : rating
+				rating : rating,
+				name : name
 		}
 								
 		$.ajax({
