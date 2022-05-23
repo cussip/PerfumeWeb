@@ -23,7 +23,6 @@ public class MyReviewServiceImpl implements MyReviewService {
 	}
 
 	
-	
 	@Override
 	public void enrollReview(MyReviewVO myreview) {
 		
@@ -31,6 +30,13 @@ public class MyReviewServiceImpl implements MyReviewService {
 		
 	}
 
+	// 리뷰 삭제	
+	@Override
+	public void deleteReview(int reviewId) throws Exception {
+		
+		myReviewDAO.deleteReview(reviewId);
+	}
+	
 	/*
 	@Override
 	public MyReviewVO getProductIdName(int productId) {

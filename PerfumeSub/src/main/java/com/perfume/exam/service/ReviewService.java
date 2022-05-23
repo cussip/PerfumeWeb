@@ -12,6 +12,6 @@ public interface ReviewService {
 	public int enrollReview(ReviewVO rvo);
 	
 	// 리뷰 페이징
-	public ReviewPageVO reviewList(Criteria cri);
+	// public ReviewPageVO reviewList(Criteria cri);
 	
 }

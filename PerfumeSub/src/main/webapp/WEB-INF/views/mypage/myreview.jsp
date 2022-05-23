@@ -81,7 +81,7 @@
 			<div class="col-3"></div><div class="col-3"></div><div class="col-3"></div>
 				<div class="col-3">
 					<button type="button" class="myreview_mod">수정</button>
-					<button type="button" class="myreview_del">삭제</button>
+					<button type="button" class="myreview_del" data-reviewid="${rvs.reviewId}">삭제</button>
 				</div>
 			</div>
 			</div><hr>		
@@ -91,6 +91,20 @@
 	
 </div>	
 	
+<form action="/myreview/deletereview" method="post" class="reviewlist_delete_form">
+	<input type="hidden" name="reviewId" class="delete_reviewId">			
+	<input type="hidden" name="writerId" value="${member.id}">			
+</form>
+
+<script>
+$(".myreview_del").on("click", function(e){
+	e.preventDefault();
+	const reviewId = $(this).data("reviewid")
+	$(".delete_reviewId").val(reviewId);
+	$(".reviewlist_delete_form").submit();
+});	
+
+</script>	
 	
 </main>	
 

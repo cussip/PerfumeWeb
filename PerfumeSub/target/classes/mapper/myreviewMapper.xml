@@ -11,7 +11,11 @@
 	]]>
 </select>
 
-
+<delete id="deleteReview" parameterType="int">
+	<![CDATA[
+		DELETE FROM REVIEW WHERE reviewid = #{reviewid} 
+	]]>	
+</delete>
 
 
 

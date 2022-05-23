@@ -28,6 +28,7 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 	
 	// 리뷰목록 페이징
+	/*
 	@Override
 	public ReviewPageVO reviewList(Criteria cri) {
 		ReviewPageVO vo = new ReviewPageVO(); 	
@@ -38,5 +39,5 @@ public class ReviewServiceImpl implements ReviewService{
 		return vo;
 		
 	}
-	
+	*/
 }

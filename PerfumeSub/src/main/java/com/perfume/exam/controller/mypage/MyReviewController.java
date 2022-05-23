@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.perfume.exam.service.MyReviewService;
 
 import com.perfume.exam.vo.MyReviewVO;
+import com.perfume.exam.vo.MyWishVO;
 import com.perfume.exam.vo.ReviewVO;
 
 
@@ -42,6 +43,15 @@ public class MyReviewController {
 		
 	}
 	
+	// 리뷰목록 삭제
+	@PostMapping("/myreview/deletereview")
+	public String deleteReview(ReviewVO rvo) throws Exception {
+		
+		myReviewService.deleteReview(rvo.getReviewId());
+		
+		return "redirect:/myreview/" + rvo.getWriterId();
+		
+	}	
 	
 	
 	
