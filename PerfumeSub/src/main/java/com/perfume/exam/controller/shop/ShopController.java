@@ -1,6 +1,7 @@
 package com.perfume.exam.controller.shop;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,11 +21,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.perfume.exam.model.MemberVO;
 import com.perfume.exam.service.CartService;
 import com.perfume.exam.service.PerfumeService;
-<<<<<<< HEAD
+
 import com.perfume.exam.service.ReviewService;
-=======
+
 import com.perfume.exam.vo.CartVO;
->>>>>>> 518f613335fa1177619d62fe7e3d24d6ba95e107
+
 import com.perfume.exam.vo.PerfumeVO;
 
 @RequestMapping("/shop/")
