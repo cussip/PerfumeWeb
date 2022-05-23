@@ -55,6 +55,13 @@ public class PerfumeServiceImpl implements PerfumeService {
 		return perfumeDAO.getProductIdName(product_id); 
 	}
 
+	// 제품명에 따른 리뷰 조회
+	public List<ReviewVO> selectReviewList(String param) throws Exception {
+		
+		return perfumeDAO.selectReviewList(param);
+	}
+
+
 }
 
 

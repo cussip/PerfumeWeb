@@ -13,6 +13,10 @@
 		
 	</insert>	
 	
+	<!-- 상세페이지 하단 리뷰목록 -->
+	
+	
+	
 	<!-- 리뷰 페이징 -->
 	<select id="getReviewList" resultType="com.perfume.exam.vo.ReviewVO">
 	

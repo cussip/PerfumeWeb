@@ -18,6 +18,18 @@
 	background-color: #b6b8bb;
 }
 
+.delete_wish {
+	border-color: #ff0065;
+	text-decoration: none;
+	color: #ff0065;
+}
+
+.add_cart {
+	border-color: #140f0e;
+	text-decoration: none;
+	color: #140f0e;
+}
+
 #goodsname {
 	color:#555555;
 	text-decoration: none;
@@ -47,9 +59,9 @@
 		<!-- 좌측 마이페이지 사이드메뉴 -->
 		<div class="col-4" style="padding: 0 100px 0 20px">
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
-   			<li class="list-group-item" ><a href="/myorder" id="mymenu">주문내역</a></li>
-  			<li class="list-group-item" ><a href="/mywish" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="/myreview" id="mymenu">나의리뷰</a></li>
+   			<li class="list-group-item" ><a href="/myorder/${member.id}" id="mymenu">주문내역</a></li>
+  			<li class="list-group-item" ><a href="/mywish/${member.id}" id="mymenu">관심상품</a></li>
+  			<li class="list-group-item" ><a href="/myreview/${member.id}" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
 		</ul>
@@ -80,8 +92,11 @@
 				<fmt:formatNumber value="${wi.price}"/>
 				</div>
 				<div class="col-3">
-						<button type="button" class="btn btn-outline-secondary btn-sm">장바구니</button>
-						<button class="delete_wish" data-wishid="${wi.wishId}">삭제</button>
+						<button type="button" class="add_cart">장바구니</button>
+						
+						<!-- <button type="button" class="btn btn-outline-danger" id="wishdel" data-wishid="${wi.wishId}">삭제</button> -->
+						
+						<button type="button" class="delete_wish" data-wishid="${wi.wishId}">삭제</button>  
 				</div>
 				
 		</div>

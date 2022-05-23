@@ -62,8 +62,12 @@
 			<exclude-mapping path="/mywish/add"/>
 			<beans:bean id="MyWishIntreceptor" class="com.perfume.exam.interceptor.MyWishInterceptor"></beans:bean>	
 		</interceptor>
-		
 	
+		<interceptor>
+			<mapping path="/myreview/**"/>
+			<beans:bean id="MyReviewIntreceptor" class="com.perfume.exam.interceptor.MyReviewInterceptor"></beans:bean>	
+		</interceptor>	
+		
 	</interceptors>
 	
 </beans:beans>

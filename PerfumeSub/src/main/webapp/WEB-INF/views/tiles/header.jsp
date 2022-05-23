@@ -1,18 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 9c0352050145e0c4eb35e575b619527629a3afa8
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 
-<<<<<<< HEAD
+
 
 <%@	taglib	prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-=======
->>>>>>> 9c0352050145e0c4eb35e575b619527629a3afa8
+
 <header>
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
@@ -91,6 +86,14 @@
 					<i class="header-icon bi bi-box-arrow-up"></i>
 				</a>
 			</c:if>
+          </li>
+          
+          <li>
+          	<c:if test="${member != null }">
+          		<a class="nav-link" aria-current="page" href="/myorder/${member.id}">
+				마이페이지
+				</a>
+          	</c:if>
           </li>
         </ul>
       </div>

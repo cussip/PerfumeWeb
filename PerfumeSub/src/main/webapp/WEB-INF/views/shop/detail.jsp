@@ -89,7 +89,7 @@
 				price = '<strong>'+cn1+' 원</strong>'
 				$("#p").text("");
 				$("#p").append(price);
-<<<<<<< HEAD
+
 			}
 			
 			
@@ -111,12 +111,12 @@
 	});
 	
 	
-=======
+
 			}											
 		});				
 	});
 	
->>>>>>> 518f613335fa1177619d62fe7e3d24d6ba95e107
+
 	function payment() {
 		var price = $("#ml option:selected").val();
 		
@@ -339,13 +339,14 @@
 			   <div class="col-sm-5" style="text-align: center; margin-top: 20px;">
 				    <i class="bi bi-star-fill" style="font-size: 4rem; margin-top: 20px;"> 4.6</i><br>
 				    90%의 구매자가 이 상품을 좋아합니다.<br>
-				    <button type="button" class="btn btn-lg btn btn-dark" style="margin-top: 20px;">상품 리뷰 작성하기</button>				      
+				    <button type="button" class="btn btn-lg btn btn-dark" id="review_button" style="margin-top: 20px;">상품 리뷰 작성하기</button>				      
+				<!-- 
 				<c:if test="${member != null}">
 					<div class="reply_button_wrap">
 					<button>리뷰 쓰기</button>
 					</div>
 				</c:if>	
-			   		
+			   	-->
 			   </div>
 			  
 			  
@@ -381,15 +382,16 @@
 		</div>
 	</div>
 
-     <div class="container" style="padding-bottom: 100px;">
+     <div class="container" style="padding-bottom: 20px;">
      <div class="border-bottom"></div>
      </div>
      
+     <!-- 
      <div class="review_not_div">
      
      </div>
      <ul class="review_content_ul">
-     <!--  
+       
      	<li>
      		<div class="comment_wrap">
      			<div class="review_top">
@@ -405,12 +407,12 @@
      			</div>
      		</div>
      	</li>
-     -->
+     
      </ul>   
       
      <div class="review_pageInfo_div">
  		<ul class="pageMaker">
- 	<!--	
+ 		
 			<li class="pageMaker_btn prev">
 				<a>이전</a>
 			</li>
@@ -426,45 +428,34 @@
 			<li class="pageMaker_btn next">
 				<a>다음</a>
 			</li>
-	-->
+	
 		</ul>    
      </div>
-       
+     -->   
     
     <!-- 리뷰 목록 -->
-    <%--
-    <div class="container" style="padding-bottom: 200px;">	
-     <div class="table_review">
-     	<table>
-     		<thead>
-     			<tr>
-     				<th class="regdate_width">작성일</th>
-     				<th class="rating_width">평점</th>
-     				<th class="product_width">상품번호</th>
-     				<th class="content_width">내용</th>
- 				</tr>
-     		</thead>
-     		<c:forEach var="revList" items="${revList}">
-     			<tr>
-					<td><c:out value="${revlist.regDate}"></c:out></td>
- 					<td><c:out value="${revlist.rating}"></c:out></td>
- 					<td><c:out value="${revlist.productId}"></c:out></td>
- 					<td><c:out value="${revlist.content}"></c:out></td>
- 				</tr>     			
+    <div class="container">	 		
+     		<c:forEach var="revlist" items="${revlist}">
+    			<div class="row">
+    				<div class="col-2">${revlist.rating}점</div>
+    				<div class="col-2">${revlist.writerId}</div>
+    				<div class="col-1"></div><div class="col-1"></div><div class="col-1"></div>
+    				<div class="col-5">${revlist.regDate}</div>
+    			</div>		
+    			<br>
+    			<div class="row"><p>${revlist.content}</p></div>
+    			<hr>
      		</c:forEach>
-     	</table>	
      
-     </div>		
-	</div>
+     </div>
+  
+</div>
 			
 				
-      --%>		
-</div>
-
 <script>
 
 /* 리뷰쓰기 */
-$(".reply_button_wrap").on("click", function(e){
+$("#review_button").on("click", function(e){
 	
 	e.preventDefault();			
 

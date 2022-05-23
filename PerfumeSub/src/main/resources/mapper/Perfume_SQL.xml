@@ -40,6 +40,12 @@
       ]]>
  </select> 
  
+ <!-- 상세페이지 하단에 상품리뷰 목록 조회 -->
+  <select id="selectReviewList" resultType="com.perfume.exam.vo.ReviewVO" parameterType = "String">
+   <![CDATA[
+      select * from review where NAME =#{param}
+      ]]>
+ </select>
  
  
  

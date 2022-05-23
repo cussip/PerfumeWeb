@@ -27,6 +27,7 @@ import com.perfume.exam.service.ReviewService;
 import com.perfume.exam.vo.CartVO;
 
 import com.perfume.exam.vo.PerfumeVO;
+import com.perfume.exam.vo.ReviewVO;
 
 @RequestMapping("/shop/")
 @Controller
@@ -123,6 +124,10 @@ public class ShopController {
 		String param = request.getParameter("param");
 
 		List<PerfumeVO> list = perfumeservice.selectName(param);
+		
+		// 상세페이지 하단에 리뷰 조회하기
+		List<ReviewVO> revlist = perfumeservice.selectReviewList(param);
+		
 		MemberVO vo = new MemberVO();
 		vo =(MemberVO) session.getAttribute("member");
 		if (vo== null) {
@@ -142,7 +147,8 @@ public class ShopController {
 		
 		model.addAttribute("user_id",vo.getId());
 		
-
+		// 리뷰목록
+		model.addAttribute("revlist", revlist);
 	
 		return "root.shop.detail";
 	}

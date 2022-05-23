@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
 <style>
 #mymenu {
 	color:#555555;
@@ -11,6 +16,19 @@
 .list-group-item:hover {
 	background-color: #b6b8bb;
 }
+
+.myreview_mod {
+	border-color: #140f0e;
+	text-decoration: none;
+	color: #140f0e;
+}
+
+.myreview_del {
+	border-color: #ff0065;
+	text-decoration: none;
+	color: #ff0065;
+}
+
 
 #goodsname {
 	color:#555555;
@@ -34,9 +52,9 @@
 		<!-- 좌측 마이페이지 사이드메뉴 -->
 		<div class="col-4" style="padding: 0 80px 0 20px">
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
-  			<li class="list-group-item" ><a href="#" id="mymenu">주문내역</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">나의리뷰</a></li>
+  			<li class="list-group-item" ><a href="/myorder/${member.id}" id="mymenu">주문내역</a></li>
+  			<li class="list-group-item" ><a href="/mywish/${member.id}" id="mymenu">관심상품</a></li>
+  			<li class="list-group-item" ><a href="/myreview/${member.id}" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
 		</ul>
@@ -56,14 +74,17 @@
 			<div class="col">${rvs.regDate}</div>
 			<div class="col">${rvs.name}</div>
 			<div class="col">${rvs.rating} / 5.0 </div>		
-				
-			<%--<div class="col">${rvs.writerId}</div>  --%>
 			<br>
 			<p>${rvs.content}</p>
-			
-			
-			</div>		
-			<br><hr>		
+			<br>
+			<div class="row">
+			<div class="col-3"></div><div class="col-3"></div><div class="col-3"></div>
+				<div class="col-3">
+					<button type="button" class="myreview_mod">수정</button>
+					<button type="button" class="myreview_del">삭제</button>
+				</div>
+			</div>
+			</div><hr>		
 			</c:forEach>	
 	</div> 
 	</div>	
