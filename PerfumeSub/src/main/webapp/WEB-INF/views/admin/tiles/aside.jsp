@@ -37,7 +37,7 @@
 	        </button>
 	        <div class="collapse" id="orders-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-	            <li><a href="#" class="link-dark rounded">상품등록 및 수정</a></li>
+	            <li><a href="/admin/product" class="link-dark rounded">상품등록 및 수정</a></li>
 	          </ul>
 	        </div>
 	      </li>

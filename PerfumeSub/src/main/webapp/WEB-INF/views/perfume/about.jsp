@@ -76,9 +76,8 @@
 
 <main class="container-fluid">
 	<!--  body -->
-	<div style="background-color: white;">
 	
-	<div class="box my-5 pb-5">
+	<div class="box mb-5 pb-5">
 		<video muted autoplay loop>
 			<source
 				src="https://paffem.me/web/paffem/assets/about/desktop.mp4.gif"

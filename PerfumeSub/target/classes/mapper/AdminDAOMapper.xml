@@ -3,6 +3,8 @@
 
 <mapper namespace="com.perfume.exam.service.dao.AdminDAO">
 
+	<!--=================================List Query=================================-->
+	<!--=================================List Query=================================-->
 	<select id="getNoticeList" resultType="boardVO">
 		<![CDATA[
 			SELECT * FROM board WHERE category = 'notice' ORDER BY id DESC
@@ -33,6 +35,16 @@
 		]]>
 	</select>
 	
+	<select id="getProductList" resultType="perfumeVO">
+		<![CDATA[
+			SELECT * FROM product
+		]]>	
+	</select>
+	
+	
+	
+	<!--=================================Board Query=================================-->
+	<!--=================================Board Query=================================-->
 	<insert id="boardInsert" parameterType="boardVO">
 		<![CDATA[
 			INSERT INTO board VALUES (board_seq.nextval, 0, #{title}, #{content}, sysdate, #{category})
@@ -45,11 +57,16 @@
 		]]>
 	</update>
 	
+	
+	
+	<!--=================================Benefit Query=================================-->
+	<!--=================================Benefit Query=================================-->
 	<delete id="boardDelete" parameterType="boardVO">
 		<![CDATA[
 			DELETE FROM board WHERE id = ${id}
 		]]>
 	</delete>
+	
 	
 	<update id="beneSubmit" parameterType="eventVO">
 		<![CDATA[
@@ -57,7 +74,11 @@
 		]]>
 	</update>	
 	
-	<update id="eventUpdate" parameterType="eventVO">
+	
+	
+	<!--=================================Event Query=================================-->
+	<!--=================================Event Query=================================-->
+	<update id="eventUpdateMax" parameterType="eventVO">
 		<![CDATA[
 			UPDATE event SET 
 				title = #{title}, 
@@ -68,6 +89,38 @@
 			WHERE id = ${id}
 		]]>
 	</update>
+	
+	<update id="eventUpdateThn" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET 
+				title = #{title}, 
+				startDate = #{startdate}, 
+				enddate = #{enddate}, 
+				thumbnail = #{thumbnail}
+			WHERE id = ${id}
+		]]>
+	</update>
+	
+	<update id="eventUpdateImg" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET 
+				title = #{title}, 
+				startDate = #{startdate}, 
+				enddate = #{enddate}, 
+				image = #{image} 
+			WHERE id = ${id}
+		]]>
+	</update>
+	
+	<update id="eventUpdateMin" parameterType="eventVO">
+		<![CDATA[
+			UPDATE event SET 
+				title = #{title}, 
+				startDate = #{startdate}, 
+				enddate = #{enddate}
+			WHERE id = ${id}
+		]]>
+	</update>			
 	
 	<insert id="eventInsert" parameterType="eventVO">
 		<![CDATA[
@@ -85,6 +138,30 @@
 				  	)
 		]]>
 	</insert>
-
+	
+	<delete id="eventDelete" parameterType="eventVO">
+		<![CDATA[
+			DELETE FROM event WHERE id = ${id}
+		]]>
+	</delete>	
+	
+	
+	
+	<!--=================================Product Query=================================-->
+	<!--=================================Product Query=================================-->
+	
+	
+	
+	
+	
+	
 	
 </mapper> 
+
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@ import com.perfume.exam.service.AdminService;
 import com.perfume.exam.service.dao.AdminDAO;
 import com.perfume.exam.vo.BoardVO;
 import com.perfume.exam.vo.EventVO;
+import com.perfume.exam.vo.PerfumeVO;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -46,6 +47,16 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
+	public List<PerfumeVO> getProductList() throws Exception {
+
+		List<PerfumeVO> productList = adminDao.getProductList();
+		return productList;
+	}
+	
+	//-------------------------------------------------------------------------------------------
+	// Board Service
+	//-------------------------------------------------------------------------------------------
+	@Override
 	public void boardInsert(BoardVO board) throws Exception {
 		
 		String title = board.getTitle();
@@ -81,6 +92,9 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.boardDelete(id);	
 	}
 
+	//-------------------------------------------------------------------------------------------
+	// Benefit Service
+	//-------------------------------------------------------------------------------------------
 	@Override
 	public String getBenefit() throws Exception {
 
@@ -96,31 +110,85 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.beneSubmit(path);
 	}
 
+	//-------------------------------------------------------------------------------------------
+	// Event Service
+	//-------------------------------------------------------------------------------------------	
 	@Override
 	public void eventUpdate(EventVO event) throws Exception {
 		
 		int id = event.getId();
 		String title = event.getTitle();
-		String thumbnail = "/img/event/" + event.getThumbnail();
-		String image = "/img/event/" + event.getImage();
-		Date startdate = event.getStartdate();
 		Date enddate = event.getEnddate();
+		Date startdate = event.getStartdate();
+		String thumbnail = null;
+		String image = null;
+				
 		
-		adminDao.eventUpdate(id, title, thumbnail, image, startdate, enddate);
+		//썸네일 파일만 들어오는 경우
+		if(!event.getThumbnail().equals("") && event.getImage().equals("")) {
+			thumbnail = "/img/event/thumbnail/" + event.getThumbnail();			
+			adminDao.eventUpdateThn(id, title, thumbnail, startdate, enddate);
+			
+		//이미지 파일만 들어오는 경우
+		} else if(event.getThumbnail().equals("") && !event.getImage().equals("")) {
+			image = "/img/event/image/" + event.getImage();	
+			adminDao.eventUpdateImg(id, title, image, startdate, enddate);
 		
+		//파일이 안 들어오는 경우
+		} else if(event.getThumbnail().equals("") && event.getImage().equals("")) {
+			adminDao.eventUpdateMin(id, title, startdate, enddate);
+			
+		//파일이 전부 들어오는 경우	
+		} else {		
+			thumbnail = "/img/event/thumbnail/" + event.getThumbnail();			
+			image = "/img/event/image/" + event.getImage();	
+			adminDao.eventUpdateMax(id, title, thumbnail, image, startdate, enddate);
+		}	
 	}
 
 	@Override
 	public void eventInsert(EventVO event) throws Exception {
 		
 		String title = event.getTitle();
-		String thumbnail = "/img/event/" + event.getThumbnail();
-		String image = "/img/event/" + event.getImage();
+		String thumbnail = "/img/event/thumbnail/" + event.getThumbnail();
+		String image = "/img/event/image/" + event.getImage();
 		Date startdate = event.getStartdate();
 		Date enddate = event.getEnddate();
 		
 		adminDao.eventInsert(title, thumbnail, image, startdate, enddate);
 		
 	}
+
+	@Override
+	public void eventDelete(EventVO event) throws Exception {
+
+		int id = event.getId();
+		
+		adminDao.eventDelete(id);
+		
+	}
+
+	
+	//-------------------------------------------------------------------------------------------
+	// Product Service
+	//-------------------------------------------------------------------------------------------
+	@Override
+	public void productUpdate(PerfumeVO perfume) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void productInsert(PerfumeVO perfume) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void productDelete(PerfumeVO perfume) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

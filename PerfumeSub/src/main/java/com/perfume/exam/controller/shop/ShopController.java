@@ -1,36 +1,31 @@
 package com.perfume.exam.controller.shop;
 
 import java.util.ArrayList;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
-import org.apache.taglibs.standard.tag.common.fmt.ParseDateSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.perfume.exam.model.CartDTO;
 import com.perfume.exam.model.MemberVO;
 import com.perfume.exam.service.CartService;
 import com.perfume.exam.service.PerfumeService;
+<<<<<<< HEAD
 import com.perfume.exam.service.ReviewService;
+=======
+import com.perfume.exam.vo.CartVO;
+>>>>>>> 518f613335fa1177619d62fe7e3d24d6ba95e107
 import com.perfume.exam.vo.PerfumeVO;
-import com.perfume.exam.vo.ReviewVO;
 
 @RequestMapping("/shop/")
 @Controller
@@ -150,28 +145,25 @@ public class ShopController {
 	
 		return "root.shop.detail";
 	}
+	
 	@RequestMapping(value = "detail/cart",method = RequestMethod.POST)
     @ResponseBody
-    public String payment(@RequestParam("user_id") String user_id,@RequestParam("product_id") String product_id){
-		CartDTO cart = new CartDTO();
+    public String payment(@RequestParam("user_id") String user_id,@RequestParam("product_id") String product_id,@RequestParam("price")String price){
+		
+	  List<CartVO> list =  new ArrayList<>();
+	  	
+		CartVO cart = new CartVO();
 		cart.setId(user_id);
 		cart.setName(product_id);
+		cart.setImage(price);
+		
         cartservice.newAddCart(cart);
         
-        
-        
-        
+       
         return "success";
         
     }
-		
-	@RequestMapping("register")
-	public String register(HttpSession session, Model model) {
-		
-
-		return "root.shop.register";
-	}
-
+			
 	// 리뷰 작성
 	@GetMapping("/reviewEnroll/{id}")
 	public String reviewEnrollGET(@PathVariable("id") String id, int product_id, Model model) throws Exception {
@@ -186,6 +178,7 @@ public class ShopController {
 	
 	
 }
+
 
 
 

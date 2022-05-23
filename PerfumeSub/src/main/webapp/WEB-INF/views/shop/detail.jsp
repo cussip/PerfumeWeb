@@ -65,29 +65,31 @@
 
 
 	$(document).ready(function(){
+		
 		var price;
 		$("#ml").change(function() {
-			if ($("#ml").val() == '40ml') {
+			if ($("#ml").val() == 'price') {
 				price = ${price}
 				const cn1 = price.toString()
 				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 				price = '<strong>'+cn1+' 원</strong>'
 				$("#p").text("");
 				$("#p").append(price);
-			}else if ($("#ml").val() == '60ml') {
+			}else if ($("#ml").val() == 'price2') {
 				price = ${price2}
 				const cn1 = price.toString()
 				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 				price = '<strong>'+cn1+' 원</strong>'
 				$("#p").text("");
 				$("#p").append(price);
-			}else if ($("#ml").val() == '120ml') {
+			}else if ($("#ml").val() == 'price3') {
 				price = ${price3}
 				const cn1 = price.toString()
 				  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 				price = '<strong>'+cn1+' 원</strong>'
 				$("#p").text("");
 				$("#p").append(price);
+<<<<<<< HEAD
 			}
 			
 			
@@ -109,11 +111,24 @@
 	});
 	
 	
+=======
+			}											
+		});				
+	});
+	
+>>>>>>> 518f613335fa1177619d62fe7e3d24d6ba95e107
 	function payment() {
-
+		var price = $("#ml option:selected").val();
+		
+		
+		
+		
 		var params = {
 				user_id      : "${user_id}"
               , product_id       : "${name}"
+              , price : price
+              
+                
              
       }
 		$.ajax({
@@ -132,6 +147,8 @@
 	}
 	
 
+		
+	
 
 </script>
 </head>
@@ -183,12 +200,11 @@
 						
 						
 						<select name="ml" id="ml">												
-							<option id="" value="40ml">-[필수] 옵션을 선택해 주세요-</option>
-						    <option id="price" value="40ml">40ml </option>
-						    <option id="price2" value="60ml">60ml + 5,000</option>
-						    <option id="price3" value="120ml">120ml + 15,000</option>
+						    <option value="price">40ml </option>
+						    <option value="price2">60ml + 5,000</option>
+						    <option value="price3">120ml + 15,000</option>
 						</select>
-
+                        
 
 
 
