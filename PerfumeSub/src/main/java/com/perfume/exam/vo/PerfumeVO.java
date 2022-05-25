@@ -1,5 +1,7 @@
 package com.perfume.exam.vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class PerfumeVO {
 	
 	private int Product_id;
@@ -12,12 +14,14 @@ public class PerfumeVO {
 	private String Image;
 	private int Price2;
 	private int Price3;
+	private MultipartFile ImgFile;
+	
 	public PerfumeVO(){
 		
 	}
 
 	public PerfumeVO(int product_id, String name, String brand, int price, String source1, String source2,
-			String source3, String image) {
+			String source3, String image, MultipartFile imgFile) {
 		super();
 		Product_id = product_id;
 		Name = name;
@@ -27,10 +31,11 @@ public class PerfumeVO {
 		Source2 = source2;
 		Source3 = source3;
 		Image = image;
+		ImgFile = imgFile;
 	}
 	
 	public PerfumeVO(int product_id, String name, String brand, int price,int price2,int price3, String source1, String source2,
-			String source3) {
+			String source3, MultipartFile imgFile) {
 		super();
 		Product_id = product_id;
 		Name = name;
@@ -41,6 +46,7 @@ public class PerfumeVO {
 		Source1 = source1;
 		Source2 = source2;
 		Source3 = source3;
+		ImgFile = imgFile;
 		
 	}
 	
@@ -125,10 +131,21 @@ public class PerfumeVO {
 		Image = image;
 	}
 
+
+	public MultipartFile getImgFile() {
+		return ImgFile;
+	}
+
+	public void setImgFile(MultipartFile imgFile) {
+		ImgFile = imgFile;
+	}
+
+	
 	@Override
 	public String toString() {
 		return "PerfumeVO [Product_id=" + Product_id + ", Name=" + Name + ", Brand=" + Brand + ", Price=" + Price
-				+ ", Source1=" + Source1 + ", Source2=" + Source2 + ", Source3=" + Source3 + ", Image=" + Image + "]";
+				+ ", Source1=" + Source1 + ", Source2=" + Source2 + ", Source3=" + Source3 + ", Image=" + Image
+				 + ", ImgFile=" + ImgFile + "]";
 	}
 
 	

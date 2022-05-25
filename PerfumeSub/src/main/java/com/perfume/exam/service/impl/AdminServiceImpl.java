@@ -162,8 +162,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void eventDelete(EventVO event) throws Exception {
 
-		int id = event.getId();
-		
+		int id = event.getId();		
 		adminDao.eventDelete(id);
 		
 	}
@@ -174,21 +173,50 @@ public class AdminServiceImpl implements AdminService {
 	//-------------------------------------------------------------------------------------------
 	@Override
 	public void productUpdate(PerfumeVO perfume) throws Exception {
-		// TODO Auto-generated method stub
 		
+		int productId = perfume.getProduct_id();
+		String name = perfume.getName();
+		String brand = perfume.getBrand();
+		String source1 = perfume.getSource1();
+		String source2 = perfume.getSource2();
+		String source3 = perfume.getSource3();
+		int price = perfume.getPrice();
+		int price2 = perfume.getPrice2();
+		int price3 = perfume.getPrice3();
+		String image = null;
+				
+		
+		//파일이 안 들어오는 경우
+		if(perfume.getImage().equals("")) {
+			adminDao.productUpdateMin(productId, name, brand, source1, source2, source3, price, price2, price3);
+			
+		//파일이 전부 들어오는 경우	
+		} else {				
+			image = "/img/product/" + perfume.getImage();	
+			adminDao.productUpdateMax(productId, name, brand, source1, source2, source3, price, price2, price3, image);
+		}		
 	}
 
 	@Override
 	public void productInsert(PerfumeVO perfume) throws Exception {
-		// TODO Auto-generated method stub
 		
+		String name = perfume.getName();
+		String brand = perfume.getBrand();
+		String source1 = perfume.getSource1();
+		String source2 = perfume.getSource2();
+		String source3 = perfume.getSource3();
+		int price = perfume.getPrice();
+		int price2 = perfume.getPrice2();
+		int price3 = perfume.getPrice3();
+		String image = "/img/product/" + perfume.getImage();
+		
+		adminDao.productInsert(name, brand, source1, source2, source3, price, price2, price3, image);
 	}
 
 	@Override
 	public void productDelete(PerfumeVO perfume) throws Exception {
-		// TODO Auto-generated method stub
-		
+
+		int id = perfume.getProduct_id();
+		adminDao.productDelete(id);	
 	}
-
-
 }
