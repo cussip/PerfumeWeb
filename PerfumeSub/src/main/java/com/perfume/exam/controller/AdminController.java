@@ -189,9 +189,7 @@ public class AdminController {
 		if(!thnFile.isEmpty()) {			
 			//기존 이미지 파일의 삭제
 			String befThnPath = File.separator + "resources" + event.getThumbnail();
-			System.out.println(event.getThumbnail());
 			String realBefThnPath = ctx.getRealPath(befThnPath);
-			System.out.println(realBefThnPath);
 			File delThnPath = new File(realBefThnPath);
 			delThnPath.delete();
 
@@ -274,5 +272,85 @@ public class AdminController {
 		return "admin.product";
 	}
 	
+	@PostMapping("product")
+	public String productInsert(@ModelAttribute PerfumeVO perfume) throws Exception {
+		
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());       
+		SimpleDateFormat sdf = new SimpleDateFormat ("yyMMddhhmmss");
+		
+    	MultipartFile image = perfume.getImgFile();
+	    String imgName = sdf.format(timestamp) + "_" + image.getOriginalFilename();
+	    	    
+	    String imgPath = ctx.getRealPath("resources/img/product");
+	    File saveImgPath = new File(imgPath);
+	    if(!saveImgPath.exists()) { saveImgPath.mkdirs(); }
+	  
+	  	imgPath += File.separator + imgName;	  
+	  	File saveImgFile = new File(imgPath);
+  	
+	  	perfume.setImage(imgName);
+	  	image.transferTo(saveImgFile);
+	  
+	  	adminService.productInsert(perfume);	
+		
+		return "redirect:product";		
+	}
 	
+	@GetMapping("productDelete")
+	public String productDelete(@ModelAttribute PerfumeVO perfume) throws Exception {
+		
+		String imgPath = File.separator + "resources" + perfume.getImage();	
+		String realImgPath = ctx.getRealPath(imgPath);
+		File delImgPath = new File(realImgPath);
+				
+		delImgPath.delete();
+		adminService.productDelete(perfume);
+
+		return "redirect:product";	
+	}
+	
+	
+    @PostMapping("productUpdate") 
+    public String productUpdate(@ModelAttribute PerfumeVO perfume) throws Exception {
+
+    	Timestamp timestamp = new Timestamp(System.currentTimeMillis());       
+    	SimpleDateFormat sdf = new SimpleDateFormat ("yyMMddhhmmss");
+    		
+		MultipartFile imgFile = perfume.getImgFile();
+		if(!imgFile.isEmpty()) {			
+			//기존 이미지 파일의 삭제
+			String befImgPath = File.separator + "resources" + perfume.getImage();		
+			String realBefImgPath = ctx.getRealPath(befImgPath);
+			File delImgPath = new File(realBefImgPath);
+			delImgPath.delete();
+
+			//신규 이미지 파일의 등록
+			String imgName = sdf.format(timestamp) + "_" + imgFile.getOriginalFilename();			
+			String imgPath = ctx.getRealPath("resources/img/product");
+			
+			File saveImgPath = new File(imgPath);
+			if(!saveImgPath.exists()) { saveImgPath.mkdirs(); }
+			
+			imgPath += File.separator + imgName;
+			File saveImgFile = new File(imgPath);
+
+			perfume.setImage(imgName);			
+			imgFile.transferTo(saveImgFile);			
+		} else {
+			perfume.setImage("");
+		}
+	
+	  	adminService.productUpdate(perfume);
+	  
+	  	return "redirect:product"; 
+    }
+	
+	
+
 }
+
+
+
+
+
+

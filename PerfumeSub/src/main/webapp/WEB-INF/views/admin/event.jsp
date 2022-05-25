@@ -423,12 +423,12 @@
 	var thnChange = function (changeEvent) {
 	    const imgFile = changeEvent.target.files[0];
 	    thnReader.readAsDataURL(imgFile);
-	}
+	};
 
 	var imgChange = function (changeEvent) {
 	    const imgFile = changeEvent.target.files[0];
 	    imgReader.readAsDataURL(imgFile);
-	}
+	};
 	
 	document.querySelector("#thumbnailAdd").addEventListener("change", thnChange);		
 	document.querySelector("#imageAdd").addEventListener("change", imgChange);			
@@ -446,12 +446,12 @@
 	var thnAddChange = function (changeEvent) {
 	    const imgFile = changeEvent.target.files[0];
 	    thnAddReader.readAsDataURL(imgFile);
-	}
+	};
 
 	var imgAddChange = function (changeEvent) {
 	    const imgFile = changeEvent.target.files[0];
 	    imgAddReader.readAsDataURL(imgFile);
-	}
+	};
 	
 	document.querySelector("#thnAdd").addEventListener("change", thnAddChange);		
 	document.querySelector("#imgAdd").addEventListener("change", imgAddChange);			

@@ -50,4 +50,25 @@ public interface AdminDAO {
 	void eventDelete(@Param("id") int id) throws Exception;
 	
 	
+	void productInsert(@Param("name") String name, @Param("brand") String brand, 
+			@Param("source1") String source1, @Param("source2") String source2, 
+			@Param("source3") String source3, @Param("price") int price, 
+			@Param("price2") int price2, @Param("price3") int price3, 
+			@Param("image") String image);
+	
+	void productDelete(@Param("id") int id);
+	
+	void productUpdateMin(@Param("productId") int productId, @Param("name") String name, 
+			@Param("brand") String brand, @Param("source1") String source1, 
+			@Param("source2") String source2, @Param("source3") String source3,
+			@Param("price") int price, @Param("price2") int price2, 
+			@Param("price3") int price3);
+	
+	void productUpdateMax(@Param("productId") int productId, @Param("name") String name, 
+			@Param("brand") String brand, @Param("source1") String source1, 
+			@Param("source2") String source2, @Param("source3") String source3,
+			@Param("price") int price, @Param("price2") int price2, 
+			@Param("price3") int price3, @Param("image") String image);
+	
+	
 }
