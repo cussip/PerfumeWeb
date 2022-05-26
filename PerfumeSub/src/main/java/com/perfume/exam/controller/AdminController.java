@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.perfume.exam.model.MemberVO;
 import com.perfume.exam.service.AdminService;
 import com.perfume.exam.vo.BoardVO;
 import com.perfume.exam.vo.EventVO;
@@ -31,16 +34,18 @@ public class AdminController {
 	@Autowired
 	private ServletContext ctx;
 
+	
 	//-------------------------------------------------------------------------------------------
 	// Board Controller
 	//-------------------------------------------------------------------------------------------	
+	
 	@GetMapping("board")
-	public String boardList(Model model) throws Exception {
-
+	public String boardList(Model model) throws Exception {		
+		
 		List<BoardVO> noticeList = adminService.getNoticeList();
 		List<BoardVO> faqList = adminService.getFAQList();
 		String benefit = adminService.getBenefit();
-
+		
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("faqList", faqList);
 		model.addAttribute("benefit", benefit);
@@ -187,13 +192,13 @@ public class AdminController {
     	
 		MultipartFile thnFile = event.getThnFile();		
 		if(!thnFile.isEmpty()) {			
-			//±âÁ¸ ÀÌ¹ÌÁö ÆÄÀÏÀÇ »èÁ¦
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			String befThnPath = File.separator + "resources" + event.getThumbnail();
 			String realBefThnPath = ctx.getRealPath(befThnPath);
 			File delThnPath = new File(realBefThnPath);
 			delThnPath.delete();
 
-			//½Å±Ô ÀÌ¹ÌÁö ÆÄÀÏÀÇ µî·Ï
+			//ï¿½Å±ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			String thnName = sdf.format(timestamp) + "_" + thnFile.getOriginalFilename(); 			
 			String thnPath = ctx.getRealPath("resources/img/event/thumbnail");     		
 			
@@ -211,13 +216,13 @@ public class AdminController {
 				
 		MultipartFile imgFile = event.getImgFile();
 		if(!imgFile.isEmpty()) {			
-			//±âÁ¸ ÀÌ¹ÌÁö ÆÄÀÏÀÇ »èÁ¦
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			String befImgPath = File.separator + "resources" + event.getImage();		
 			String realBefImgPath = ctx.getRealPath(befImgPath);
 			File delImgPath = new File(realBefImgPath);
 			delImgPath.delete();
 
-			//½Å±Ô ÀÌ¹ÌÁö ÆÄÀÏÀÇ µî·Ï
+			//ï¿½Å±ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			String imgName = sdf.format(timestamp) + "_" + imgFile.getOriginalFilename();			
 			String imgPath = ctx.getRealPath("resources/img/event/image");
 			
@@ -318,13 +323,11 @@ public class AdminController {
     		
 		MultipartFile imgFile = perfume.getImgFile();
 		if(!imgFile.isEmpty()) {			
-			//±âÁ¸ ÀÌ¹ÌÁö ÆÄÀÏÀÇ »èÁ¦
 			String befImgPath = File.separator + "resources" + perfume.getImage();		
 			String realBefImgPath = ctx.getRealPath(befImgPath);
 			File delImgPath = new File(realBefImgPath);
 			delImgPath.delete();
 
-			//½Å±Ô ÀÌ¹ÌÁö ÆÄÀÏÀÇ µî·Ï
 			String imgName = sdf.format(timestamp) + "_" + imgFile.getOriginalFilename();			
 			String imgPath = ctx.getRealPath("resources/img/product");
 			
