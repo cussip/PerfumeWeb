@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
@@ -71,7 +72,7 @@
 			<c:forEach var="rvs" items="${reviews}">
 			<!-- 추후에 상품이름 목록에 추가 -->		
 			<div class="row">
-			<div class="col">${rvs.regDate}</div>
+			<div class="col"><fmt:formatDate var="myRevDate" value="${rvs.regDate}" type="date" pattern="yyyy-MM-dd"/>${myRevDate}</div>
 			<div class="col">${rvs.name}</div>
 			<div class="col">${rvs.rating} / 5.0 </div>		
 			<br>

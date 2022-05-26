@@ -81,7 +81,7 @@
 						<div class="col-8"></div>
 						<div class="col-4">
 						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="" 
-						><a href="/enrollreview">리뷰쓰기</a></button>
+						><a href="#">리뷰쓰기</a></button>
 						
 						<button class="delete_order" data-orderid="${item.orderId}">반품신청(삭제)</button>
 						
