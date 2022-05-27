@@ -53,11 +53,15 @@
 	  <!-- 우층 메뉴 영역 -->
 	  <div class="col-md-4">	
         <ul class="navbar-nav me-auto mb-2 mb-md-0 justify-content-md-center">
-	      <li class="nav-item my-icon">
-            <a class="nav-link" aria-current="page" href="/admin/board">
-            	<i class="header-icon bi bi-dash-circle-fill"></i>
-            </a>
-          </li>          
+        
+	      <c:if test="${member.adminCk == 1}">
+		      <li class="nav-item my-icon">
+	            <a class="nav-link" aria-current="page" href="/admin/board" style="color:red">
+	            	<i class="header-icon bi bi-dash-circle-fill"></i>
+	            </a>
+	          </li>
+	      </c:if>
+                    
           <li class="nav-item my-icon">
 
 

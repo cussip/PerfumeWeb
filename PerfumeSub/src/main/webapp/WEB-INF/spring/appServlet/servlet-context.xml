@@ -67,6 +67,11 @@
 			<mapping path="/myreview/**"/>
 			<beans:bean id="MyReviewIntreceptor" class="com.perfume.exam.interceptor.MyReviewInterceptor"></beans:bean>	
 		</interceptor>	
+
+		<interceptor>
+			<mapping path="/admin/**"/>
+			<beans:bean id="AdminInterceptor" class="com.perfume.exam.interceptor.AdminInterceptor"></beans:bean>
+		</interceptor>
 		
 	</interceptors>
 	

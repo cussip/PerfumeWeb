@@ -28,6 +28,6 @@ public interface AdminService {
 	
 	public void productUpdate(PerfumeVO perfume) throws Exception;
 	public void productInsert(PerfumeVO perfume) throws Exception;
-	public void productDelete(PerfumeVO perfume) throws Exception;	
+	public void productDelete(PerfumeVO perfume) throws Exception;
 	
 }
