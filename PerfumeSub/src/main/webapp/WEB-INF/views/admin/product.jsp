@@ -40,14 +40,49 @@
 							  <input type="text" class="form-control" name="brand" required>									  
 							</div>
 							
-						    <div class="input-group mb-3">
-						      <span class="input-group-text">source1</span>
-						      <input type="text" class="form-control" name="source1" required>
-						      <span class="input-group-text">source2</span>
-						      <input type="text" class="form-control" name="source2" required>
-						      <span class="input-group-text">source3</span>
-						      <input type="text" class="form-control" name="source3" required>
-						    </div>
+							<div class="form-control mb-3 chkSource" align="center">
+							  <span class="input-group-text">Source</span>
+							 	<c:forEach var="cnt" begin="1" end="3">
+								    <table class="form-control">
+								      <tr>
+									    <td>
+										  <input type="radio" value="Citrus" id="citrus" name="source${cnt}" checked>
+										  <label for="citrus">Citrus</label>	
+									    </td>
+									    <td>
+										  <input type="radio" value="Floral" id="floral" name="source${cnt}">
+										  <label for="floral">Floral</label>
+									    </td>
+									    <td>
+										  <input type="radio" value="Frutity" id="frutity" name="source${cnt}">
+										  <label for="frutity">Frutity</label>		
+									    </td>
+									    <td>
+										  <input type="radio" value="Green" id="green" name="source${cnt}">
+										  <label for="green">Green</label>	
+									    </td>
+								      </tr>	      
+								      <tr>
+									    <td>
+										  <input type="radio" value="Herbal" id="herbal" name="source${cnt}">
+										  <label for="herbal">Herbal</label>		
+									    </td>
+									    <td>
+										  <input type="radio" value="Musk" id="musk" name="source${cnt}">
+										  <label for="musk">Musk</label>		
+									    </td>
+									    <td>
+										  <input type="radio" value="Oriental" id="oriental" name="source${cnt}">
+										  <label for="oriental">Oriental</label>								  
+									    </td>
+									    <td>
+										  <input type="radio" value="Woody" id="woody" name="source${cnt}">
+										  <label for="woody">Woody</label>		
+									    </td>
+								      </tr>	
+								    </table>
+							    </c:forEach>
+							</div> 
 
 						    <div class="input-group mb-3">
 						      <span class="input-group-text">price</span>
@@ -66,7 +101,7 @@
 								  </div>
 								</div>
 								<div class="mb-3">
-								  <input type="file" class="form-control" id="imageAdd" name="imgFile">
+								  <input type="file" class="form-control" id="imageAdd" name="imgFile" required>
 								</div>
 							</div>						    
 						    
@@ -140,7 +175,8 @@
 									  <input type="text" class="form-control modBrand" name="brand" id="brandExt-name" required>									  
 									</div>
 									
-								    <div class="input-group mb-3">
+								    <div class="form-control mb-3">
+								    
 								      <span class="input-group-text">source1</span>
 								      <input type="text" class="form-control modSource1" name="source1" id="source1Ext-name" required>
 								      <span class="input-group-text">source2</span>
@@ -277,6 +313,7 @@
 	};
 	document.querySelector("#pImageAdd").addEventListener("change", pImgChange);			
 	
+
 </script>
 
 
