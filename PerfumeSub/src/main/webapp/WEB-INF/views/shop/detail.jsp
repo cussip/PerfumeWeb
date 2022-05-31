@@ -437,10 +437,10 @@
     <div class="container">	 		
      		<c:forEach var="revlist" items="${revlist}">
     			<div class="row">
-    				<div class="col-2">${revlist.rating}점</div>
+    				<div class="col-2">${revlist.rating} / 5.0</div>
     				<div class="col-2">${revlist.writerId}</div>
     				<div class="col-1"></div><div class="col-1"></div><div class="col-1"></div>
-    				<div class="col-5">${revlist.regDate}</div>
+    				<div class="col-5"><fmt:formatDate var="revDate" value="${revlist.regDate}" type="date" pattern="yyyy-MM-dd"/>${revDate}</div>
     			</div>		
     			<br>
     			<div class="row"><p>${revlist.content}</p></div>
