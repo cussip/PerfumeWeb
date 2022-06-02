@@ -45,7 +45,7 @@
 
 
 <main style="margin: 100px 150px 100px 150px">
-<h3 style="margin:130px 0 40px 0; text-align:center">마이페이지</h3>
+<h3 style="margin:130px 0 40px 0; text-align:center">${member.user_name}님의 마이페이지</h3>
 <hr style="color:#555555">
 
 
@@ -57,7 +57,7 @@
   			<li class="list-group-item" ><a href="/mywish/${member.id}" id="mymenu">관심상품</a></li>
   			<li class="list-group-item" ><a href="/myreview/${member.id}" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
+  			<li class="list-group-item" ><a href="/myedit/${member.id}" id="mymenu">정보수정</a></li>
 		</ul>
 		</div>
 		<!-- 좌측 마이페이지 사이드메뉴 (End) -->	
@@ -67,6 +67,7 @@
 			<div class="row" style="color:#555555; font-weight:600">고객님께서 구매하신 상품의 리뷰를 관리하는 공간입니다.</div>		
 			
 			<br><hr>
+			
 			
 			<!-- 목록이 들어갈 곳 -->
 			<c:forEach var="rvs" items="${reviews}">
@@ -87,6 +88,7 @@
 			</div>
 			</div><hr>		
 			</c:forEach>	
+				
 	</div> 
 	</div>	
 	

@@ -9,19 +9,30 @@
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
+<style>
+#mymenu {
+	color:#555555;
+	text-decoration: none;
+}
+
+.list-group-item:hover {
+	background-color: #b6b8bb;
+}
+</style>
+
 <main style="margin: 100px 150px 100px 150px">
-<h3 style="margin:130px 0 40px 0; text-align:center">마이페이지</h3>
+<h3 style="margin:130px 0 40px 0; text-align:center">${member.user_name}님의 마이페이지</h3>
 <hr style="color:#555555">
 
 <div class="row">
 		<!-- 좌측 마이페이지 사이드메뉴 -->
 	<div class="col-4" style="padding: 0 100px 0 20px">
 		<ul class="list-group list-group-flush" style="border-bottom:1px solid black">
-  			<li class="list-group-item" ><a href="#" id="mymenu">주문내역</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">관심상품</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">나의리뷰</a></li>
+  			<li class="list-group-item" ><a href="/myorder/${member.id}" id="mymenu">주문내역</a></li>
+  			<li class="list-group-item" ><a href="/mywish/${member.id}" id="mymenu">관심상품</a></li>
+  			<li class="list-group-item" ><a href="/myreview/${member.id}" id="mymenu">나의리뷰</a></li>
   			<li class="list-group-item" ><a href="#" id="mymenu">나의문의</a></li>
-  			<li class="list-group-item" ><a href="#" id="mymenu">정보수정</a></li>
+  			<li class="list-group-item" ><a href="/myedit/${member.id}" id="mymenu">정보수정</a></li>
 		</ul>
 	</div>
 		<!-- 좌측 마이페이지 사이드메뉴 (End) -->
