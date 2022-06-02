@@ -231,6 +231,17 @@
 			font-size: 14pt;
 		}
 		
+		.chkSource input[type=checkbox] {
+			transform : scale(1.5);
+		}
+		
+		.chkSource table {
+			border-spacing: 40px;
+			border-collapse: separate;
+			font-weight: bold;
+			font-size: 15pt;
+		}
+		
 	</style>
 </head>
 
