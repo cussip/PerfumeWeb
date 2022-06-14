@@ -93,8 +93,6 @@
 			}
 			
 			
-			
-			
 		});
 		
 		/*리뷰 리스트 출력*/
@@ -108,28 +106,68 @@
 		});
 		*/
 		
-	});
+		//수량버튼 조작
+		let quantity = $(".quantity_input").val();
+
+		$(".plus_btn").on("click", function(){
+			$(".quantity_input").val(++quantity);
+		});
+
+		$(".minus_btn").on("click", function(){
+			if(quantity > 1){
+			$(".quantity_input").val(--quantity);
+			}
+		});		
+	
+	//------------------------------------------------------------------------------	
+	// 장바구니 추가 script(MyCart) : 신규 작성	
+	//------------------------------------------------------------------------------	
+		
+		// 장바구니 전송 데이터 form
+		const cartform = {
+				member_id : '${member.id}',
+				product_id : '${product_id}',
+				product_count : ''
+	
+		}
+
+	//장바구니 추가버튼 클릭
+	$(".addCart_btn").on("click", function(e){
+	cartform.product_count = $(".quantity_input").val();
+	$.ajax({
+		url:	'/mycart/add',
+		type:	'POST',
+		data:	cartform,
+		success: function(result){
+			if(result == '0'){
+				alert("장바구니에 추가를 하지 못하였습니다.");
+			} else if(result == '1'){
+				alert("장바구니에 추가되었습니다.");
+			} else if(result == '2'){
+				alert("장바구니에 이미 추가되어져 있습니다.");
+			} else if(result == '5'){
+				alert("로그인이 필요합니다.");	
+			}			
+		}
+	})
+	});		
+		
+		
+	}); // End - $(document).ready(function()
 	
 	
 
-			}											
-		});				
-	});
-	
-
+// 장바구니 스크립트 - 기존 팀 작성
+/*
 	function payment() {
 		var price = $("#ml option:selected").val();
 		
-		
-		
-		
+	
 		var params = {
 				user_id      : "${user_id}"
               , product_id       : "${name}"
               , price : price
-              
                 
-             
       }
 		$.ajax({
             type : "POST",            // HTTP method type(GET, POST) 형식이다.
@@ -144,17 +182,13 @@
             }
         });
 		
-	}
+	} */
 	
-
-		
-	
-
 </script>
+
+
 </head>
 <body>
-
-
 
 	<!--  http://drive.google.com/uc?export=view&id=1-3p5BqrlNWPxZ6K2Ztu2ftxLOppfkTXF-->
 
@@ -197,20 +231,24 @@
 
 					<div class="dropdown">
 
-						
-						
 						<select name="ml" id="ml">												
 						    <option value="price">40ml </option>
 						    <option value="price2">60ml + 5,000</option>
 						    <option value="price3">120ml + 15,000</option>
 						</select>
                         
-
-
-
-						
-                      
 					</div>
+					<br>
+			
+					<div class="button_quantity">
+					수량
+						<input type="text" class="quantity_input" value="1"> 
+						<span>
+							<button class="plus_btn">+</button>
+							<button class="minus_btn">-</button>
+						</span>
+					</div>
+					
 					<br>
 					<div class="border-bottom"></div>
 
@@ -235,15 +273,11 @@
 					<div style="display: flex;">
 						<div style="padding-top: 10px; width: 320px;">
 						
-						
-						
-						<button onclick="payment()" type="button" class="addCart_btn" style="text-decoration: none; color: white; height:50px; width: 350px; background-color: black; font-size: 18px; font-weight: bold;">
+						<!-- 장바구니 추가 버튼 -->												
+						<button type="button" class="addCart_btn" style="text-decoration: none; color: white; height:50px; width: 350px; background-color: black; font-size: 18px; font-weight: bold;">
 							장바구니
-							</button>
-						
-						
-						
-							
+						</button>
+																			
 						</div>
 						<div style="padding-left: 40px; padding-top: 10px;">
 							<button class="hit" style="background-color: white; border: 0; outline: 0;"><i class="bi bi-heart" style="font-size: 2rem;"></i></button>
@@ -470,6 +504,7 @@ $("#review_button").on("click", function(e){
 	window.open(popUrl,"리뷰 쓰기",popOption);
 });
 
+
 /* 관심상품 추가 동작 */
 const form = {
 		id : '${member.id}',
@@ -477,7 +512,6 @@ const form = {
 		image : '${image}',
 		price : '${price}'
 }
-
 
 
 /* 관심상품 추가 버튼 (♡) */
@@ -500,6 +534,7 @@ $(".hit").on("click", function(e){
 		}
 	})
 });
+
 
 </script>
 

@@ -153,24 +153,7 @@ public class ShopController {
 		return "root.shop.detail";
 	}
 	
-	@RequestMapping(value = "detail/cart",method = RequestMethod.POST)
-    @ResponseBody
-    public String payment(@RequestParam("user_id") String user_id,@RequestParam("product_id") String product_id,@RequestParam("price")String price){
-		
-	  List<CartVO> list =  new ArrayList<>();
-	  	
-		CartVO cart = new CartVO();
-		cart.setId(user_id);
-		cart.setName(product_id);
-		cart.setImage(price);
-		
-        cartservice.newAddCart(cart);
-        
-       
-        return "success";
-        
-    }
-			
+	
 	// 리뷰 작성
 	@GetMapping("/reviewEnroll/{id}")
 	public String reviewEnrollGET(@PathVariable("id") String id, int product_id, Model model) throws Exception {
