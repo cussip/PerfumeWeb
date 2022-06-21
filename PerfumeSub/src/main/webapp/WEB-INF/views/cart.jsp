@@ -39,11 +39,6 @@
 </style>
 <script>
 $(document).ready(function() {
-
-
-	
-	
-	
 	
 	$(".btn_delete").click(function() {
 		var param = $(this).data('cart_id');
@@ -150,7 +145,9 @@ $(document).ready(function() {
     </tr>
     </c:forEach>
 </table>
+
 <br><br><br><br>
+
 <p> 상품가격 30,000원이상시 무료배송입니다.</p>
 <table class="table table-striped" >
 	<tr>

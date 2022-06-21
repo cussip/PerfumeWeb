@@ -47,10 +47,21 @@ public class MyCartController {
 	public String myCartGET(@PathVariable("id") String id, Model model,HttpServletRequest request
 		  	,HttpServletResponse response) throws Exception {
 		
-		model.addAttribute("cartInfo", mycartservice.getCartList(id));			
+		model.addAttribute("myCartInfo", mycartservice.getCartList(id));			
 		
 		return "root.mypage.mycart";
 	}
 			
+	// 카트 목록삭제
+	@PostMapping("/mycart/delete")
+	public String deleteMyCartPOST(MyCartVO mycart) {
+		
+		mycartservice.deleteCart(mycart.getCart_id());
+		
+		return "redirect:/mycart/" + mycart.getMember_id();
+		
+	}
+	
+	
 	
 }

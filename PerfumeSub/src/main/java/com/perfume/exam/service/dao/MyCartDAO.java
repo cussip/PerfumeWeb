@@ -18,7 +18,7 @@ public interface MyCartDAO {
 	// 수량수정
 	public int modifyCart(MyCartVO mycart);
 	
-	// 카트 목록
+	// 카트 목록(조회)
 	public List<MyCartVO> getCart(String id);
 	
 	// 카트 확인

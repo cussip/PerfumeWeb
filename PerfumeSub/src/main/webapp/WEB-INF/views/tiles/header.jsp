@@ -97,6 +97,11 @@
           		<a class="nav-link" aria-current="page" href="/myorder/${member.id}">
 				마이페이지
 				</a>
+				
+          		<a class="nav-link" aria-current="page" href="/mycart/${member.id}">
+				MY CART
+				</a>
+				
           	</c:if>
           </li>
         </ul>

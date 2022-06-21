@@ -47,5 +47,12 @@ public class MyCartServiceImpl implements MyCartService {
 		return mycart;
 	}
 	
+	@Override
+	public int deleteCart(int cart_id) {
+		
+		return mycartdao.deleteCart(cart_id);
+	}
+	
 
+	
 }
