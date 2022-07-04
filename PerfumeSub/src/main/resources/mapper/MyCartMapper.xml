@@ -41,5 +41,13 @@ where member_id = #{id}
 	
 	</select>
 
+	<!-- 카트 제거(주문처리) -->
+	<delete id="deleteOrderCart">
+	
+		delete from my_cart 
+		where member_id = #{member_id} and product_id = #{product_id}
+	
+	</delete>
+
 
 </mapper>  

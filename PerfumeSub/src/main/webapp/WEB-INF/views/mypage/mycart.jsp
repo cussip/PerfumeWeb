@@ -65,6 +65,8 @@
 			<input type="hidden" class="individual_price_input" value="${mycart.price }">
 			<input type="hidden" class="individual_totalPrice_input" value="${mycart.price * mycart.product_count }">
 			<input type="hidden" class="individual_count_input" value="${mycart.product_count }">
+			<!-- 주문정보를 위한 상품id 추가 -->
+			<input type="hidden" class="individual_prodid_input" value="${mycart.product_id}">
 		</td>
 		<!--/ ------------------------------------------------------- -->
 		<td><img src="${mycart.image }" width=60px height="60px" align="left" /></td> 
@@ -119,6 +121,11 @@ background-color: black; font-size: 18px; font-weight: bold;">주문하기</butt
 <form action="/mycart/delete" method="post" class="delete_form">
 	<input type="hidden" name="cart_id" class="delete_myCartId">
 	<input type="hidden" name="member_id" value="${member.id}">
+</form>
+
+<!-- 주문 form -->
+<form action="/shoporder/${member.id}" method="get" class="order_form">
+
 </form>
 
 
@@ -199,7 +206,7 @@ function setTotalInfo(){
 	// 최종 금액 = (총 가격 + 배송비)
 	$(".finalTotalPrice_span").text(finalTotalPrice);		
 				
-}
+}  // End - function setTotalInfo()
 
 /* 장바구니 삭제 동작 */
 $(".mycart_del").on("click", function(e){
@@ -210,6 +217,35 @@ $(".mycart_del").on("click", function(e){
 	
 });
 
+/* 주문페이지 이동 */
+$(".doOrder_btn").on("click", function(){
+	
+	let form_contents = '';
+	// orders[0], orders[1], ...과 같이 index값 역할을 할 orderNumber 변수 선언(0초기화)
+	let orderNumber = 0;
+	//  상품의 데이터가 저장된 <input> 값들을 감싸고 있는 <td> 태그 반복해서 접근하는 메서드 추가
+	$(".mycart_info_td").each(function(index, element){
+		
+		let product_id = $(element).find(".individual_prodid_input").val();	
+		let product_count = $(element).find(".individual_count_input").val();	
+		
+		let product_id_input = "<input name='orders[" + orderNumber + "].product_id' type='hidden' value='" + product_id + "'>";
+		form_contents += product_id_input;
+		
+		let product_count_input = "<input name='orders[" + orderNumber + "].product_count' type='hidden' value='" + product_count + "'>";
+		form_contents += product_count_input;
+		
+		orderNumber += 1;
+		
+		
+		
+	});
+	
+	$(".order_form").html(form_contents);
+	$(".order_form").submit();
+	
+	
+});
 
 </script>
 

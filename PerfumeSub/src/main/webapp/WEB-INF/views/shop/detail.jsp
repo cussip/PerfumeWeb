@@ -153,6 +153,8 @@
 	});		
 		
 		
+	
+	
 	}); // End - $(document).ready(function()
 	
 	
@@ -264,8 +266,8 @@
 					</div>
 					<div>
 						<a href="#" style="text-decoration: none; color: black;">
-							<div class="border border-dark"
-								style="text-align: center; font-size: 20px; font-weight: bold; height: 50px; padding-top: 10px;">
+							<div class="border border-dark" id="btn_buy" 
+							style="text-align: center; font-size: 20px; font-weight: bold; height: 50px; padding-top: 10px;">
 								바로 구매</div>
 						</a>
 					</div>
@@ -471,7 +473,7 @@
     <div class="container">	 		
      		<c:forEach var="revlist" items="${revlist}">
     			<div class="row">
-    				<div class="col-2">${revlist.rating} / 5.0</div>
+    				<div class="col-2">★ ${revlist.rating} / 5.0</div>
     				<div class="col-2">${revlist.writerId}</div>
     				<div class="col-1"></div><div class="col-1"></div><div class="col-1"></div>
     				<div class="col-5"><fmt:formatDate var="revDate" value="${revlist.regDate}" type="date" pattern="yyyy-MM-dd"/>${revDate}</div>
@@ -485,6 +487,8 @@
   
 </div>
 			
+
+
 				
 <script>
 
@@ -535,6 +539,13 @@ $(".hit").on("click", function(e){
 	})
 });
 
+/* 바로구매하기 버튼 */
+$("#btn_buy").on("click", function(){
+		let product_count = $(".quantity_input").val();
+		$(".order_form").find("input[name='orders[0].product_count']").val(product_count);
+		$(".order_form").submit();
+			
+});
 
 </script>
 
@@ -662,6 +673,12 @@ $.getJSON("/review/list", {product_id : product_id}, function(obj){
 	*/
 
 </script>
+
+<!-- 상품주문 form -->
+<form action="/shoporder/${member.id}" method="get" class="order_form">
+	<input type="hidden" name="orders[0].product_id" value="${product_id}">
+	<input type="hidden" name="orders[0].product_count" value="">
+</form>
 
 
 

@@ -94,7 +94,7 @@
           
           <li>
           	<c:if test="${member != null }">
-          		<a class="nav-link" aria-current="page" href="/myorder/${member.id}">
+          		<a class="nav-link" aria-current="page" href="/myedit/${member.id}">
 				마이페이지
 				</a>
 				

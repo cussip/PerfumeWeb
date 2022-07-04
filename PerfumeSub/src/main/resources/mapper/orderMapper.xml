@@ -6,6 +6,8 @@
 
 
 <!-- 주문목록 조회 -->
+
+<!-- 
 <select id="selectOrderList" resultType="myOrderVO">
 	<![CDATA[
 		SELECT 
@@ -20,8 +22,10 @@
 	]]>
 
 </select>
+ -->
 
-
+ 
+<!--  
  
 <delete id="deleteOrder" parameterType="int" >
 	<![CDATA[
@@ -29,7 +33,7 @@
 	]]>
 
 </delete>
-
+ -->
 	
 	
 

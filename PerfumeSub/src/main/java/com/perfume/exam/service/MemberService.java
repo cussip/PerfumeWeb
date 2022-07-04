@@ -16,10 +16,13 @@ public interface MemberService {
     // 아이디 찾기
     public String find_id(String email) throws Exception;
     
-
-
-
-
+    // (추가) 주문자 정보
+    public MemberVO getMemberInfo(String id);
 
 	
 }
+
+
+
+
+

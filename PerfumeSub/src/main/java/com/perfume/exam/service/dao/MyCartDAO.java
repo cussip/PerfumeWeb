@@ -24,4 +24,7 @@ public interface MyCartDAO {
 	// 카트 확인
 	public MyCartVO checkCart(MyCartVO mycart);
 	
+	// 카트 제거(주문처리)
+	public int deleteOrderCart(MyCartVO mvo);
+	
 }

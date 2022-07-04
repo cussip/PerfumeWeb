@@ -22,4 +22,10 @@ public interface MemberMapper {
     // 회원 상세정보 조회(마이페이지)
     public MemberVO memberInfo(String id);
     
+    //----------------------------------------------------------------
+    // (추가) 주문회원 주소 정보
+    //----------------------------------------------------------------
+    public MemberVO getMemberInfo(String id);		
+    		
+    	
 }

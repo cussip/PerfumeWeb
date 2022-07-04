@@ -28,10 +28,11 @@ public class ReviewController {
 		}
 		
 		// 리뷰 페이징
+		/*
 		@GetMapping(value="/list", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 		public ReviewPageVO reviewListPOST(Criteria cri) {
 			
 			return reviewService.reviewList(cri);
 		}
-		
+		*/
 }
